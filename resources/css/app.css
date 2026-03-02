@@ -58,7 +58,13 @@ main {
 .home-hero__overlay-content {
     position: absolute;
     inset: 0;
-    padding: 22px 20px;
+    margin-top: 7rem;
+    margin-right: 5rem;
+    margin-left: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: min(100%, 760px);
 }
 
 .home-hero__overlay h1 {
@@ -410,10 +416,6 @@ main {
     }
 }
 
-.site-footer {
-    margin-top: 72px;
-}
-
 .site-contact {
     background: #c4aa85;
     padding: 48px 0 43px;
@@ -571,6 +573,10 @@ main {
     .home-hero__overlay {
         left: 3%;
         width: min(calc(100% - 16px), 885px);
+    }
+
+    .home-hero__overlay-content {
+        padding: 70px 20px 22px;
     }
 
     .home-hero__overlay h1 {

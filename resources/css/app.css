@@ -43,12 +43,22 @@ main {
 
 .home-hero__overlay {
     position: absolute;
-    left: 7%;
+    left: 0;
     bottom: 0;
-    width: min(100% - 56px, 520px);
-    padding: 22px 20px;
-    background: rgba(196, 170, 133, 0.8);
+    width: min(calc(100% - 32px), 885px);
     color: #fff;
+}
+
+.home-hero__overlay svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.home-hero__overlay-content {
+    position: absolute;
+    inset: 0;
+    padding: 22px 20px;
 }
 
 .home-hero__overlay h1 {
@@ -560,7 +570,7 @@ main {
 @media (max-width: 1440px) {
     .home-hero__overlay {
         left: 3%;
-        width: min(100% - 32px, 520px);
+        width: min(calc(100% - 16px), 885px);
     }
 
     .home-hero__overlay h1 {
@@ -747,6 +757,9 @@ main {
         width: auto;
         margin: 0 16px;
         margin-top: -18px;
+    }
+
+    .home-hero__overlay-content {
         padding: 18px 16px;
     }
 

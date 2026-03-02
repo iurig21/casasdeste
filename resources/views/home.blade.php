@@ -3,13 +3,17 @@
         <section class="home-hero">
             <img src="/imagens/img1home.svg" alt="Casas D'Este" class="home-hero__image">
             <div class="home-hero__overlay">
-                
-                <h1>Casas D'Este</h1>
-                <p class="home-hero__subtitle">Onde a Arquitetura Moderna encontra o Refúgio Perfeito em Braga</p>
-                <p class="home-hero__description">
-                    Moradias unifamiliares V3 de luxo, desenhadas para oferecer o máximo conforto, sofisticação e uma
-                    integração única com a natureza.
-                </p>
+                <svg width="885" height="398" viewBox="0 0 885 398" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M885 397.697H-98V172.088L885 0V397.697Z" fill="#C4AA85" fill-opacity="0.85"/>
+                </svg>
+                <div class="home-hero__overlay-content">
+                    <h1>Casas D'Este</h1>
+                    <p class="home-hero__subtitle">Onde a Arquitetura Moderna encontra o Refúgio Perfeito em Braga</p>
+                    <p class="home-hero__description">
+                        Moradias unifamiliares V3 de luxo, desenhadas para oferecer o máximo conforto, sofisticação e uma
+                        integração única com a natureza.
+                    </p>
+                </div>
             </div>
         </section>
 

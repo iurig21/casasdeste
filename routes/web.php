@@ -11,9 +11,11 @@ Route::get('/projeto', function () {
     return view('projeto');
 });
 
-Route::get('/acamentos', function () {
+Route::get('/acabamentos', function () {
     return view('acabamentos');
 });
+
+
 
 
 

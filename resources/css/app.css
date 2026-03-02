@@ -22,12 +22,12 @@ main {
 }
 
 .home-page {
-    max-width: 1920px;
+    max-width: 1728px;
     margin: 0 auto;
 }
 
 .home-hero {
-    margin-top: 28px;
+    margin-top: 24px;
     position: relative;
 }
 
@@ -37,12 +37,16 @@ main {
     height: auto;
 }
 
+.home-details{
+    margin-top: 1.5rem;
+}
+
 .home-hero__overlay {
     position: absolute;
-    left: 7.9%;
+    left: 7%;
     bottom: 0;
-    width: min(100% - 64px, 575px);
-    padding: 26px 24px;
+    width: min(100% - 56px, 520px);
+    padding: 22px 20px;
     background: rgba(196, 170, 133, 0.8);
     color: #fff;
 }
@@ -51,28 +55,28 @@ main {
     margin: 0;
     font-family: "Ubuntu", sans-serif;
     font-weight: 700;
-    font-size: 55px;
+    font-size: 50px;
     line-height: 1;
 }
 
 .home-hero__subtitle {
     margin: 8px 0 0;
     font-family: "Ubuntu", sans-serif;
-    font-size: 40px;
+    font-size: 36px;
     line-height: 1;
 }
 
 .home-hero__description {
     margin: 12px 0 0;
     font-family: "Montserrat", sans-serif;
-    font-size: 19px;
+    font-size: 17px;
     font-weight: 500;
     line-height: 1.4;
 }
 
 .home-intro {
-    margin: 74px auto 58px;
-    width: min(calc(100% - 32px), 880px);
+    margin: 66px auto 52px;
+    width: min(calc(100% - 32px), 792px);
 }
 
 .home-intro p {
@@ -80,26 +84,26 @@ main {
     text-align: center;
     color: #353d3f;
     font-family: "Ubuntu", sans-serif;
-    font-size: 38px;
+    font-size: 34px;
     line-height: 1.35;
 }
 
 .home-highlights {
-    width: min(calc(100% - 32px), 1621px);
+    width: min(calc(100% - 32px), 1459px);
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(4, 364px);
-    gap: 55px;
+    grid-template-columns: repeat(4, 328px);
+    gap: 46px;
     justify-content: center;
 }
 
 .home-highlight {
     background: #fff;
-    width: 364px;
-    min-height: 186px;
+    width: 328px;
+    min-height: 168px;
     border-radius: 20px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    padding: 18px 20px 22px;
+    padding: 16px 18px 20px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -108,7 +112,7 @@ main {
 }
 
 .home-highlight svg {
-    height: 76px;
+    height: 68px;
     width: auto;
 }
 
@@ -116,9 +120,9 @@ main {
     margin: 2px 0 0;
     color: #353d3f;
     font-family: "Montserrat", sans-serif;
-    font-size: 21px;
+    font-size: 19px;
     font-weight: 700;
-    line-height: 32px;
+    line-height: 28px;
     text-transform: uppercase;
 }
 
@@ -126,21 +130,21 @@ main {
     margin: 0;
     color: #353d3f;
     font-family: "Montserrat", sans-serif;
-    font-size: 21px;
+    font-size: 19px;
     font-weight: 500;
-    line-height: 32px;
+    line-height: 28px;
 }
 
 .home-interior {
-    margin: 110px auto 0;
-    width: min(calc(100% - 32px), 1790px);
+    margin: 96px auto 0;
+    width: min(calc(100% - 32px), 1610px);
 }
 
 .home-interior h2 {
     margin: 0 0 20px;
     font-family: "Ubuntu", sans-serif;
     font-weight: 500;
-    font-size: 95px;
+    font-size: 85px;
     line-height: 1;
     color: #c4aa85;
 }
@@ -149,7 +153,7 @@ main {
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
     grid-template-rows: repeat(2, minmax(0, auto));
-    gap: 20px;
+    gap: 18px;
 }
 
 .home-interior__grid img {
@@ -169,18 +173,18 @@ main {
 }
 
 .home-exterior {
-    width: min(calc(100% - 32px), 1790px);
-    margin: 52px auto 0;
+    width: min(calc(100% - 32px), 1610px);
+    margin: 46px auto 0;
     display: grid;
-    grid-template-columns: minmax(0, 1063px) minmax(0, 1fr);
-    gap: 64px;
+    grid-template-columns: minmax(0, 956px) minmax(0, 1fr);
+    gap: 56px;
 }
 
 .home-exterior__gallery {
     display: grid;
     grid-template-columns: 638fr 405fr;
-    grid-template-rows: 405px 242px;
-    gap: 20px;
+    grid-template-rows: 365px 218px;
+    gap: 18px;
 }
 
 .home-exterior__gallery img {
@@ -199,14 +203,14 @@ main {
 }
 
 .home-exterior__details article + article {
-    margin-top: 36px;
+    margin-top: 32px;
 }
 
 .home-exterior__details h3 {
     margin: 0;
     color: #c4aa85;
     font-family: "Ubuntu", sans-serif;
-    font-size: 50px;
+    font-size: 45px;
     font-weight: 500;
     line-height: 1.08;
 }
@@ -215,13 +219,13 @@ main {
     margin: 8px 0 0;
     color: #353d3f;
     font-family: "Ubuntu", sans-serif;
-    font-size: 25px;
+    font-size: 22px;
     line-height: 1.36;
 }
 
 .site-nav {
     position: relative;
-    padding: 19px 0 14px;
+    padding: 17px 0 12px;
     margin-left: 3rem;
     margin-right: 3rem;
 }
@@ -237,7 +241,7 @@ main {
 }
 
 .site-nav__container {
-    max-width: 1652px;
+    max-width: 1487px;
     margin: 0 auto;
     padding: 0 16px;
     display: flex;
@@ -258,12 +262,12 @@ main {
     margin-left: auto;
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 22px;
 }
 
 .site-nav__brand-symbol {
-    width: 153px;
-    height: 59.433px;
+    width: 138px;
+    height: 53px;
     aspect-ratio: 153/59.43;
     object-fit: contain;
 }
@@ -294,7 +298,7 @@ main {
 .site-nav__links {
     display: flex;
     align-items: center;
-    gap: 36px;
+    gap: 32px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -302,7 +306,7 @@ main {
 
 .site-nav__links a {
     font-family: "Montserrat", sans-serif;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 700;
     color: #353d3f;
     text-decoration: none;
@@ -316,15 +320,15 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 210px;
-    min-height: 64px;
+    width: 189px;
+    min-height: 58px;
     background-color: #c4aa85;
     color: #fff;
     text-decoration: none;
     border-radius: 10px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     font-family: "Montserrat", sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     line-height: 1;
     text-align: center;
@@ -402,36 +406,36 @@ main {
 
 .site-contact {
     background: #c4aa85;
-    padding: 54px 0 48px;
+    padding: 48px 0 43px;
 }
 
 .site-contact__container {
-    max-width: 1652px;
+    max-width: 1487px;
     margin: 0 auto;
     padding: 0 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 80px;
+    gap: 72px;
 }
 
 .site-contact h2 {
     margin: 0;
     font-family: "Ubuntu", sans-serif;
     font-weight: 500;
-    font-size: 55px;
+    font-size: 50px;
     line-height: 1.04;
     color: #fff;
 }
 
 .site-contact__form {
-    width: min(100%, 968px);
+    width: min(100%, 871px);
 }
 
 .site-contact__row {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 36px;
+    gap: 32px;
 }
 
 .site-contact label {
@@ -442,7 +446,7 @@ main {
 .site-contact label span {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.4;
     color: #fff;
     margin-bottom: 8px;
@@ -456,7 +460,7 @@ main {
     background: transparent;
     color: #fff;
     font-family: "Montserrat", sans-serif;
-    font-size: 16px;
+    font-size: 15px;
     outline: none;
     padding: 0 0 6px;
 }
@@ -466,7 +470,7 @@ main {
 }
 
 .site-contact textarea {
-    min-height: 88px;
+    min-height: 80px;
     border: 1px solid rgba(255, 255, 255, 0.95);
     padding: 10px 12px;
     resize: vertical;
@@ -474,28 +478,28 @@ main {
 
 .site-contact button {
     margin-top: 14px;
-    min-width: 86px;
-    height: 31px;
+    min-width: 78px;
+    height: 29px;
     border: 0;
     border-radius: 2px;
     background: #fff;
     color: #353d3f;
     font-family: "Montserrat", sans-serif;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 500;
     cursor: pointer;
 }
 
 .site-footer__bottom {
     background: #353d3f;
-    min-height: 244px;
+    min-height: 220px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
 }
 
 .site-footer__bottom-container {
     position: relative;
-    width: min(100%, 1920px);
-    min-height: 244px;
+    width: min(100%, 1728px);
+    min-height: 220px;
     margin: 0 auto;
     padding: 0;
 }
@@ -510,7 +514,7 @@ main {
 
 .site-footer__evobuild svg {
     display: block;
-    width: 263px;
+    width: 236px;
     height: auto;
 }
 
@@ -525,7 +529,7 @@ main {
     margin: 0;
     font-weight: 500;
     font-family: "Montserrat", sans-serif;
-    font-size: 19px;
+    font-size: 17px;
     line-height: 1.3;
     color: #fff;
 }
@@ -548,8 +552,8 @@ main {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     text-decoration: none;
 }
 

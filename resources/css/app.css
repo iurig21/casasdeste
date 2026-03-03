@@ -15,6 +15,7 @@
 body {
     margin: 0;
     background: #f5f5f5;
+    overflow-x: hidden;
 }
 
 main {
@@ -47,7 +48,7 @@ main {
     position: absolute;
     left: 0;
     bottom: 0;
-    width: min(calc(100% - 28px), 740px);
+    width: min(46%, 885px);
     color: #fff;
 }
 
@@ -64,10 +65,9 @@ main {
 
 .home-hero__overlay-text {
     position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: min(76%, 565px);
+    bottom: 10%;
+    left: 12%;
+    width: 76%;
     text-align: left;
 }
 
@@ -590,13 +590,13 @@ main {
 @media (max-width: 1440px) {
     .home-hero__overlay {
         left: 0;
-        width: min(calc(100% - 14px), 740px);
+        width: min(48%, 740px);
     }
 
     .home-hero__overlay-text {
-        top: 56%;
-        left: 48%;
-        width: min(76%, 516px);
+        bottom: 10%;
+        left: 12%;
+        width: 76%;
     }
 
     .home-hero__overlay h1 {
@@ -799,15 +799,13 @@ main {
         left: 0;
         bottom: 0;
         transform: none;
-        width: min(calc(100%), 433px);
+        width: min(60%, 433px);
     }
 
     .home-hero__overlay-text {
-        top: auto;
-        bottom: 10%;
-        left: 10%;
-        transform: none;
-        width: 80%;
+        bottom: 8%;
+        left: 8%;
+        width: 84%;
     }
 
     .home-hero__overlay h1 {
@@ -930,15 +928,13 @@ main {
 
 @media (max-width: 560px) {
     .home-hero__overlay {
-        width: 100%;
+        width: 75%;
         bottom: 0;
     }
 
     .home-hero__overlay-text {
-        top: auto;
         bottom: 8%;
         left: 8%;
-        transform: none;
         width: 84%;
     }
 
@@ -961,6 +957,262 @@ main {
     }
 }
 
+/* ── Acabamentos page ────────────────────────────────── */
+
+.acabamentos-page {
+    max-width: 1440px;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+/* Hero */
+.acabamentos-hero {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    height: clamp(266px, 23vw, 448px);
+    overflow: hidden;
+}
+
+.acabamentos-hero__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 70%;
+}
+
+/* Intro */
+.acabamentos-intro {
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 50px 14px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+}
+
+.acabamentos-intro__heading {
+    flex-shrink: 0;
+    max-width: 500px;
+}
+
+.acabamentos-intro__heading h1 {
+    margin: 0;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-size: clamp(30px, 3.1vw, 60px);
+    line-height: 1.05;
+    color: #c4aa85;
+}
+
+.acabamentos-intro__text {
+    margin: 0;
+    padding-top: 10px;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 300;
+    font-size: clamp(14px, 1.3vw, 25px);
+    line-height: 1.16;
+    color: #353d3f;
+    max-width: 750px;
+}
+
+/* Specs section (text left, image right) */
+.acabamentos-specs {
+    max-width: 1350px;
+    margin: 50px auto 0;
+    padding: 0 14px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 570px);
+    gap: 40px;
+    align-items: start;
+}
+
+.acabamentos-specs__left {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.acabamentos-specs__right img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: 830px;
+    object-fit: cover;
+}
+
+/* Spec block (shared by both sections) */
+.acabamentos-spec h2 {
+    margin: 0;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-size: clamp(30px, 3.1vw, 60px);
+    line-height: 1.1;
+    color: #c4aa85;
+}
+
+.acabamentos-spec ul {
+    margin: 12px 0 0;
+    padding: 0;
+    list-style: none;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 300;
+    font-size: clamp(14px, 1.3vw, 25px);
+    line-height: 1.36;
+    color: #353d3f;
+}
+
+.acabamentos-spec ul li::before {
+    content: "- ";
+}
+
+.acabamentos-spec > p {
+    margin: 12px 0 0;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 300;
+    font-size: clamp(14px, 1.3vw, 25px);
+    line-height: 1.36;
+    color: #353d3f;
+}
+
+/* Details section (images left, text right) */
+.acabamentos-details {
+    margin-top: 60px;
+}
+
+.acabamentos-details__row {
+    display: grid;
+    grid-template-columns: minmax(300px, 570px) minmax(0, 1fr);
+    gap: 0;
+    align-items: start;
+}
+
+.acabamentos-details__row + .acabamentos-details__row {
+    margin-top: 40px;
+}
+
+.acabamentos-details__image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    object-fit: cover;
+}
+
+.acabamentos-details__content {
+    padding: 30px 40px 30px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+@media (max-width: 1440px) {
+    .acabamentos-intro {
+        gap: 40px;
+        padding-top: 40px;
+    }
+
+    .acabamentos-intro__heading h1 {
+        font-size: clamp(28px, 2.8vw, 50px);
+    }
+
+    .acabamentos-spec h2 {
+        font-size: clamp(28px, 2.8vw, 50px);
+    }
+}
+
+@media (max-width: 1180px) {
+    .acabamentos-intro {
+        flex-direction: column;
+        gap: 17px;
+        padding-top: 33px;
+    }
+
+    .acabamentos-intro__heading {
+        max-width: none;
+    }
+
+    .acabamentos-hero {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .acabamentos-specs {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-top: 33px;
+    }
+
+    .acabamentos-specs__right img {
+        max-height: 500px;
+        width: 100%;
+    }
+
+    .acabamentos-details__row {
+        grid-template-columns: 1fr;
+    }
+
+    .acabamentos-details__image img {
+        min-height: 260px;
+        max-height: 400px;
+    }
+
+    .acabamentos-details__content {
+        padding: 20px 14px;
+    }
+
+    .acabamentos-details__row + .acabamentos-details__row {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 860px) {
+    .acabamentos-hero {
+        height: clamp(184px, 43vw, 300px);
+    }
+
+    .acabamentos-intro {
+        padding-top: 23px;
+        gap: 12px;
+    }
+
+    .acabamentos-intro__heading h1 {
+        font-size: 27px;
+    }
+
+    .acabamentos-intro__text {
+        font-size: 14px;
+    }
+
+    .acabamentos-specs {
+        margin-top: 25px;
+    }
+
+    .acabamentos-spec h2 {
+        font-size: 27px;
+    }
+
+    .acabamentos-spec ul,
+    .acabamentos-spec > p {
+        font-size: 14px;
+    }
+
+    .acabamentos-details {
+        margin-top: 35px;
+    }
+
+    .acabamentos-details__image img {
+        min-height: 200px;
+        max-height: 300px;
+    }
+
+    .acabamentos-details__content {
+        padding: 15px 14px;
+        gap: 20px;
+    }
+}
+
 /* ── Projeto page ────────────────────────────────────── */
 
 .projeto-page {
@@ -971,7 +1223,9 @@ main {
 /* Hero */
 .projeto-hero {
     position: relative;
-    width: 100%;
+    width: 100vw;
+    left: 50%;
+    margin-left: -50vw;
     height: clamp(266px, 23vw, 373px);
     overflow: hidden;
 }
@@ -981,7 +1235,7 @@ main {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 30%;
+    object-position: center 70%;
 }
 
 /* Intro */
@@ -1038,19 +1292,19 @@ main {
     display: flex;
     align-items: flex-start;
     gap: 0;
-    margin-top: -17px;
+    margin-top: -10px;
 }
 
 .projeto-floor__image {
     display: block;
-    width: clamp(283px, 40vw, 757px);
-    height: clamp(233px, 25vw, 432px);
+    width: clamp(283px, 47%, 907px);
+    aspect-ratio: 907 / 515;
     object-fit: cover;
     flex-shrink: 0;
 }
 
 .projeto-floor__info {
-    padding: 50px 33px 33px 46px;
+    padding: 64px 33px 33px 55px;
     flex: 1;
     min-width: 0;
 }
@@ -1088,43 +1342,51 @@ main {
     content: "- ";
 }
 
-/* Rés-do-chão: image left, text right */
+/* Rés-do-chão: image flush left, title overlapping top */
+.projeto-floor--left {
+    max-width: none;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+}
+
 .projeto-floor--left .projeto-floor__title {
     text-align: left;
-    padding-left: 12%;
+    padding-left: calc(50vw - 50% + 19%);
 }
 
 .projeto-floor--left .projeto-floor__image {
     margin-left: 0;
 }
 
-/* Primeiro Piso: image more to right */
+/* Primeiro Piso: image flush left */
 .projeto-floor--right .projeto-floor__title {
     text-align: left;
-    padding-left: 20%;
-}
-
-.projeto-floor--right .projeto-floor__body {
-    justify-content: flex-end;
+    padding-left: 27%;
 }
 
 .projeto-floor--right .projeto-floor__image {
     order: 0;
-    margin-left: auto;
+    margin-left: 0;
 }
 
 .projeto-floor--right .projeto-floor__info {
     order: 1;
 }
 
-/* Segundo Piso: image left again but offset */
+/* Segundo Piso: image extends slightly past left edge */
+.projeto-floor--left-offset {
+    max-width: none;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+}
+
 .projeto-floor--left-offset .projeto-floor__title {
     text-align: left;
-    padding-left: 9%;
+    padding-left: calc(50vw - 50% + 16%);
 }
 
 .projeto-floor--left-offset .projeto-floor__image {
-    margin-left: -14px;
+    margin-left: 0;
 }
 
 /* Construção e Qualidade */
@@ -1247,8 +1509,21 @@ main {
         max-width: none;
     }
 
+    .projeto-hero {
+        width: 100%;
+        left: 0;
+        margin-left: 0;
+    }
+
     .projeto-floor {
         margin-top: 33px;
+    }
+
+    .projeto-floor--left,
+    .projeto-floor--left-offset {
+        width: 100%;
+        max-width: none;
+        margin-left: 0;
     }
 
     .projeto-floor__body {
@@ -1319,11 +1594,6 @@ main {
         font-size: 32px;
     }
 
-    .projeto-floor__info-list,
-    .projeto-floor__info-subtitle,
-    .projeto-floor__info-title {
-        font-size: 14px;
-    }
 
     .projeto-construcao {
         margin-top: 42px;

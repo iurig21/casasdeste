@@ -34,7 +34,7 @@
                     <ul class="site-nav__links">
                         <li><a href="/projeto" @class(['site-nav__link--active' => request()->is('projeto')])>O PROJETO</a></li>
                         <li><a href="/acabamentos" @class(['site-nav__link--active' => request()->is('acabamentos')])>ACABAMENTOS</a></li>
-                        <li><a href="">LOCALIZAÇÃO</a></li>
+                        <li><a target="_blank" href="https://maps.app.goo.gl/tdSycnys8VXh6xVCA">LOCALIZAÇÃO</a></li>
                     </ul>
 
                     <button class="site-nav__brochure" onclick="document.getElementById('brochureModal').showModal()">

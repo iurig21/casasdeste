@@ -15,7 +15,15 @@ class BrochureDownloadController extends Controller
             'telefone' => 'required|string|size:9|regex:/^9[0-9]{8}$/',
         ]);
 
-        BrochureDownload::create($validated);
+        BrochureDownload::updateOrCreate(
+            [
+                'email' => $validated['email'],
+                'telefone' => $validated['telefone'],
+            ],
+            [
+                'nome' => $validated['nome'],
+            ]
+        );
 
         return response()->download(public_path('brochura.pdf'), 'brochura.pdf');
     }

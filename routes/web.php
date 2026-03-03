@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BrochureDownloadController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,6 +15,8 @@ Route::get('/projeto', function () {
 Route::get('/acabamentos', function () {
     return view('acabamentos');
 });
+
+Route::post('/brochure-download', [BrochureDownloadController::class, 'store'])->name('brochure.download');
 
 
 

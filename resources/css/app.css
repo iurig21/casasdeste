@@ -1076,7 +1076,7 @@ main {
     display: grid;
     grid-template-columns: minmax(300px, 45%) minmax(0, 1fr);
     gap: 0;
-    align-items: start;
+    align-items: stretch;
 }
 
 .acabamentos-details__row + .acabamentos-details__row {
@@ -1086,7 +1086,7 @@ main {
 .acabamentos-details__image img {
     display: block;
     width: 100%;
-    aspect-ratio: 872 / 491;
+    height: 100%;
     object-fit: cover;
 }
 

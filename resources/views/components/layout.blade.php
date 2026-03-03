@@ -54,28 +54,43 @@
             <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.25rem; color: #C4AA85; margin-bottom: 1.5rem; text-align: center;">
                 Preencha os campos para fazer download:
             </h3>
-            <form id="brochureForm" style="display: flex; flex-direction: column; gap: 1rem;">
+            <form id="brochureForm" method="POST" action="{{ route('brochure.download') }}" style="display: flex; flex-direction: column; gap: 1rem;">
+                @csrf
                 <div>
                     <label style="display: block; font-size: 0.875rem; color: #C4AA85; margin-bottom: 0.25rem; font-family: 'Montserrat', sans-serif;">Nome</label>
-                    <input type="text" id="brochureNome" placeholder="O seu nome"
-                        style="width: 100%; padding: 0.625rem 0.75rem; background: transparent; border: 1px solid #C4AA85; border-radius: 6px; color: #fff; font-family: 'Montserrat', sans-serif; font-size: 0.875rem; outline: none; box-sizing: border-box;"
-                        oninput="checkBrochureForm()" required>
+                    <input type="text" name="nome" id="brochureNome" placeholder="O seu nome" value="{{ old('nome') }}"
+                        style="width: 100%; padding: 0.625rem 0.75rem; background: transparent; border: 1px solid {{ $errors->has('nome') ? '#ff6b6b' : '#C4AA85' }}; border-radius: 6px; color: #fff; font-family: 'Montserrat', sans-serif; font-size: 0.875rem; outline: none; box-sizing: border-box;"
+                        required>
+                    @error('nome')
+                        <span style="display: block; color: #ff6b6b; font-size: 0.75rem; font-family: 'Montserrat', sans-serif; margin-top: 0.25rem;">{{ $message }}</span>
+                    @enderror
                 </div>
                 <div>
                     <label style="display: block; font-size: 0.875rem; color: #C4AA85; margin-bottom: 0.25rem; font-family: 'Montserrat', sans-serif;">Telefone</label>
-                    <input type="tel" id="brochureTelefone" placeholder="O seu telefone"
-                        style="width: 100%; padding: 0.625rem 0.75rem; background: transparent; border: 1px solid #C4AA85; border-radius: 6px; color: #fff; font-family: 'Montserrat', sans-serif; font-size: 0.875rem; outline: none; box-sizing: border-box;"
-                        oninput="checkBrochureForm()" required>
+                    <input type="tel" name="telefone" id="brochureTelefone" placeholder="9XXXXXXXX" maxlength="9" value="{{ old('telefone') }}"
+                        style="width: 100%; padding: 0.625rem 0.75rem; background: transparent; border: 1px solid {{ $errors->has('telefone') ? '#ff6b6b' : '#C4AA85' }}; border-radius: 6px; color: #fff; font-family: 'Montserrat', sans-serif; font-size: 0.875rem; outline: none; box-sizing: border-box;"
+                        required>
+                    <span id="telefoneError" style="display: none; color: #ff6b6b; font-size: 0.75rem; font-family: 'Montserrat', sans-serif; margin-top: 0.25rem;">
+                        O telefone deve ter 9 dígitos e começar com 9.
+                    </span>
+                    @error('telefone')
+                        <span style="display: block; color: #ff6b6b; font-size: 0.75rem; font-family: 'Montserrat', sans-serif; margin-top: 0.25rem;">{{ $message }}</span>
+                    @enderror
                 </div>
                 <div>
                     <label style="display: block; font-size: 0.875rem; color: #C4AA85; margin-bottom: 0.25rem; font-family: 'Montserrat', sans-serif;">Email</label>
-                    <input type="email" id="brochureEmail" placeholder="O seu email"
-                        style="width: 100%; padding: 0.625rem 0.75rem; background: transparent; border: 1px solid #C4AA85; border-radius: 6px; color: #fff; font-family: 'Montserrat', sans-serif; font-size: 0.875rem; outline: none; box-sizing: border-box;"
-                        oninput="checkBrochureForm()" required>
+                    <input type="email" name="email" id="brochureEmail" placeholder="O seu email" value="{{ old('email') }}"
+                        style="width: 100%; padding: 0.625rem 0.75rem; background: transparent; border: 1px solid {{ $errors->has('email') ? '#ff6b6b' : '#C4AA85' }}; border-radius: 6px; color: #fff; font-family: 'Montserrat', sans-serif; font-size: 0.875rem; outline: none; box-sizing: border-box;"
+                        required>
+                    <span id="emailError" style="display: none; color: #ff6b6b; font-size: 0.75rem; font-family: 'Montserrat', sans-serif; margin-top: 0.25rem;">
+                        Por favor insira um email válido.
+                    </span>
+                    @error('email')
+                        <span style="display: block; color: #ff6b6b; font-size: 0.75rem; font-family: 'Montserrat', sans-serif; margin-top: 0.25rem;">{{ $message }}</span>
+                    @enderror
                 </div>
                 <button type="submit" id="brochureDownloadBtn" disabled
-                    style="margin-top: 0.5rem; padding: 0.75rem; background-color: #C4AA85; color: #1a1a1a; border: none; border-radius: 6px; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.95rem; cursor: pointer; transition: opacity 0.2s; opacity: 0.4;"
-                    onclick="handleBrochureDownload(event)">
+                    style="margin-top: 0.5rem; padding: 0.75rem; background-color: #C4AA85; color: #1a1a1a; border: none; border-radius: 6px; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.95rem; cursor: not-allowed; transition: opacity 0.2s; opacity: 0.4;">
                     Download
                 </button>
             </form>
@@ -171,35 +186,8 @@
         </div>
     </footer>
 
-    <script>
-        function checkBrochureForm() {
-            const nome = document.getElementById('brochureNome').value.trim();
-            const telefone = document.getElementById('brochureTelefone').value.trim();
-            const email = document.getElementById('brochureEmail').value.trim();
-            const btn = document.getElementById('brochureDownloadBtn');
-
-            if (nome && telefone && email) {
-                btn.disabled = false;
-                btn.style.opacity = '1';
-                btn.style.cursor = 'pointer';
-            } else {
-                btn.disabled = true;
-                btn.style.opacity = '0.4';
-                btn.style.cursor = 'not-allowed';
-            }
-        }
-
-        function handleBrochureDownload(e) {
-            e.preventDefault();
-            // TODO: replace with actual brochure file path
-            const link = document.createElement('a');
-            link.href = '/brochura.pdf';
-            link.download = 'brochura.pdf';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            document.getElementById('brochureModal').close();
-        }
-    </script>
+    @if ($errors->any())
+        <script>document.addEventListener('DOMContentLoaded', () => document.getElementById('brochureModal').showModal());</script>
+    @endif
 </body>
 </html>

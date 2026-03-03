@@ -360,6 +360,7 @@ main {
     line-height: 1;
     text-align: center;
     text-transform: none;
+    cursor: pointer;
 }
 
 .site-nav__brochure span + span {
@@ -1306,7 +1307,7 @@ main {
 .projeto-floor__info-title {
     margin: 0;
     font-family: "Ubuntu", sans-serif;
-    font-weight: 500;
+    font-weight: 700;
     font-size: clamp(14px, 1.2vw, 21px);
     line-height: 1;
     color: #353d3f;
@@ -1315,7 +1316,7 @@ main {
 .projeto-floor__info-subtitle {
     margin: 3px 0 0;
     font-family: "Ubuntu", sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     font-size: clamp(14px, 1.2vw, 21px);
     line-height: 1.2;
     color: #353d3f;

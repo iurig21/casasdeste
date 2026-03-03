@@ -1,12 +1,10 @@
 <x-layout>
     <section class="acabamentos-page">
 
-        {{-- Hero --}}
         <section class="acabamentos-hero">
             <img src="/imagens/acabamentos-hero.jpg" alt="Acabamentos Casas D'Este" class="acabamentos-hero__image">
         </section>
 
-        {{-- Intro --}}
         <section class="acabamentos-intro">
             <div class="acabamentos-intro__heading">
                 <h1>Materiais selecionados<br>para conforto e durabilidade</h1>
@@ -16,7 +14,6 @@
             </p>
         </section>
 
-        {{-- Top section: specs left, image right --}}
         <section class="acabamentos-specs">
             <div class="acabamentos-specs__left">
                 <article class="acabamentos-spec">
@@ -63,7 +60,6 @@
             </div>
         </section>
 
-        {{-- Bottom section: images left, specs right --}}
         <section class="acabamentos-details">
             <div class="acabamentos-details__row">
                 <div class="acabamentos-details__image">

@@ -957,19 +957,16 @@ main {
     }
 }
 
-/* ── Acabamentos page ────────────────────────────────── */
-
 .acabamentos-page {
     max-width: 1440px;
     margin: 0 auto;
-    overflow-x: hidden;
 }
 
-/* Hero */
 .acabamentos-hero {
     position: relative;
     width: 100vw;
-    margin-left: calc(-50vw + 50%);
+    left: 50%;
+    margin-left: -50vw;
     height: clamp(266px, 23vw, 448px);
     overflow: hidden;
 }
@@ -982,7 +979,6 @@ main {
     object-position: center 70%;
 }
 
-/* Intro */
 .acabamentos-intro {
     max-width: 1350px;
     margin: 0 auto;
@@ -1017,21 +1013,19 @@ main {
     max-width: 750px;
 }
 
-/* Specs section (text left, image right) */
 .acabamentos-specs {
-    max-width: 1350px;
-    margin: 50px auto 0;
-    padding: 0 14px;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(300px, 570px);
+    grid-template-columns: 1fr minmax(300px, 570px);
     gap: 40px;
     align-items: start;
+    margin-top: 50px;
 }
 
 .acabamentos-specs__left {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    padding-left: max(14px, calc((100vw - 1350px) / 2 + 14px));
 }
 
 .acabamentos-specs__right img {
@@ -1042,7 +1036,6 @@ main {
     object-fit: cover;
 }
 
-/* Spec block (shared by both sections) */
 .acabamentos-spec h2 {
     margin: 0;
     font-family: "Ubuntu", sans-serif;
@@ -1076,9 +1069,9 @@ main {
     color: #353d3f;
 }
 
-/* Details section (images left, text right) */
 .acabamentos-details {
     margin-top: 60px;
+    margin-bottom: 5rem;
 }
 
 .acabamentos-details__row {
@@ -1101,7 +1094,7 @@ main {
 }
 
 .acabamentos-details__content {
-    padding: 30px 40px 30px 60px;
+    padding: 30px max(14px, calc((100vw - 1350px) / 2 + 14px)) 30px 60px;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -1135,6 +1128,7 @@ main {
 
     .acabamentos-hero {
         width: 100%;
+        left: 0;
         margin-left: 0;
     }
 
@@ -1142,6 +1136,11 @@ main {
         grid-template-columns: 1fr;
         gap: 30px;
         margin-top: 33px;
+    }
+
+    .acabamentos-specs__left {
+        padding-left: 14px;
+        padding-right: 14px;
     }
 
     .acabamentos-specs__right img {
@@ -1593,7 +1592,6 @@ main {
     .projeto-floor__title {
         font-size: 32px;
     }
-
 
     .projeto-construcao {
         margin-top: 42px;

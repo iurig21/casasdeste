@@ -22,30 +22,32 @@ main {
 }
 
 .home-page {
-    max-width: 1728px;
-    margin: 0 auto;
+    margin: 0;
 }
 
 .home-hero {
-    margin-top: 24px;
     position: relative;
+    min-height: clamp(300px, 40vw, 720px);
+    overflow: hidden;
 }
 
 .home-hero__image {
     display: block;
     width: 100%;
-    height: auto;
+    height: clamp(300px, 40vw, 720px);
+    object-fit: cover;
+    object-position: center;
 }
 
-.home-details{
-    margin-top: 1.5rem;
+.home-details {
+    margin-top: 1.25rem;
 }
 
 .home-hero__overlay {
     position: absolute;
     left: 0;
     bottom: 0;
-    width: min(calc(100% - 32px), 885px);
+    width: min(calc(100% - 28px), 740px);
     color: #fff;
 }
 
@@ -58,41 +60,45 @@ main {
 .home-hero__overlay-content {
     position: absolute;
     inset: 0;
-    margin-top: 7rem;
-    margin-right: 5rem;
-    margin-left: 5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: min(100%, 760px);
+}
+
+.home-hero__overlay-text {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(76%, 565px);
+    text-align: left;
 }
 
 .home-hero__overlay h1 {
     margin: 0;
     font-family: "Ubuntu", sans-serif;
     font-weight: 700;
-    font-size: 50px;
+    font-size: clamp(27px, 2.5vw, 43px);
     line-height: 1;
 }
 
 .home-hero__subtitle {
-    margin: 8px 0 0;
+    margin: 6px 0 0;
     font-family: "Ubuntu", sans-serif;
-    font-size: 36px;
-    line-height: 1;
+    font-size: clamp(15px, 1.8vw, 27px);
+    line-height: 1.05;
+    max-width: 24ch;
 }
 
 .home-hero__description {
-    margin: 12px 0 0;
+    margin: 10px 0 0;
     font-family: "Montserrat", sans-serif;
-    font-size: 17px;
+    font-size: clamp(12px, 0.9vw, 15px);
     font-weight: 500;
-    line-height: 1.4;
+    line-height: 1.35;
+    max-width: 52ch;
 }
 
 .home-intro {
-    margin: 66px auto 52px;
-    width: min(calc(100% - 32px), 792px);
+    margin: 55px auto 43px;
+    width: min(calc(100% - 28px), 660px);
 }
 
 .home-intro p {
@@ -100,26 +106,26 @@ main {
     text-align: center;
     color: #353d3f;
     font-family: "Ubuntu", sans-serif;
-    font-size: 34px;
+    font-size: 28px;
     line-height: 1.35;
 }
 
 .home-highlights {
-    width: min(calc(100% - 32px), 1459px);
+    width: min(calc(100% - 28px), 1215px);
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(4, 328px);
-    gap: 46px;
+    grid-template-columns: repeat(4, 273px);
+    gap: 38px;
     justify-content: center;
 }
 
 .home-highlight {
     background: #fff;
-    width: 328px;
-    min-height: 168px;
-    border-radius: 20px;
+    width: 273px;
+    min-height: 140px;
+    border-radius: 16px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    padding: 16px 18px 20px;
+    padding: 13px 15px 17px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -128,7 +134,7 @@ main {
 }
 
 .home-highlight svg {
-    height: 68px;
+    height: 56px;
     width: auto;
 }
 
@@ -136,9 +142,9 @@ main {
     margin: 2px 0 0;
     color: #353d3f;
     font-family: "Montserrat", sans-serif;
-    font-size: 19px;
+    font-size: 16px;
     font-weight: 700;
-    line-height: 28px;
+    line-height: 23px;
     text-transform: uppercase;
 }
 
@@ -146,22 +152,25 @@ main {
     margin: 0;
     color: #353d3f;
     font-family: "Montserrat", sans-serif;
-    font-size: 19px;
+    font-size: 16px;
     font-weight: 500;
-    line-height: 28px;
+    line-height: 23px;
 }
 
 .home-interior {
-    margin: 96px auto 0;
-    width: min(calc(100% - 32px), 1610px);
+    position: relative;
+    margin: 80px 0 0;
+    padding-left: clamp(14px, 3.3%, 63px);
+    overflow: hidden;
 }
 
 .home-interior h2 {
-    margin: 0 0 20px;
+    position: relative;
+    z-index: 1;
+    margin: 0 0 -0.45em 0;
     font-family: "Ubuntu", sans-serif;
     font-weight: 500;
-    font-size: 85px;
-    line-height: 1;
+    font-size: 70px;
     color: #c4aa85;
 }
 
@@ -169,7 +178,8 @@ main {
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
     grid-template-rows: repeat(2, minmax(0, auto));
-    gap: 18px;
+    gap: 15px;
+    margin-left: clamp(0px, 5%, 88px);
 }
 
 .home-interior__grid img {
@@ -189,18 +199,19 @@ main {
 }
 
 .home-exterior {
-    width: min(calc(100% - 32px), 1610px);
-    margin: 46px auto 0;
+    width: 100%;
+    margin: 38px 0 0;
     display: grid;
-    grid-template-columns: minmax(0, 956px) minmax(0, 1fr);
-    gap: 56px;
+    grid-template-columns: minmax(0, 1fr) minmax(200px, 560px);
+    gap: 46px;
+    padding-right: clamp(14px, 9.5%, 181px);
 }
 
 .home-exterior__gallery {
     display: grid;
     grid-template-columns: 638fr 405fr;
-    grid-template-rows: 365px 218px;
-    gap: 18px;
+    grid-template-rows: clamp(250px, 21vw, 405px) clamp(160px, 12.6vw, 242px);
+    gap: 20px;
 }
 
 .home-exterior__gallery img {
@@ -219,31 +230,31 @@ main {
 }
 
 .home-exterior__details article + article {
-    margin-top: 32px;
+    margin-top: 26px;
 }
 
 .home-exterior__details h3 {
     margin: 0;
     color: #c4aa85;
     font-family: "Ubuntu", sans-serif;
-    font-size: 45px;
+    font-size: 37px;
     font-weight: 500;
     line-height: 1.08;
 }
 
 .home-exterior__details p {
-    margin: 8px 0 0;
+    margin: 7px 0 0;
     color: #353d3f;
     font-family: "Ubuntu", sans-serif;
-    font-size: 22px;
+    font-size: 18px;
     line-height: 1.36;
 }
 
 .site-nav {
     position: relative;
-    padding: 17px 0 12px;
-    margin-left: 3rem;
-    margin-right: 3rem;
+    padding: 14px 0 10px;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
 }
 
 .site-nav::after {
@@ -251,26 +262,26 @@ main {
     position: absolute;
     left: 50%;
     bottom: 0;
-    width: min(calc(100% - 32px), 1652px);
+    width: min(calc(100% - 28px), 1375px);
     transform: translateX(-50%);
     border-bottom: 2px solid #c4aa85;
 }
 
 .site-nav__container {
-    max-width: 1487px;
+    max-width: 1240px;
     margin: 0 auto;
-    padding: 0 16px;
+    padding: 0 14px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 24px;
+    gap: 20px;
 }
 
 .site-nav__brand {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 8px;
+    gap: 7px;
     text-decoration: none;
 }
 
@@ -278,12 +289,12 @@ main {
     margin-left: auto;
     display: flex;
     align-items: center;
-    gap: 22px;
+    gap: 18px;
 }
 
 .site-nav__brand-symbol {
-    width: 138px;
-    height: 53px;
+    width: 115px;
+    height: 44px;
     aspect-ratio: 153/59.43;
     object-fit: contain;
 }
@@ -292,29 +303,29 @@ main {
     display: none;
     align-items: center;
     justify-content: center;
-    min-width: 88px;
-    height: 42px;
+    min-width: 73px;
+    height: 35px;
     border: 1px solid #c4aa85;
-    border-radius: 10px;
+    border-radius: 8px;
     background-color: #fff;
     color: #353d3f;
     font-family: "Montserrat", sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 700;
     text-transform: uppercase;
     cursor: pointer;
 }
 
 .site-nav__brand-text {
-    width: 153px;
-    height: 15px;
+    width: 127px;
+    height: 12px;
     object-fit: contain;
 }
 
 .site-nav__links {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 26px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -322,7 +333,7 @@ main {
 
 .site-nav__links a {
     font-family: "Montserrat", sans-serif;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 700;
     color: #353d3f;
     text-decoration: none;
@@ -336,15 +347,15 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 189px;
-    min-height: 58px;
+    width: 157px;
+    min-height: 48px;
     background-color: #c4aa85;
     color: #fff;
     text-decoration: none;
-    border-radius: 10px;
+    border-radius: 8px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     font-family: "Montserrat", sans-serif;
-    font-size: 16px;
+    font-size: 13px;
     font-weight: 700;
     line-height: 1;
     text-align: center;
@@ -357,32 +368,32 @@ main {
 
 @media (max-width: 1180px) {
     .site-nav__links {
-        gap: 22px;
+        gap: 18px;
     }
 
     .site-nav__links a {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .site-nav__brochure {
-        width: 185px;
-        min-height: 56px;
-        font-size: 16px;
+        width: 154px;
+        min-height: 46px;
+        font-size: 13px;
     }
 }
 
 @media (max-width: 860px) {
     .site-nav {
-        padding: 14px 0 12px;
+        padding: 12px 0 10px;
     }
 
     .site-nav__container {
         flex-wrap: wrap;
-        gap: 12px;
+        gap: 10px;
     }
 
     .site-nav__brand-symbol {
-        width: 126px;
+        width: 105px;
         height: auto;
     }
 
@@ -396,8 +407,8 @@ main {
         width: 100%;
         flex-direction: column;
         align-items: stretch;
-        gap: 14px;
-        padding: 4px 0 8px;
+        gap: 12px;
+        padding: 3px 0 7px;
     }
 
     .site-nav--open .site-nav__actions {
@@ -407,47 +418,51 @@ main {
     .site-nav__links {
         flex-direction: column;
         align-items: flex-start;
-        gap: 14px;
+        gap: 12px;
     }
 
     .site-nav__brochure {
         width: 100%;
-        min-height: 52px;
+        min-height: 43px;
     }
 }
 
 .site-contact {
+    position: relative;
     background: #c4aa85;
-    padding: 48px 0 43px;
+    padding: 60px 0 50px;
+    margin-top: 5rem;
+    clip-path: polygon(0 25%, 100% 0, 100% 100%, 0 100%);
 }
 
 .site-contact__container {
-    max-width: 1487px;
+    max-width: 1340px;
     margin: 0 auto;
-    padding: 0 16px;
+    padding: 60px 14px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 72px;
+    gap: 60px;
 }
 
 .site-contact h2 {
     margin: 0;
     font-family: "Ubuntu", sans-serif;
     font-weight: 500;
-    font-size: 50px;
+    font-size: 42px;
     line-height: 1.04;
     color: #fff;
+    font-style: italic;
 }
 
 .site-contact__form {
-    width: min(100%, 871px);
+    width: min(100%, 726px);
 }
 
 .site-contact__row {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 32px;
+    gap: 26px;
 }
 
 .site-contact label {
@@ -458,10 +473,10 @@ main {
 .site-contact label span {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 13px;
     line-height: 1.4;
     color: #fff;
-    margin-bottom: 8px;
+    margin-bottom: 7px;
 }
 
 .site-contact input,
@@ -472,46 +487,49 @@ main {
     background: transparent;
     color: #fff;
     font-family: "Montserrat", sans-serif;
-    font-size: 15px;
+    font-size: 13px;
     outline: none;
-    padding: 0 0 6px;
+    padding: 0 0 5px;
 }
 
 .site-contact__message {
-    margin-top: 18px;
+    margin-top: 15px;
 }
 
 .site-contact textarea {
-    min-height: 80px;
+    min-height: 120px;
     border: 1px solid rgba(255, 255, 255, 0.95);
-    padding: 10px 12px;
+    backdrop-filter: blur(13.5px);
+    -webkit-backdrop-filter: blur(13.5px);
+    padding: 12px 14px;
     resize: vertical;
 }
 
 .site-contact button {
-    margin-top: 14px;
-    min-width: 78px;
-    height: 29px;
+    margin-top: 18px;
+    min-width: 120px;
+    height: 38px;
     border: 0;
-    border-radius: 2px;
+    border-radius: 10px;
     background: #fff;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     color: #353d3f;
     font-family: "Montserrat", sans-serif;
-    font-size: 11px;
+    font-size: 16px;
     font-weight: 500;
     cursor: pointer;
 }
 
 .site-footer__bottom {
     background: #353d3f;
-    min-height: 220px;
+    min-height: 184px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
 }
 
 .site-footer__bottom-container {
     position: relative;
-    width: min(100%, 1728px);
-    min-height: 220px;
+    width: min(100%, 1440px);
+    min-height: 184px;
     margin: 0 auto;
     padding: 0;
 }
@@ -526,7 +544,7 @@ main {
 
 .site-footer__evobuild svg {
     display: block;
-    width: 236px;
+    width: 197px;
     height: auto;
 }
 
@@ -541,7 +559,7 @@ main {
     margin: 0;
     font-weight: 500;
     font-family: "Montserrat", sans-serif;
-    font-size: 17px;
+    font-size: 14px;
     line-height: 1.3;
     color: #fff;
 }
@@ -557,86 +575,85 @@ main {
     transform: translateY(-50%);
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 15px;
 }
 
 .site-footer__social a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 30px;
+    height: 30px;
     text-decoration: none;
 }
 
 @media (max-width: 1440px) {
     .home-hero__overlay {
-        left: 3%;
-        width: min(calc(100% - 16px), 885px);
+        left: 0;
+        width: min(calc(100% - 14px), 740px);
     }
 
-    .home-hero__overlay-content {
-        padding: 70px 20px 22px;
+    .home-hero__overlay-text {
+        top: 56%;
+        left: 48%;
+        width: min(76%, 516px);
     }
 
     .home-hero__overlay h1 {
-        font-size: 46px;
+        font-size: clamp(25px, 2.5vw, 35px);
     }
 
     .home-hero__subtitle {
-        font-size: 30px;
+        font-size: clamp(16px, 1.7vw, 22px);
+        max-width: 22ch;
     }
 
     .home-hero__description {
-        font-size: 16px;
+        font-size: 13px;
+        max-width: 46ch;
     }
 
     .home-intro p {
-        font-size: 30px;
+        font-size: 25px;
     }
 
     .home-highlight h3,
     .home-highlight p {
-        font-size: 18px;
+        font-size: 15px;
     }
 
     .home-interior h2 {
-        font-size: 68px;
-    }
-
-    .home-exterior {
-        grid-template-columns: 1fr;
-        gap: 36px;
+        font-size: 57px;
     }
 
     .home-exterior__details h3 {
-        font-size: 42px;
+        font-size: 35px;
     }
 
     .home-exterior__details p {
-        font-size: 22px;
+        font-size: 18px;
     }
 
     .site-contact__container {
-        gap: 42px;
+        gap: 35px;
     }
 
     .site-contact h2 {
-        font-size: 42px;
+        font-size: 35px;
     }
 
     .site-contact__row {
-        gap: 18px;
+        gap: 15px;
     }
 
     .site-footer__bottom-container {
-        width: min(100%, 1652px);
-        min-height: 180px;
-        padding: 0 24px;
+        width: min(100%, 1375px);
+        min-height: 150px;
+        padding: 0 20px;
         display: grid;
         grid-template-columns: auto 1fr auto;
         align-items: center;
-        column-gap: 56px;
+        column-gap: 46px;
     }
 
     .site-footer__evobuild,
@@ -653,36 +670,47 @@ main {
     }
 
     .site-footer__evobuild svg {
-        width: 220px;
+        width: 184px;
     }
 
     .site-footer__details p {
-        font-size: 17px;
+        font-size: 14px;
     }
 }
 
 @media (max-width: 1180px) {
     .home-intro {
-        margin-top: 56px;
+        margin-top: 46px;
     }
 
     .home-intro p {
-        font-size: 24px;
+        font-size: 20px;
         line-height: 1.4;
     }
 
     .home-highlights {
-        width: min(calc(100% - 32px), 840px);
-        grid-template-columns: repeat(2, 364px);
-        gap: 24px;
+        width: min(calc(100% - 28px), 700px);
+        grid-template-columns: repeat(2, 303px);
+        gap: 20px;
     }
 
     .home-interior {
-        margin-top: 70px;
+        margin-top: 58px;
+        padding-left: 14px;
     }
 
     .home-interior h2 {
-        font-size: 54px;
+        font-size: 45px;
+    }
+
+    .home-interior__grid {
+        margin-left: 0;
+    }
+
+    .home-exterior {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding-right: 14px;
     }
 
     .home-interior__grid {
@@ -694,7 +722,7 @@ main {
     .home-interior__grid img:not(:first-child) {
         grid-column: auto;
         grid-row: auto;
-        min-height: 220px;
+        min-height: 184px;
     }
 
     .home-exterior__gallery {
@@ -707,31 +735,31 @@ main {
     }
 
     .home-exterior__gallery img {
-        min-height: 220px;
+        min-height: 184px;
     }
 
     .home-exterior__details h3 {
-        font-size: 36px;
+        font-size: 30px;
     }
 
     .home-exterior__details p {
-        font-size: 20px;
+        font-size: 17px;
     }
 
     .site-footer__bottom {
         min-height: 0;
-        padding: 26px 0;
+        padding: 22px 0;
     }
 
     .site-footer__bottom-container {
         min-height: 0;
-        padding: 0 20px;
+        padding: 0 17px;
         grid-template-columns: minmax(0, 1fr) auto;
         grid-template-areas:
             "brand social"
             "details social";
-        column-gap: 24px;
-        row-gap: 12px;
+        column-gap: 20px;
+        row-gap: 10px;
     }
 
     .site-footer__evobuild {
@@ -748,94 +776,115 @@ main {
     }
 
     .site-footer__evobuild svg {
-        width: 190px;
+        width: 158px;
     }
 
     .site-footer__details p {
-        font-size: 16px;
+        font-size: 13px;
         line-height: 1.35;
     }
 }
 
 @media (max-width: 860px) {
-    .home-hero__overlay {
-        position: static;
-        width: auto;
-        margin: 0 16px;
-        margin-top: -18px;
+    .home-hero {
+        margin-top: 13px;
+        min-height: clamp(266px, 52vw, 400px);
     }
 
-    .home-hero__overlay-content {
-        padding: 18px 16px;
+    .home-hero__image {
+        height: clamp(266px, 52vw, 400px);
+    }
+
+    .home-hero__overlay {
+        left: 0;
+        bottom: 0;
+        transform: none;
+        width: min(calc(100%), 433px);
+    }
+
+    .home-hero__overlay-text {
+        top: auto;
+        bottom: 10%;
+        left: 10%;
+        transform: none;
+        width: 80%;
     }
 
     .home-hero__overlay h1 {
-        font-size: 38px;
+        font-size: clamp(17px, 4.6vw, 23px);
     }
 
     .home-hero__subtitle {
-        font-size: 26px;
+        margin-top: 3px;
+        font-size: clamp(12px, 3.3vw, 15px);
+        line-height: 1.15;
+        max-width: 22ch;
     }
 
     .home-hero__description {
-        font-size: 15px;
+        margin-top: 7px;
+        font-size: clamp(9px, 2.5vw, 12px);
+        max-width: 40ch;
+        line-height: 1.3;
     }
 
     .home-intro {
-        margin: 40px auto 36px;
+        margin: 33px auto 30px;
     }
 
     .home-intro p {
-        font-size: 20px;
+        font-size: 17px;
     }
 
     .home-highlights {
-        width: min(calc(100% - 32px), 364px);
-        grid-template-columns: 364px;
-        gap: 18px;
+        width: min(calc(100% - 28px), 303px);
+        grid-template-columns: 303px;
+        gap: 15px;
     }
 
     .home-highlight {
-        width: 364px;
+        width: 303px;
     }
 
     .home-interior {
-        margin-top: 46px;
+        margin-top: 38px;
     }
 
     .home-interior h2 {
-        font-size: 42px;
-        margin-bottom: 16px;
+        font-size: 35px;
+        margin-bottom: 13px;
     }
 
     .home-exterior {
-        margin-top: 34px;
+        margin-top: 28px;
     }
 
     .home-exterior__details article + article {
-        margin-top: 20px;
+        margin-top: 17px;
     }
 
     .home-exterior__details h3 {
-        font-size: 30px;
+        font-size: 25px;
     }
 
     .home-exterior__details p {
-        font-size: 18px;
+        font-size: 15px;
     }
 
     .site-contact {
-        padding: 34px 0;
+        padding: 50px 0 36px;
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
     }
 
     .site-contact__container {
         flex-direction: column;
         align-items: flex-start;
-        gap: 26px;
+        gap: 22px;
+        padding-top: 30px;
     }
 
     .site-contact h2 {
-        font-size: 36px;
+        font-size: 30px;
     }
 
     .site-contact__form {
@@ -844,37 +893,456 @@ main {
 
     .site-contact__row {
         grid-template-columns: 1fr;
-        gap: 14px;
+        gap: 12px;
     }
 
     .site-footer__bottom {
         min-height: 0;
-        padding: 24px 0;
+        padding: 20px 0;
     }
 
     .site-footer__bottom-container {
         min-height: 0;
-        padding: 0 16px;
+        padding: 0 14px;
         grid-template-columns: 1fr;
         grid-template-areas:
             "brand"
             "details"
             "social";
-        row-gap: 18px;
+        row-gap: 15px;
         justify-items: center;
         text-align: center;
     }
 
     .site-footer__details p {
-        font-size: 15px;
+        font-size: 13px;
     }
 
     .site-footer__evobuild svg {
-        width: 176px;
+        width: 147px;
     }
 
     .site-footer__social a {
-        width: 34px;
-        height: 34px;
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (max-width: 560px) {
+    .home-hero__overlay {
+        width: 100%;
+        bottom: 0;
+    }
+
+    .home-hero__overlay-text {
+        top: auto;
+        bottom: 8%;
+        left: 8%;
+        transform: none;
+        width: 84%;
+    }
+
+    .home-hero__overlay h1 {
+        font-size: clamp(15px, 4.2vw, 20px);
+    }
+
+    .home-hero__subtitle {
+        margin-top: 2px;
+        font-size: clamp(10px, 3vw, 13px);
+        line-height: 1.15;
+        max-width: 22ch;
+    }
+
+    .home-hero__description {
+        margin-top: 5px;
+        font-size: clamp(9px, 2.4vw, 11px);
+        max-width: 36ch;
+        line-height: 1.3;
+    }
+}
+
+/* ── Projeto page ────────────────────────────────────── */
+
+.projeto-page {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+/* Hero */
+.projeto-hero {
+    position: relative;
+    width: 100%;
+    height: clamp(266px, 23vw, 373px);
+    overflow: hidden;
+}
+
+.projeto-hero__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+}
+
+/* Intro */
+.projeto-intro {
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 46px 14px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.projeto-intro__heading {
+    margin: 0;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-size: clamp(30px, 2.9vw, 50px);
+    line-height: 1;
+    color: #c4aa85;
+    flex-shrink: 0;
+    max-width: 333px;
+}
+
+.projeto-intro__text {
+    margin: 0;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 300;
+    font-size: clamp(14px, 1.2vw, 21px);
+    line-height: 1.16;
+    color: #353d3f;
+    max-width: 845px;
+}
+
+/* Floor sections */
+.projeto-floor {
+    position: relative;
+    max-width: 1600px;
+    margin: 50px auto 0;
+    padding: 0 0 0 0;
+}
+
+.projeto-floor__title {
+    margin: 0 0 0 0;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-size: clamp(40px, 4.6vw, 79px);
+    line-height: 1;
+    color: #c4aa85;
+    position: relative;
+    z-index: 1;
+}
+
+.projeto-floor__body {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    margin-top: -17px;
+}
+
+.projeto-floor__image {
+    display: block;
+    width: clamp(283px, 40vw, 757px);
+    height: clamp(233px, 25vw, 432px);
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.projeto-floor__info {
+    padding: 50px 33px 33px 46px;
+    flex: 1;
+    min-width: 0;
+}
+
+.projeto-floor__info-title {
+    margin: 0;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-size: clamp(14px, 1.2vw, 21px);
+    line-height: 1;
+    color: #353d3f;
+}
+
+.projeto-floor__info-subtitle {
+    margin: 3px 0 0;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-size: clamp(14px, 1.2vw, 21px);
+    line-height: 1.2;
+    color: #353d3f;
+}
+
+.projeto-floor__info-list {
+    margin: 17px 0 0;
+    padding: 0;
+    list-style: none;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 300;
+    font-size: clamp(14px, 1.2vw, 21px);
+    line-height: 1.36;
+    color: #353d3f;
+}
+
+.projeto-floor__info-list li::before {
+    content: "- ";
+}
+
+/* Rés-do-chão: image left, text right */
+.projeto-floor--left .projeto-floor__title {
+    text-align: left;
+    padding-left: 12%;
+}
+
+.projeto-floor--left .projeto-floor__image {
+    margin-left: 0;
+}
+
+/* Primeiro Piso: image more to right */
+.projeto-floor--right .projeto-floor__title {
+    text-align: left;
+    padding-left: 20%;
+}
+
+.projeto-floor--right .projeto-floor__body {
+    justify-content: flex-end;
+}
+
+.projeto-floor--right .projeto-floor__image {
+    order: 0;
+    margin-left: auto;
+}
+
+.projeto-floor--right .projeto-floor__info {
+    order: 1;
+}
+
+/* Segundo Piso: image left again but offset */
+.projeto-floor--left-offset .projeto-floor__title {
+    text-align: left;
+    padding-left: 9%;
+}
+
+.projeto-floor--left-offset .projeto-floor__image {
+    margin-left: -14px;
+}
+
+/* Construção e Qualidade */
+.projeto-construcao {
+    position: relative;
+    margin-top: 66px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.projeto-construcao__bg {
+    display: block;
+    width: 100%;
+    min-height: clamp(416px, 46vw, 790px);
+    object-fit: cover;
+}
+
+.projeto-construcao__overlay {
+    position: absolute;
+    inset: 0;
+    padding: clamp(33px, 4.2vw, 107px) clamp(14px, 2.5vw, 127px);
+    display: flex;
+    flex-direction: column;
+}
+
+.projeto-construcao__title {
+    margin: 0 0 clamp(20px, 2.5vw, 46px);
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-size: clamp(35px, 4.6vw, 79px);
+    line-height: 1;
+    color: #fff;
+}
+
+.projeto-construcao__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(20px, 2.5vw, 46px) clamp(40px, 5vw, 100px);
+    flex: 1;
+}
+
+.projeto-construcao__item h3 {
+    margin: 0;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-size: clamp(23px, 2.3vw, 42px);
+    line-height: 1;
+    color: #353d3f;
+}
+
+.projeto-construcao__item-list {
+    margin: 10px 0 0;
+    padding: 0;
+    list-style: none;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 300;
+    font-size: clamp(12px, 1.2vw, 21px);
+    line-height: 1.36;
+    color: #fff;
+}
+
+.projeto-construcao__item-list li::before {
+    content: "- ";
+}
+
+.projeto-construcao__item p {
+    margin: 10px 0 0;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 300;
+    font-size: clamp(12px, 1.2vw, 21px);
+    line-height: 1.36;
+    color: #fff;
+}
+
+.site-nav__link--active {
+    position: relative;
+}
+
+.site-nav__link--active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 100%;
+    height: 2px;
+    background: #c4aa85;
+}
+
+@media (max-width: 1440px) {
+    .projeto-intro {
+        gap: 30px;
+        padding-top: 40px;
+    }
+
+    .projeto-intro__heading {
+        font-size: clamp(28px, 2.7vw, 43px);
+    }
+
+    .projeto-floor__title {
+        font-size: clamp(35px, 3.8vw, 67px);
+    }
+
+    .projeto-construcao__title {
+        font-size: clamp(32px, 3.8vw, 67px);
+    }
+
+    .projeto-construcao__item h3 {
+        font-size: clamp(20px, 2.1vw, 35px);
+    }
+}
+
+@media (max-width: 1180px) {
+    .projeto-intro {
+        flex-direction: column;
+        gap: 17px;
+        padding-top: 33px;
+    }
+
+    .projeto-intro__heading {
+        max-width: none;
+    }
+
+    .projeto-floor {
+        margin-top: 33px;
+    }
+
+    .projeto-floor__body {
+        flex-direction: column;
+    }
+
+    .projeto-floor__image {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
+    .projeto-floor__info {
+        padding: 20px 14px;
+    }
+
+    .projeto-floor--right .projeto-floor__body {
+        flex-direction: column;
+    }
+
+    .projeto-floor--right .projeto-floor__image {
+        order: 0;
+        margin-left: 0;
+    }
+
+    .projeto-floor--right .projeto-floor__info {
+        order: 1;
+    }
+
+    .projeto-floor--left-offset .projeto-floor__image {
+        margin-left: 0;
+    }
+
+    .projeto-floor__title {
+        padding-left: 14px !important;
+        text-align: left !important;
+    }
+
+    .projeto-construcao__grid {
+        grid-template-columns: 1fr;
+        gap: 23px;
+    }
+}
+
+@media (max-width: 860px) {
+    .projeto-hero {
+        height: clamp(184px, 43vw, 300px);
+    }
+
+    .projeto-intro {
+        padding-top: 23px;
+        gap: 12px;
+    }
+
+    .projeto-intro__heading {
+        font-size: 27px;
+    }
+
+    .projeto-intro__text {
+        font-size: 14px;
+    }
+
+    .projeto-floor {
+        margin-top: 25px;
+    }
+
+    .projeto-floor__title {
+        font-size: 32px;
+    }
+
+    .projeto-floor__info-list,
+    .projeto-floor__info-subtitle,
+    .projeto-floor__info-title {
+        font-size: 14px;
+    }
+
+    .projeto-construcao {
+        margin-top: 42px;
+    }
+
+    .projeto-construcao__bg {
+        min-height: 583px;
+    }
+
+    .projeto-construcao__title {
+        font-size: 27px;
+    }
+
+    .projeto-construcao__item h3 {
+        font-size: 20px;
+    }
+
+    .projeto-construcao__item-list,
+    .projeto-construcao__item p {
+        font-size: 12px;
     }
 }

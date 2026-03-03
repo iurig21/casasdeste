@@ -37,7 +37,7 @@
                         <li><a href="">LOCALIZAÇÃO</a></li>
                     </ul>
 
-                    <button class="site-nav__brochure">
+                    <button class="site-nav__brochure" onclick="document.getElementById('brochureModal').showModal()">
                         <span>Faça download</span>
                         <span>da brochura</span>
                     </button>
@@ -45,6 +45,45 @@
             </div>
         </nav>
     </header>
+
+    <dialog id="brochureModal" class="modal">
+        <div class="modal-box" style="background-color: #1a1a1a; border: 1px solid #C4AA85; border-radius: 12px; max-width: 28rem; padding: 2.5rem;">
+            <form method="dialog">
+                <button class="btn btn-sm btn-circle btn-ghost absolute right-3 top-3" style="color: #C4AA85;">✕</button>
+            </form>
+            <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.25rem; color: #C4AA85; margin-bottom: 1.5rem; text-align: center;">
+                Preencha os campos para fazer download:
+            </h3>
+            <form id="brochureForm" style="display: flex; flex-direction: column; gap: 1rem;">
+                <div>
+                    <label style="display: block; font-size: 0.875rem; color: #C4AA85; margin-bottom: 0.25rem; font-family: 'Montserrat', sans-serif;">Nome</label>
+                    <input type="text" id="brochureNome" placeholder="O seu nome"
+                        style="width: 100%; padding: 0.625rem 0.75rem; background: transparent; border: 1px solid #C4AA85; border-radius: 6px; color: #fff; font-family: 'Montserrat', sans-serif; font-size: 0.875rem; outline: none; box-sizing: border-box;"
+                        oninput="checkBrochureForm()" required>
+                </div>
+                <div>
+                    <label style="display: block; font-size: 0.875rem; color: #C4AA85; margin-bottom: 0.25rem; font-family: 'Montserrat', sans-serif;">Telefone</label>
+                    <input type="tel" id="brochureTelefone" placeholder="O seu telefone"
+                        style="width: 100%; padding: 0.625rem 0.75rem; background: transparent; border: 1px solid #C4AA85; border-radius: 6px; color: #fff; font-family: 'Montserrat', sans-serif; font-size: 0.875rem; outline: none; box-sizing: border-box;"
+                        oninput="checkBrochureForm()" required>
+                </div>
+                <div>
+                    <label style="display: block; font-size: 0.875rem; color: #C4AA85; margin-bottom: 0.25rem; font-family: 'Montserrat', sans-serif;">Email</label>
+                    <input type="email" id="brochureEmail" placeholder="O seu email"
+                        style="width: 100%; padding: 0.625rem 0.75rem; background: transparent; border: 1px solid #C4AA85; border-radius: 6px; color: #fff; font-family: 'Montserrat', sans-serif; font-size: 0.875rem; outline: none; box-sizing: border-box;"
+                        oninput="checkBrochureForm()" required>
+                </div>
+                <button type="submit" id="brochureDownloadBtn" disabled
+                    style="margin-top: 0.5rem; padding: 0.75rem; background-color: #C4AA85; color: #1a1a1a; border: none; border-radius: 6px; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.95rem; cursor: pointer; transition: opacity 0.2s; opacity: 0.4;"
+                    onclick="handleBrochureDownload(event)">
+                    Download
+                </button>
+            </form>
+        </div>
+        <form method="dialog" class="modal-backdrop">
+            <button>close</button>
+        </form>
+    </dialog>
 
     <main>
         {{ $slot }}
@@ -131,5 +170,36 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        function checkBrochureForm() {
+            const nome = document.getElementById('brochureNome').value.trim();
+            const telefone = document.getElementById('brochureTelefone').value.trim();
+            const email = document.getElementById('brochureEmail').value.trim();
+            const btn = document.getElementById('brochureDownloadBtn');
+
+            if (nome && telefone && email) {
+                btn.disabled = false;
+                btn.style.opacity = '1';
+                btn.style.cursor = 'pointer';
+            } else {
+                btn.disabled = true;
+                btn.style.opacity = '0.4';
+                btn.style.cursor = 'not-allowed';
+            }
+        }
+
+        function handleBrochureDownload(e) {
+            e.preventDefault();
+            // TODO: replace with actual brochure file path
+            const link = document.createElement('a');
+            link.href = '/brochura.pdf';
+            link.download = 'brochura.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            document.getElementById('brochureModal').close();
+        }
+    </script>
 </body>
 </html>

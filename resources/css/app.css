@@ -958,15 +958,12 @@ main {
 }
 
 .acabamentos-page {
-    max-width: 1440px;
     margin: 0 auto;
 }
 
 .acabamentos-hero {
     position: relative;
-    width: 100vw;
-    left: 50%;
-    margin-left: -50vw;
+    width: 100%;
     height: clamp(266px, 23vw, 448px);
     overflow: hidden;
 }
@@ -1127,9 +1124,7 @@ main {
     }
 
     .acabamentos-hero {
-        width: 100%;
-        left: 0;
-        margin-left: 0;
+        height: clamp(184px, 30vw, 350px);
     }
 
     .acabamentos-specs {
@@ -1391,24 +1386,14 @@ main {
 /* Construção e Qualidade */
 .projeto-construcao {
     position: relative;
+    background: #c4aa85;
     margin-top: 66px;
-    padding: 0;
-    overflow: hidden;
-}
-
-.projeto-construcao__bg {
-    display: block;
-    width: 100%;
-    min-height: clamp(416px, 46vw, 790px);
-    object-fit: cover;
-}
-
-.projeto-construcao__overlay {
-    position: absolute;
-    inset: 0;
-    padding: clamp(33px, 4.2vw, 107px) clamp(14px, 2.5vw, 127px);
-    display: flex;
-    flex-direction: column;
+    width: 100vw;
+    left: 50%;
+    margin-left: -50vw;
+    padding: 60px clamp(14px, 2.5vw, 127px) clamp(33px, 4.2vw, 107px);
+    clip-path: polygon(0 14%, 100% 0, 100% 100%, 0 100%);
+    padding-top: clamp(100px, 10vw, 180px);
 }
 
 .projeto-construcao__title {
@@ -1424,7 +1409,6 @@ main {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: clamp(20px, 2.5vw, 46px) clamp(40px, 5vw, 100px);
-    flex: 1;
 }
 
 .projeto-construcao__item h3 {
@@ -1595,10 +1579,6 @@ main {
 
     .projeto-construcao {
         margin-top: 42px;
-    }
-
-    .projeto-construcao__bg {
-        min-height: 583px;
     }
 
     .projeto-construcao__title {

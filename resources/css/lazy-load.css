@@ -1,4 +1,64 @@
-/* Section reveal – fade + subtle slide */
+/* ── Hero entrance animations ── */
+@keyframes heroImageIn {
+    from { opacity: 0; transform: scale(1.04); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes overlaySlideIn {
+    from { opacity: 0; transform: translateX(-30px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Home hero */
+.home-hero__image {
+    animation: heroImageIn 0.9s ease both;
+}
+
+.home-hero__overlay {
+    animation: overlaySlideIn 0.7s ease 0.3s both;
+}
+
+.home-hero__overlay h1 {
+    animation: fadeUp 0.5s ease 0.55s both;
+}
+
+.home-hero__subtitle {
+    animation: fadeUp 0.5s ease 0.7s both;
+}
+
+.home-hero__description {
+    animation: fadeUp 0.5s ease 0.85s both;
+}
+
+/* Home intro */
+.home-intro {
+    animation: fadeUp 0.6s ease 0.4s both;
+}
+
+/* Projeto hero + intro */
+.projeto-hero__image {
+    animation: heroImageIn 0.9s ease both;
+}
+
+.projeto-intro {
+    animation: fadeUp 0.6s ease 0.3s both;
+}
+
+/* Acabamentos hero + intro */
+.acabamentos-hero__image {
+    animation: heroImageIn 0.9s ease both;
+}
+
+.acabamentos-intro {
+    animation: fadeUp 0.6s ease 0.3s both;
+}
+
+/* ── Section reveal – fade + subtle slide ── */
 .lazy-section {
     opacity: 0;
     transform: translateY(24px);
@@ -15,8 +75,19 @@
 
 /* Respect reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
-    .lazy-section {
+    .lazy-section,
+    .home-hero__image,
+    .home-hero__overlay,
+    .home-hero__overlay h1,
+    .home-hero__subtitle,
+    .home-hero__description,
+    .home-intro,
+    .projeto-hero__image,
+    .projeto-intro,
+    .acabamentos-hero__image,
+    .acabamentos-intro {
         transition: none !important;
+        animation: none !important;
         transform: none !important;
         opacity: 1 !important;
     }

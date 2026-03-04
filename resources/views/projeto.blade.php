@@ -1,10 +1,10 @@
 <x-layout>
     <div class="projeto-page">
         <section class="projeto-hero">
-            <img src="/imagens/projeto-hero.jpg" alt="Casas D'Este – Fachada" class="projeto-hero__image" loading="lazy">
+            <img src="/imagens/projeto-hero.jpg" alt="Casas D'Este – Fachada" class="projeto-hero__image">
         </section>
 
-        <section class="projeto-intro lazy-section">
+        <section class="projeto-intro">
             <h1 class="projeto-intro__heading">Moradias pensadas<br>ao detalhe</h1>
             <p class="projeto-intro__text">
                 Estas moradias unifamiliares V3, localizadas em S. Pedro d'Este – Braga, foram concebidas

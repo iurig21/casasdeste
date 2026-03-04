@@ -2,10 +2,10 @@
     <section class="acabamentos-page">
 
         <section class="acabamentos-hero">
-            <img src="/imagens/acabamentos-hero.jpg" alt="Acabamentos Casas D'Este" class="acabamentos-hero__image" loading="lazy">
+            <img src="/imagens/acabamentos-hero.jpg" alt="Acabamentos Casas D'Este" class="acabamentos-hero__image">
         </section>
 
-        <section class="acabamentos-intro lazy-section">
+        <section class="acabamentos-intro">
             <div class="acabamentos-intro__heading">
                 <h1>Materiais selecionados<br>para conforto e durabilidade</h1>
             </div>

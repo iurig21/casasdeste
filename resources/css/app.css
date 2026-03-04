@@ -1076,7 +1076,7 @@ main {
     display: grid;
     grid-template-columns: minmax(300px, 570px) minmax(0, 1fr);
     gap: 0;
-    align-items: start;
+    align-items: stretch;
 }
 
 .acabamentos-details__row + .acabamentos-details__row {

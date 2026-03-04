@@ -18,7 +18,7 @@
 
 <body>
 
-    <header style="margin-bottom: 1.25rem">
+    <header>
         <nav class="site-nav" data-nav>
             <div class="site-nav__container">
                 <a href="/" class="site-nav__brand" aria-label="Casas D'Este">

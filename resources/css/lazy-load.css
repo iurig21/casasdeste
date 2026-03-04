@@ -1,60 +1,91 @@
-/* ── Hero entrance animations ── */
 @keyframes heroImageIn {
-    from { opacity: 0; transform: scale(1.04); }
-    to   { opacity: 1; transform: scale(1); }
+    from {
+        opacity: 0;
+        transform: scale(1.04);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 @keyframes overlaySlideIn {
-    from { opacity: 0; transform: translateX(-30px); }
-    to   { opacity: 1; transform: translateX(0); }
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(18px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hide everything until page is ready */
+.home-hero__image,
+.home-hero__overlay,
+.home-hero__overlay h1,
+.home-hero__subtitle,
+.home-hero__description,
+.home-intro,
+.projeto-hero__image,
+.projeto-intro,
+.acabamentos-hero__image,
+.acabamentos-intro {
+    opacity: 0;
 }
 
 /* Home hero */
-.home-hero__image {
-    animation: heroImageIn 0.9s ease both;
+.page-ready .home-hero__image {
+    animation: heroImageIn 1.2s ease both;
 }
 
-.home-hero__overlay {
+.page-ready .home-hero__overlay {
     animation: overlaySlideIn 0.7s ease 0.3s both;
 }
 
-.home-hero__overlay h1 {
+.page-ready .home-hero__overlay h1 {
     animation: fadeUp 0.5s ease 0.55s both;
 }
 
-.home-hero__subtitle {
+.page-ready .home-hero__subtitle {
     animation: fadeUp 0.5s ease 0.7s both;
 }
 
-.home-hero__description {
+.page-ready .home-hero__description {
     animation: fadeUp 0.5s ease 0.85s both;
 }
 
 /* Home intro */
-.home-intro {
+.page-ready .home-intro {
     animation: fadeUp 0.6s ease 0.4s both;
 }
 
 /* Projeto hero + intro */
-.projeto-hero__image {
+.page-ready .projeto-hero__image {
     animation: heroImageIn 0.9s ease both;
 }
 
-.projeto-intro {
+.page-ready .projeto-intro {
     animation: fadeUp 0.6s ease 0.3s both;
 }
 
 /* Acabamentos hero + intro */
-.acabamentos-hero__image {
+.page-ready .acabamentos-hero__image {
     animation: heroImageIn 0.9s ease both;
 }
 
-.acabamentos-intro {
+.page-ready .acabamentos-intro {
     animation: fadeUp 0.6s ease 0.3s both;
 }
 

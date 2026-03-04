@@ -80,7 +80,7 @@
             </div>
         </div>
         <div class="footer">
-            Enviado através do formulário de contacto do website Casas Deste.
+            Enviado através do formulário de contacto do website {{ config('app.name') }}.
         </div>
     </div>
 </body>

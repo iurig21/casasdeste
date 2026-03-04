@@ -64,11 +64,7 @@
                                 <td>{{ $download->telefone }}</td>
                                 <td>{{ $download->created_at->format('d/m/Y H:i') }}</td>
                                 <td>
-                                    <form method="POST" action="/admin/downloads/{{ $download->id }}" onsubmit="return confirm('Tem a certeza que deseja eliminar este registo?')">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="admin-btn admin-btn--danger admin-btn--sm">Eliminar</button>
-                                    </form>
+                                    <button type="button" class="admin-btn admin-btn--danger admin-btn--sm" onclick="openDeleteModal('/admin/downloads/{{ $download->id }}', '{{ $download->nome }}')">Eliminar</button>
                                 </td>
                             </tr>
                         @empty
@@ -90,6 +86,26 @@
         </div>
     </main>
 
+    <div id="deleteModal" class="admin-modal-overlay">
+        <div class="admin-modal">
+            <div class="admin-modal__header">
+                <h3 class="admin-modal__title">Confirmar eliminação</h3>
+            </div>
+            <div class="admin-modal__body">
+                <p>Tem a certeza que deseja eliminar o registo de <strong id="deleteModalName"></strong>?</p>
+                <p class="admin-modal__warning">Esta ação não pode ser revertida.</p>
+            </div>
+            <div class="admin-modal__footer">
+                <button type="button" class="admin-btn admin-btn--outline admin-btn--sm" onclick="closeDeleteModal()">Cancelar</button>
+                <form id="deleteModalForm" method="POST" action="">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="admin-btn admin-btn--danger admin-btn--sm">Eliminar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <script>
       const successAlert = document.getElementById('showSuccess');
       setTimeout(() => {
@@ -97,6 +113,24 @@
             successAlert.style.display = 'none';
         }
       }, 3000);
+
+      function openDeleteModal(action, name) {
+        document.getElementById('deleteModalForm').action = action;
+        document.getElementById('deleteModalName').textContent = name;
+        document.getElementById('deleteModal').classList.add('is-open');
+      }
+
+      function closeDeleteModal() {
+        document.getElementById('deleteModal').classList.remove('is-open');
+      }
+
+      document.getElementById('deleteModal').addEventListener('click', function(e) {
+        if (e.target === this) closeDeleteModal();
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeDeleteModal();
+      });
     </script>
 </body>
 </html>

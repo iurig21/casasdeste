@@ -23,7 +23,7 @@ class AdminController extends Controller
             'password' => 'required',
         ]);
 
-        if ($request->username === 'casasdesteadmin21' && $request->password === 'Casas21') {
+        if ($request->username === config('admin.username') && $request->password === config('admin.password')) {
             session(['admin_logged_in' => true]);
             return redirect('/admin/dashboard');
         }

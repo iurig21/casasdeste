@@ -346,6 +346,27 @@ main {
     text-transform: uppercase;
     line-height: 1;
     letter-spacing: 0.03em;
+    position: relative;
+}
+
+.site-nav__links a:hover {
+    color: #c4aa85;
+}
+
+.site-nav__links a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    height: 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.site-nav__links a:hover::after {
+    border-bottom: 2px solid #c4aa85;
 }
 
 .site-nav__brochure {
@@ -1599,10 +1620,6 @@ main {
     }
 }
 
-/* ============================================================
-   ADMIN / BACKOFFICE STYLES
-   ============================================================ */
-
 .admin-body {
     margin: 0;
     background: #121212;
@@ -1738,7 +1755,6 @@ main {
 .admin-btn--full {
     width: 100%;
 }
-
 
 .admin-alert {
     border-radius: 6px;

@@ -29,6 +29,18 @@ document.addEventListener('DOMContentLoaded', () => {
             return /^9[0-9]{8}$/.test(telefone);
         }
 
+        function clearServerError(fieldName, inputEl) {
+            const serverErr = document.querySelector(`[data-server-error="${fieldName}"]`);
+            if (serverErr) {
+                serverErr.style.display = 'none';
+                inputEl.style.borderColor = '#C4AA85';
+            }
+        }
+
+        nomeInput.addEventListener('input', () => clearServerError('nome', nomeInput));
+        telefoneInput.addEventListener('input', () => clearServerError('telefone', telefoneInput));
+        emailInput.addEventListener('input', () => clearServerError('email', emailInput));
+
         function checkBrochureForm() {
             const nome = nomeInput.value.trim();
             const telefone = telefoneInput.value.trim();

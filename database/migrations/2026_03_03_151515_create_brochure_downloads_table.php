@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('brochure_downloads', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->string('email');
-            $table->string('telefone', 9);
+            $table->string('email')->unique();
+            $table->string('telefone', 9)->unique();
             $table->timestamps();
         });
     }

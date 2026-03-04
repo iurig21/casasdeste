@@ -62,7 +62,7 @@
                         style="width: 100%; padding: 0.625rem 0.75rem; background: transparent; border: 1px solid {{ $errors->has('nome') ? '#ff6b6b' : '#C4AA85' }}; border-radius: 6px; color: #fff; font-family: 'Montserrat', sans-serif; font-size: 0.875rem; outline: none; box-sizing: border-box;"
                         required>
                     @error('nome')
-                        <span style="display: block; color: #ff6b6b; font-size: 0.75rem; font-family: 'Montserrat', sans-serif; margin-top: 0.25rem;">{{ $message }}</span>
+                        <span data-server-error="nome" style="display: block; color: #ff6b6b; font-size: 0.75rem; font-family: 'Montserrat', sans-serif; margin-top: 0.25rem;">{{ $message }}</span>
                     @enderror
                 </div>
                 <div>
@@ -74,7 +74,7 @@
                         O telefone deve ter 9 dígitos e começar com 9.
                     </span>
                     @error('telefone')
-                        <span style="display: block; color: #ff6b6b; font-size: 0.75rem; font-family: 'Montserrat', sans-serif; margin-top: 0.25rem;">{{ $message }}</span>
+                        <span data-server-error="telefone" style="display: block; color: #ff6b6b; font-size: 0.75rem; font-family: 'Montserrat', sans-serif; margin-top: 0.25rem;">{{ $message }}</span>
                     @enderror
                 </div>
                 <div>
@@ -86,7 +86,7 @@
                         Por favor insira um email válido.
                     </span>
                     @error('email')
-                        <span style="display: block; color: #ff6b6b; font-size: 0.75rem; font-family: 'Montserrat', sans-serif; margin-top: 0.25rem;">{{ $message }}</span>
+                        <span data-server-error="email" style="display: block; color: #ff6b6b; font-size: 0.75rem; font-family: 'Montserrat', sans-serif; margin-top: 0.25rem;">{{ $message }}</span>
                     @enderror
                 </div>
                 <button type="submit" id="brochureDownloadBtn" disabled

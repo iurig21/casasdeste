@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Find the hero image on the current page
     const heroImg =
         document.querySelector(".home-hero__image") ||
         document.querySelector(".projeto-hero__image") ||
@@ -12,11 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (heroImg && !heroImg.complete) {
-        // Wait for the hero image to fully load before animating
         heroImg.addEventListener("load", activate, { once: true });
         heroImg.addEventListener("error", activate, { once: true });
     } else {
-        // Image already cached / decoded – go immediately
         activate();
     }
 

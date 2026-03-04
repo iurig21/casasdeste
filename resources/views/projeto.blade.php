@@ -1,10 +1,10 @@
 <x-layout>
     <div class="projeto-page">
         <section class="projeto-hero">
-            <img src="/imagens/projeto-hero.jpg" alt="Casas D'Este – Fachada" class="projeto-hero__image">
+            <img src="/imagens/projeto-hero.jpg" alt="Casas D'Este – Fachada" class="projeto-hero__image" loading="lazy">
         </section>
 
-        <section class="projeto-intro">
+        <section class="projeto-intro lazy-section">
             <h1 class="projeto-intro__heading">Moradias pensadas<br>ao detalhe</h1>
             <p class="projeto-intro__text">
                 Estas moradias unifamiliares V3, localizadas em S. Pedro d'Este – Braga, foram concebidas
@@ -16,10 +16,10 @@
             </p>
         </section>
 
-        <section class="projeto-floor projeto-floor--left">
+        <section class="projeto-floor projeto-floor--left lazy-section">
             <h2 class="projeto-floor__title">Rés-do-chão</h2>
             <div class="projeto-floor__body">
-                <img src="/imagens/projeto-resdochao.jpg" alt="Rés-do-chão" class="projeto-floor__image">
+                <img src="/imagens/projeto-resdochao.jpg" alt="Rés-do-chão" class="projeto-floor__image" loading="lazy">
                 <div class="projeto-floor__info">
                     <p class="projeto-floor__info-subtitle">Um piso funcional e prático, pensado para apoio à vivência diária</p>
                     <ul class="projeto-floor__info-list">
@@ -33,10 +33,10 @@
             </div>
         </section>
 
-        <section class="projeto-floor projeto-floor--right">
+        <section class="projeto-floor projeto-floor--right lazy-section">
             <h2 class="projeto-floor__title">Primeiro Piso</h2>
             <div class="projeto-floor__body">
-                <img src="/imagens/projeto-primeiro-piso.jpg" alt="Primeiro Piso" class="projeto-floor__image">
+                <img src="/imagens/projeto-primeiro-piso.jpg" alt="Primeiro Piso" class="projeto-floor__image" loading="lazy">
                 <div class="projeto-floor__info">
                     <p class="projeto-floor__info-title">Zona Social</p>
                     <p class="projeto-floor__info-subtitle">O coração da habitação, privilegiando luz natural e ligação ao exterior</p>
@@ -55,10 +55,10 @@
             </div>
         </section>
 
-        <section class="projeto-floor projeto-floor--left-offset">
+        <section class="projeto-floor projeto-floor--left-offset lazy-section">
             <h2 class="projeto-floor__title">Segundo Piso</h2>
             <div class="projeto-floor__body">
-                <img src="/imagens/projeto-segundo-piso.jpg" alt="Segundo Piso" class="projeto-floor__image">
+                <img src="/imagens/projeto-segundo-piso.jpg" alt="Segundo Piso" class="projeto-floor__image" loading="lazy">
                 <div class="projeto-floor__info">
                     <p class="projeto-floor__info-title">Zona Privativa</p>
                     <p class="projeto-floor__info-subtitle">Área reservada ao descanso e conforto</p>
@@ -73,7 +73,7 @@
                 </div>
             </div>
         </section>
-        <section class="projeto-construcao">
+        <section class="projeto-construcao lazy-section">
                 <h2 class="projeto-construcao__title">Construção e Qualidade</h2>
                 <div class="projeto-construcao__grid">
                     <article class="projeto-construcao__item">

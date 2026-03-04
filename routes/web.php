@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BrochureDownloadController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -18,6 +19,8 @@ Route::get('/acabamentos', function () {
 });
 
 Route::post('/brochure-download', [BrochureDownloadController::class, 'store'])->name('brochure.download');
+
+Route::post('/contacto', [ContactController::class, 'send'])->name('contact.send');
 
 Route::get('/admin', [AdminController::class, 'loginForm']);
 Route::post('/admin/login', [AdminController::class, 'login']);

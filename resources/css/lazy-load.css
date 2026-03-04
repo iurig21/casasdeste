@@ -1,0 +1,23 @@
+/* Section reveal – fade + subtle slide */
+.lazy-section {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+    will-change: opacity, transform;
+}
+
+.lazy-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .lazy-section {
+        transition: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+}

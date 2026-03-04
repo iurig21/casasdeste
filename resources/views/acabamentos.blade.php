@@ -2,10 +2,10 @@
     <section class="acabamentos-page">
 
         <section class="acabamentos-hero">
-            <img src="/imagens/acabamentos-hero.jpg" alt="Acabamentos Casas D'Este" class="acabamentos-hero__image">
+            <img src="/imagens/acabamentos-hero.jpg" alt="Acabamentos Casas D'Este" class="acabamentos-hero__image" loading="lazy">
         </section>
 
-        <section class="acabamentos-intro">
+        <section class="acabamentos-intro lazy-section">
             <div class="acabamentos-intro__heading">
                 <h1>Materiais selecionados<br>para conforto e durabilidade</h1>
             </div>
@@ -14,7 +14,7 @@
             </p>
         </section>
 
-        <section class="acabamentos-specs">
+        <section class="acabamentos-specs lazy-section">
             <div class="acabamentos-specs__left">
                 <article class="acabamentos-spec">
                     <h2>Pavimentos</h2>
@@ -56,14 +56,14 @@
             </div>
 
             <div class="acabamentos-specs__right">
-                <img src="/imagens/acabamentos-interior-right.jpg" alt="Interior acabamentos">
+                <img src="/imagens/acabamentos-interior-right.jpg" alt="Interior acabamentos" loading="lazy">
             </div>
         </section>
 
-        <section class="acabamentos-details">
+        <section class="acabamentos-details lazy-section">
             <div class="acabamentos-details__row">
                 <div class="acabamentos-details__image">
-                    <img src="/imagens/acabamentos-cozinha.jpg" alt="Cozinha">
+                    <img src="/imagens/acabamentos-cozinha.jpg" alt="Cozinha" loading="lazy">
                 </div>
                 <div class="acabamentos-details__content">
                     <article class="acabamentos-spec">
@@ -93,7 +93,7 @@
 
             <div class="acabamentos-details__row">
                 <div class="acabamentos-details__image">
-                    <img src="/imagens/acabamentos-quarto.jpg" alt="Quarto">
+                    <img src="/imagens/acabamentos-quarto.jpg" alt="Quarto" loading="lazy">
                 </div>
                 <div class="acabamentos-details__content">
                     <article class="acabamentos-spec">
@@ -112,7 +112,7 @@
 
             <div class="acabamentos-details__row">
                 <div class="acabamentos-details__image">
-                    <img src="/imagens/acabamentos-wc.jpg" alt="Instalações sanitárias">
+                    <img src="/imagens/acabamentos-wc.jpg" alt="Instalações sanitárias" loading="lazy">
                 </div>
                 <div class="acabamentos-details__content">
                     <article class="acabamentos-spec">

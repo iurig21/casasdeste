@@ -1,7 +1,7 @@
 <x-layout>
     <div class="projeto-page">
         <section class="projeto-hero">
-            <img src="/imagens/projeto-hero.jpg" alt="Casas D'Este – Fachada" class="projeto-hero__image">
+            <img srcset="/imagens/projeto-hero.jpg" alt="Casas D'Este – Fachada" class="projeto-hero__image">
         </section>
 
         <section class="projeto-intro">
@@ -58,7 +58,7 @@
         <section class="projeto-floor projeto-floor--left-offset lazy-section">
             <h2 class="projeto-floor__title">Segundo Piso</h2>
             <div class="projeto-floor__body">
-                <img src="/imagens/projeto-segundo-piso.jpg" alt="Segundo Piso" class="projeto-floor__image" loading="lazy">
+                <img srcset="/imagens/projeto-segundo-piso.jpg" alt="Segundo Piso" class="projeto-floor__image" loading="lazy">
                 <div class="projeto-floor__info">
                     <p class="projeto-floor__info-title">Zona Privativa</p>
                     <p class="projeto-floor__info-subtitle">Área reservada ao descanso e conforto</p>

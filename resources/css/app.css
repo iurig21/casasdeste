@@ -71,7 +71,7 @@ main {
 .home-hero__overlay-text {
     position: absolute;
     top: 60%;
-    left: 26.5%;
+    left: 24.5%;
     transform: translateY(-50%);
     width: 74%;
     text-align: left;
@@ -85,7 +85,7 @@ main {
 }
 
 .home-hero__subtitle {
-    margin: 5px 0 0;
+    margin: 15px 0 0;
     font-family: "Ubuntu", sans-serif;
     font-size: clamp(13px, 1.5vw, 22px);
     line-height: 1.05;
@@ -94,7 +94,7 @@ main {
 .home-hero__description {
     margin: 8px 0 0;
     font-family: "Montserrat", sans-serif;
-    font-size: clamp(11px, 0.8vw, 13px);
+    font-size: clamp(13px, 0.8vw, 13px);
     font-weight: 500;
     line-height: 1.35;
 }
@@ -706,6 +706,46 @@ main {
 }
 
 @media (max-width: 1180px) {
+
+       .home-hero {
+        margin-top: 10px;
+        min-height: clamp(220px, 44vw, 340px);
+    }
+
+    .home-hero__image {
+        height: clamp(220px, 44vw, 340px);
+    }
+
+    .home-hero__overlay {
+        left: 0;
+        bottom: 0;
+        transform: none;
+        width: min(60%, 433px);
+    }
+
+    .home-hero__overlay-text {
+        left: 20%;
+        width: 80%;
+    }
+
+    .home-hero__overlay h1 {
+        font-size: clamp(15px, 4vw, 20px);
+    }
+
+    .home-hero__subtitle {
+        margin-top: 3px;
+        font-size: clamp(10px, 2.8vw, 13px);
+        line-height: 1.15;
+        max-width: 45ch;
+    }
+
+    .home-hero__description {
+        margin-top: 5px;
+        font-size: clamp(8px, 2.2vw, 11px);
+        max-width: 46ch;
+        line-height: 1.3;
+    }
+
     .home-intro {
         margin-top: 36px;
     }
@@ -826,11 +866,11 @@ main {
         left: 0;
         bottom: 0;
         transform: none;
-        width: min(60%, 433px);
+        width: min(70%, 433px);
     }
 
     .home-hero__overlay-text {
-        left: 12%;
+        left: 20%;
         width: 80%;
     }
 
@@ -842,13 +882,13 @@ main {
         margin-top: 3px;
         font-size: clamp(10px, 2.8vw, 13px);
         line-height: 1.15;
-        max-width: 22ch;
+        max-width: 45ch;
     }
 
     .home-hero__description {
         margin-top: 5px;
         font-size: clamp(8px, 2.2vw, 11px);
-        max-width: 36ch;
+        max-width: 46ch;
         line-height: 1.3;
     }
 
@@ -960,25 +1000,25 @@ main {
     }
 
     .home-hero__overlay-text {
-        left: 12%;
+        left: 20%;
         width: 80%;
     }
 
     .home-hero__overlay h1 {
-        font-size: clamp(13px, 3.5vw, 17px);
+        font-size: clamp(13px, 3.5vw, 20px);
     }
 
     .home-hero__subtitle {
         margin-top: 2px;
-        font-size: clamp(9px, 2.5vw, 11px);
+        font-size: clamp(9px, 2.5vw, 13px);
         line-height: 1.15;
-        max-width: 22ch;
+        max-width: 35ch;
     }
 
     .home-hero__description {
         margin-top: 4px;
         font-size: clamp(8px, 2vw, 10px);
-        max-width: 36ch;
+        max-width: 40ch;
         line-height: 1.3;
     }
 }
@@ -1362,7 +1402,6 @@ main {
     content: "- ";
 }
 
-/* Rés-do-chão: image flush left, title overlapping top */
 .projeto-floor--left {
     max-width: none;
     width: 100vw;

@@ -63,7 +63,7 @@
         <section class="acabamentos-details lazy-section">
             <div class="acabamentos-details__row">
                 <div class="acabamentos-details__image">
-                    <img src="/imagens/acabamentos-cozinha.jpg" alt="Cozinha" loading="lazy">
+                    <img src="/imagens/interna1.jpg" alt="Cozinha" loading="lazy">
                 </div>
                 <div class="acabamentos-details__content">
                     <article class="acabamentos-spec">

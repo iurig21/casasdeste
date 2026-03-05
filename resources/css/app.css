@@ -1658,6 +1658,18 @@ main {
     color: #c4aa85;
     margin: 0;
 }
+@media (max-width: 560px) {
+    .projeto-construcao__grid,
+    .projeto-construcao__title,
+    .projeto-construcao__item,
+    .projeto-construcao__item-list,
+    .projeto-construcao__item p,
+    .projeto-construcao__item h3 {
+        text-align: center !important;
+        justify-content: center;
+        align-items: center;
+    }
+}
 
 .admin-login__subtitle {
     font-size: 0.85rem;

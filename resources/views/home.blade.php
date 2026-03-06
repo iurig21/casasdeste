@@ -1,7 +1,7 @@
 <x-layout>
     <section class="home-page">
         <section class="home-hero">
-            <img src="/imagens/home1.jpg" alt="Casas D'Este" class="home-hero__image">
+            <img src="/imagens/home1.webp" alt="Casas D'Este" class="home-hero__image">
             <div class="home-hero__overlay">
                 <svg width="885" height="398" viewBox="0 0 885 398" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path d="M885 397.697H-98V172.088L885 0V397.697Z" fill="#C4AA85" fill-opacity="0.85"/>
@@ -88,19 +88,19 @@
         <section class="home-interior lazy-section">
             <h2>Essência e Equilíbrio</h2>
             <div class="home-interior__grid">
-                <img src="/imagens/interna1.jpg" alt="Interior principal" loading="lazy">
-                <img src="/imagens/interna2.jpg" alt="Interior 2" loading="lazy">
-                <img src="/imagens/interna3.jpg" alt="Interior 3" loading="lazy">
-                <img src="/imagens/interna4.jpg" alt="Interior 4" loading="lazy">
-                <img src="/imagens/interna5.jpg" alt="Interior 5" loading="lazy">
+                <img src="/imagens/interna1.webp" alt="Interior principal" loading="lazy">
+                <img src="/imagens/interna2.webp" alt="Interior 2" loading="lazy">
+                <img src="/imagens/interna3.webp" alt="Interior 3" loading="lazy">
+                <img src="/imagens/interna4.webp" alt="Interior 4" loading="lazy">
+                <img src="/imagens/interna5.webp" alt="Interior 5" loading="lazy">
             </div>
         </section>
 
         <section class="home-exterior lazy-section">
             <div class="home-exterior__gallery">
-                <img class="home-exterior__main" src="/imagens/exterior1.jpg" alt="Exterior principal" loading="lazy">
-                <img src="/imagens/exterior2.jpg" alt="Exterior 2" loading="lazy">
-                <img src="/imagens/exterior3.jpg" alt="Exterior 3" loading="lazy">
+                <img class="home-exterior__main" src="/imagens/exterior1.webp" alt="Exterior principal" loading="lazy">
+                <img src="/imagens/exterior2.webp" alt="Exterior 2" loading="lazy">
+                <img src="/imagens/exterior3.webp" alt="Exterior 3" loading="lazy">
             </div>
 
             <div class="home-exterior__details">
@@ -185,7 +185,7 @@
             if(successAlert){
                 successAlert.style.display = 'none';
             }
-        }, 3000);
+        }, 4000);
     </script>
     
 </x-layout>

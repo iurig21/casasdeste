@@ -39,11 +39,23 @@
                     <label class="admin-label" for="password">Password</label>
                     <input class="admin-input" type="password" id="password" name="password" placeholder="••••••••" required>
                 </div>
-                <button type="submit" class="admin-btn admin-btn--primary admin-btn--full">Entrar</button>
+                <button id="login-btn" type="submit" class="admin-btn admin-btn--primary admin-btn--full">
+                    <span id="login-text">Entrar</span>
+                    <span id="login-spinner" style="display: none">
+                        <x-lucide-loader class="animate-spin size-5"/>
+                    </span>
+                </button>
             </form>
             <a href="/" class="admin-btn admin-btn--outline admin-btn--block admin-login__back">← Voltar ao site</a>
         </div>
     </div>
-</body>
 
+    <script>
+       document.getElementsByClassName("admin-login__form")[0].addEventListener('submit',() => {
+            document.getElementById("login-btn").disabled = true;
+            document.getElementById("login-text").style.display = "none";
+            document.getElementById("login-spinner").style.display = "inline";            
+       })
+    </script>
+</body>
 </html>

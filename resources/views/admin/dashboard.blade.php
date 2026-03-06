@@ -19,7 +19,7 @@
                 <h1 class="admin-nav__title">Casas D'Este</h1>
                 <span class="admin-nav__badge">Backoffice</span>
             </div>
-            <a href="/admin/logout" class="admin-btn admin-btn--outline admin-btn--sm">Sair</a>
+            <a href="/admin/logout" class="font-display font-bold border-2 border-[#c4aa85] text-[#c4aa85] px-8 py-2 rounded-lg">Sair</a>
         </div>
     </nav>
 

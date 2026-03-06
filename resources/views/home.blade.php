@@ -178,6 +178,14 @@
             document.getElementById("login-text").style.display = "none";
             document.getElementById("login-spinner").style.display = "inline";            
        })
+
+        const successAlert = document.getElementsByClassName('site-contact__success')[0];
+        
+        setTimeout(() => {
+            if(successAlert){
+                successAlert.style.display = 'none';
+            }
+        }, 3000);
     </script>
     
 </x-layout>

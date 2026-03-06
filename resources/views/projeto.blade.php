@@ -1,7 +1,7 @@
 <x-layout>
     <div class="projeto-page">
         <section class="projeto-hero">
-            <img srcset="/imagens/projeto-hero.webp" alt="Casas D'Este – Fachada" class="projeto-hero__image">
+            <img srcset="/imagens/projeto-hero.webp" alt="Casas D'Este – Fachada" class="projeto-hero__image" fetchpriority="high">
         </section>
 
         <section class="projeto-intro">

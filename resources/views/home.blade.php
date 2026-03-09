@@ -156,9 +156,9 @@
                     <textarea name="mensagem" required>{{ old('mensagem') }}</textarea>
                 </label>
 
-                <button id="login-btn" type="submit" class="flex justify-center items-center">
+                <button id="login-btn" type="submit">
                     <span id="login-text">Enviar</span>
-                    <span id="login-spinner" class="hidden">
+                    <span id="login-spinner" class="hidden justify-center items-center">
                         <x-lucide-loader class="animate-spin size-5"/>
                     </span>
                 </button>
@@ -176,7 +176,7 @@
        document.getElementsByClassName("site-contact__form")[0].addEventListener('submit',() => {
             document.getElementById("login-btn").disabled = true;
             document.getElementById("login-text").style.display = "none";
-            document.getElementById("login-spinner").style.display = "inline";            
+            document.getElementById("login-spinner").style.display = "flex";     
        })
 
         const successAlert = document.getElementsByClassName('site-contact__success')[0];

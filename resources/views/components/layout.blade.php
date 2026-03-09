@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="{{ asset('imagens/favicon.ico') }}" type="image/x-icon">
+    <meta name="description" content="Site para divulgar o trabalho da empresa de construção de casas, Casas D'Este,proveniente de Braga,Portugal.">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 

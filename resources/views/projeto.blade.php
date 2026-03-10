@@ -19,7 +19,9 @@
         <section class="projeto-floor projeto-floor--left lazy-section">
             <h2 class="projeto-floor__title">Rés-do-chão</h2>
             <div class="projeto-floor__body">
-                <img src="/imagens/projeto-resdochao.webp" alt="Rés-do-chão" class="projeto-floor__image" loading="lazy">
+                <div class="contents max-[860px]:block max-[860px]:w-full max-[860px]:pl-[14px]">
+                    <img src="/imagens/projeto-resdochao.webp" alt="Rés-do-chão" class="projeto-floor__image" loading="lazy">
+                </div>
                 <div class="projeto-floor__info">
                     <p class="projeto-floor__info-subtitle">Um piso funcional e prático, pensado para apoio à vivência diária</p>
                     <ul class="projeto-floor__info-list">
@@ -36,7 +38,9 @@
         <section class="projeto-floor projeto-floor--right lazy-section">
             <h2 class="projeto-floor__title">Primeiro Piso</h2>
             <div class="projeto-floor__body">
-                <img src="/imagens/projeto-primeiro-piso.webp" alt="Primeiro Piso" class="projeto-floor__image" loading="lazy">
+                <div class="contents max-[860px]:block max-[860px]:w-full max-[860px]:pl-[14px]">
+                    <img src="/imagens/projeto-primeiro-piso.webp" alt="Primeiro Piso" class="projeto-floor__image" loading="lazy">
+                </div>
                 <div class="projeto-floor__info">
                     <p class="projeto-floor__info-title">Zona Social</p>
                     <p class="projeto-floor__info-subtitle">O coração da habitação, privilegiando luz natural e ligação ao exterior</p>
@@ -58,7 +62,9 @@
         <section class="projeto-floor projeto-floor--left-offset lazy-section">
             <h2 class="projeto-floor__title">Segundo Piso</h2>
             <div class="projeto-floor__body">
-                <img srcset="/imagens/projeto-segundo-piso.webp" alt="Segundo Piso" class="projeto-floor__image" loading="lazy">
+                <div class="contents max-[860px]:block max-[860px]:w-full max-[860px]:pl-[14px]">
+                    <img srcset="/imagens/projeto-segundo-piso.webp" alt="Segundo Piso" class="projeto-floor__image" loading="lazy">
+                </div>
                 <div class="projeto-floor__info">
                     <p class="projeto-floor__info-title">Zona Privativa</p>
                     <p class="projeto-floor__info-subtitle">Área reservada ao descanso e conforto</p>

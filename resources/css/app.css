@@ -1642,6 +1642,7 @@ main {
 
     .projeto-floor__title {
         font-size: 27px;
+        margin-bottom: 0.5rem;
     }
 
     .projeto-construcao {

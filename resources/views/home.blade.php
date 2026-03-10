@@ -96,14 +96,14 @@
             </div>
         </section>
 
-        <section class="home-exterior lazy-section">
-            <div class="home-exterior__gallery">
-                <img class="home-exterior__main" src="/imagens/exterior1.webp" alt="Exterior principal" loading="lazy">
-                <img src="/imagens/exterior2.webp" alt="Exterior 2" loading="lazy">
-                <img src="/imagens/exterior3.webp" alt="Exterior 3" loading="lazy">
+        <section class="home-exterior lazy-section px-[14px] sm:px-0 max-[1180px]:grid-cols-1! max-[1180px]:gap-[30px]! max-[1180px]:pr-0!">
+            <div class="home-exterior__gallery w-full max-w-[600px] mx-auto sm:max-w-none sm:mx-0 max-[1180px]:grid-cols-1! max-[1180px]:grid-rows-[auto]!">
+                <img class="home-exterior__main block w-full h-auto! sm:h-full!" src="/imagens/exterior1.webp" alt="Exterior principal" loading="lazy">
+                <img class="block w-full h-auto! sm:h-full!" src="/imagens/exterior2.webp" alt="Exterior 2" loading="lazy">
+                <img class="block w-full h-auto! sm:h-full!" src="/imagens/exterior3.webp" alt="Exterior 3" loading="lazy">
             </div>
 
-            <div class="home-exterior__details">
+            <div class="home-exterior__details mx-auto max-w-[620px] text-center sm:mx-0 sm:max-w-none sm:text-left">
                 <article>
                     <h3>Conforto</h3>
                     <p>Caixilharia de alumínio com rutura térmica e vidro duplo GuardianSun.</p>
@@ -147,7 +147,7 @@
                     </label>
                     <label>
                         <span>Contacto</span>
-                        <input type="tel" name="contacto" autocomplete="tel" placeholder="9XXXXXXXX" pattern="[9][0-9]{8}" size="9" maxlength="9" required>
+                        <input type="tel" name="contacto" autocomplete="tel" placeholder="9XXXXXXXX" pattern="[9][0-9]{8}" size="9" maxlength="9" required class="placeholder:text-center sm:placeholder:text-left">
                     </label>
                 </div>
 

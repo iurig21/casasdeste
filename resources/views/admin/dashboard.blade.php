@@ -85,6 +85,7 @@
                 </div>
             @endif
         </div>
+        
     </main>
 
     <div id="deleteModal" class="admin-modal-overlay">

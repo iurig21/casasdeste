@@ -30,10 +30,3 @@ Route::middleware('admin')->group(function () {
     Route::delete('/admin/downloads/{download}', [AdminController::class, 'destroy']);
     Route::get('/admin/logout', [AdminController::class, 'logout']);
 });
-
-
-
-
-
-
-

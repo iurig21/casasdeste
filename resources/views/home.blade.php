@@ -186,6 +186,29 @@
                 successAlert.style.display = 'none';
             }
         }, 4000);
+        
+        const shouldScrollToContact = @json(session('success') || $errors->any());
+
+        if (shouldScrollToContact) {
+            window.addEventListener('load', () => {
+                const scrollToAbsoluteBottom = () => {
+                        const pageBottom = Math.max(
+                            document.body.scrollHeight,
+                            document.documentElement.scrollHeight
+                        );
+
+                        window.scrollTo({
+                            top: pageBottom,
+                            behavior: 'smooth',
+                        });
+                };
+
+                scrollToAbsoluteBottom();
+                requestAnimationFrame(scrollToAbsoluteBottom);
+                setTimeout(scrollToAbsoluteBottom, 150);
+                setTimeout(scrollToAbsoluteBottom, 450);
+            });
+         }
     </script>
     
 </x-layout>

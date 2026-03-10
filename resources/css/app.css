@@ -1655,6 +1655,11 @@ main {
 
     .projeto-construcao__title {
         font-size: 22px;
+        text-align: center;
+    }
+
+    .projeto-construcao__item {
+        text-align: center;
     }
 
     .projeto-construcao__item h3 {

@@ -85,7 +85,7 @@
             </article>
         </section>
 
-        <section class="home-interior lazy-section">
+        <section class="home-interior lazy-section max-[860px]:px-[14px]">
             <h2>Essência e Equilíbrio</h2>
             <div class="home-interior__grid">
                 <img src="/imagens/interna1.webp" alt="Interior principal" loading="lazy">
@@ -96,7 +96,7 @@
             </div>
         </section>
 
-        <section class="home-exterior lazy-section px-[14px] sm:px-0 max-[1180px]:grid-cols-1! max-[1180px]:gap-[30px]! max-[1180px]:pr-0!">
+        <section class="home-exterior lazy-section max-[860px]:px-[14px] max-[1180px]:grid-cols-1! max-[1180px]:gap-[30px]!">
             <div class="home-exterior__gallery w-full max-w-[600px] mx-auto sm:max-w-none sm:mx-0 max-[1180px]:grid-cols-1! max-[1180px]:grid-rows-[auto]!">
                 <img class="home-exterior__main block w-full h-auto! sm:h-full!" src="/imagens/exterior1.webp" alt="Exterior principal" loading="lazy">
                 <img class="block w-full h-auto! sm:h-full!" src="/imagens/exterior2.webp" alt="Exterior 2" loading="lazy">
@@ -147,7 +147,7 @@
                     </label>
                     <label>
                         <span>Contacto</span>
-                        <input type="tel" name="contacto" autocomplete="tel" placeholder="9XXXXXXXX" pattern="[9][0-9]{8}" size="9" maxlength="9" required class="placeholder:text-center sm:placeholder:text-left">
+                        <input type="tel" name="contacto" autocomplete="tel" placeholder="9XXXXXXXX" pattern="[9][0-9]{8}" size="9" maxlength="9" required class="placeholder:text-center sm:placeholder:text-left md:placeholder:text-center">
                     </label>
                 </div>
 

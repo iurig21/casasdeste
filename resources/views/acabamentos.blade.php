@@ -55,14 +55,14 @@
                 </article>
             </div>
 
-            <div class="acabamentos-specs__right max-[860px]:w-full max-[860px]:pl-[14px]">
+            <div class="acabamentos-specs__right max-[860px]:w-full max-[860px]:px-[14px]">
                 <img src="/imagens/acabamentos-interior-right.webp" alt="Interior acabamentos" class="block w-full" loading="lazy">
             </div>
         </section>
 
         <section class="acabamentos-details lazy-section">
             <div class="acabamentos-details__row">
-                <div class="acabamentos-details__image max-[860px]:w-full max-[860px]:pl-[14px]">
+                <div class="acabamentos-details__image max-[860px]:w-full max-[860px]:px-[14px]">
                     <img src="/imagens/interna1.webp" alt="Cozinha" class="block w-full" loading="lazy">
                 </div>
                 <div class="acabamentos-details__content">
@@ -92,7 +92,7 @@
             </div>
 
             <div class="acabamentos-details__row">
-                <div class="acabamentos-details__image max-[860px]:w-full max-[860px]:pl-[14px]">
+                <div class="acabamentos-details__image max-[860px]:w-full max-[860px]:px-[14px]">
                     <img src="/imagens/acabamentos-quarto.webp" alt="Quarto" class="block w-full" loading="lazy">
                 </div>
                 <div class="acabamentos-details__content">
@@ -111,7 +111,7 @@
             </div>
 
             <div class="acabamentos-details__row">
-                <div class="acabamentos-details__image max-[860px]:w-full max-[860px]:pl-[14px]">
+                <div class="acabamentos-details__image max-[860px]:w-full max-[860px]:px-[14px]">
                     <img src="/imagens/acabamentos-wc.webp" alt="Instalações sanitárias" class="block w-full" loading="lazy">
                 </div>
                 <div class="acabamentos-details__content">

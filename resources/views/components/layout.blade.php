@@ -64,7 +64,7 @@
                 </div>
                 <div>
                     <label style="display: block; font-size: 0.875rem; color: #C4AA85; margin-bottom: 0.25rem; font-family: 'Montserrat', sans-serif;">Telefone</label>
-                    <input type="tel" name="telefone" id="brochureTelefone" placeholder="9XXXXXXXX" maxlength="9" value="{{ old('telefone') }}" pattern="[9][0-9]{8}"
+                    <input type="tel" name="telefone" id="brochureTelefone" placeholder="9XXXXXXXX" size="9" maxlength="9" value="{{ old('telefone') }}" pattern="[9][0-9]{8}"
                         style="width: 100%; padding: 0.625rem 0.75rem; background: transparent; border: 1px solid {{ $errors->has('telefone') ? '#ff6b6b' : '#C4AA85' }}; border-radius: 6px; color: #fff; font-family: 'Montserrat', sans-serif; font-size: 0.875rem; outline: none; box-sizing: border-box;"
                         required>
                     <span id="telefoneError" style="display: none; color: #ff6b6b; font-size: 0.75rem; font-family: 'Montserrat', sans-serif; margin-top: 0.25rem;">

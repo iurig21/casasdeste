@@ -147,7 +147,7 @@
                     </label>
                     <label>
                         <span>Contacto</span>
-                        <input type="tel" name="contacto" autocomplete="tel" placeholder="9XXXXXXXX" pattern="[9][0-9]{8}" maxlength="9" value="{{ old('contacto') }}" required>
+                        <input type="tel" name="contacto" autocomplete="tel" placeholder="9XXXXXXXX" pattern="[9][0-9]{8}" size="9" maxlength="9" value="{{ old('contacto') }}" required>
                     </label>
                 </div>
 

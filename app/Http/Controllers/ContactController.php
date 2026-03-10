@@ -10,10 +10,10 @@ class ContactController extends Controller
 {
     public function send(Request $request)
     {
-        $validated = $request->validate([
+        $validated = $request->validateWithBag('contact', [
             'nome' => 'required|string|max:255',
             'email' => 'required|email|max:255',
-            'contacto' => 'required|string|max:50',
+            'contacto' => 'required|string|size:9|regex:/^9[0-9]{8}$/',
             'mensagem' => 'required|string|max:5000',
         ]);
 

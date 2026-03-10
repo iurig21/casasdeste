@@ -124,10 +124,10 @@
         <div class="site-contact__container">
             <h2>Contacte-nos para<br>mais informações</h2>
 
-            @if($errors->any())
+            @if($errors->contact->any())
                 <div class="site-contact__errors" style="background: #f8d7da; color: #721c24; padding: 12px 20px; border-radius: 6px; margin-bottom: 20px; font-size: 14px;">
                     <ul style="margin: 0; padding-left: 20px;">
-                        @foreach($errors->all() as $error)
+                        @foreach($errors->contact->all() as $error)
                             <li>{{ $error }}</li>
                         @endforeach
                     </ul>
@@ -139,21 +139,21 @@
                 <div class="site-contact__row">
                     <label>
                         <span>Nome</span>
-                        <input type="text" name="nome" autocomplete="name" value="{{ old('nome') }}" required>
+                        <input type="text" name="nome" autocomplete="name" required>
                     </label>
                     <label>
                         <span>E-mail</span>
-                        <input type="email" name="email" autocomplete="email" value="{{ old('email') }}" required>
+                        <input type="email" name="email" autocomplete="email" required>
                     </label>
                     <label>
                         <span>Contacto</span>
-                        <input type="tel" name="contacto" autocomplete="tel" placeholder="9XXXXXXXX" pattern="[9][0-9]{8}" size="9" maxlength="9" value="{{ old('contacto') }}" required>
+                        <input type="tel" name="contacto" autocomplete="tel" placeholder="9XXXXXXXX" pattern="[9][0-9]{8}" size="9" maxlength="9" required>
                     </label>
                 </div>
 
                 <label class="site-contact__message">
                     <span>Mensagem</span>
-                    <textarea name="mensagem" required>{{ old('mensagem') }}</textarea>
+                    <textarea name="mensagem" required></textarea>
                 </label>
 
                 <button id="login-btn" type="submit">
@@ -187,7 +187,7 @@
             }
         }, 4000);
         
-        const shouldScrollToContact = @json(session('success') || $errors->any());
+        const shouldScrollToContact = @json(session('success') || $errors->contact->any());
 
         if (shouldScrollToContact) {
             window.addEventListener('load', () => {

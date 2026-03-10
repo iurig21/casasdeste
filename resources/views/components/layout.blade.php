@@ -56,33 +56,33 @@
                 <div>
                     <label style="display: block; font-size: 0.875rem; color: #C4AA85; margin-bottom: 0.25rem; font-family: 'Montserrat', sans-serif;">Nome</label>
                     <input type="text" name="nome" id="brochureNome" placeholder="O seu nome" value="{{ old('nome') }}"
-                        style="width: 100%; padding: 0.625rem 0.75rem; background: transparent; border: 1px solid {{ $errors->has('nome') ? '#ff6b6b' : '#C4AA85' }}; border-radius: 6px; color: #fff; font-family: 'Montserrat', sans-serif; font-size: 0.875rem; outline: none; box-sizing: border-box;"
+                        style="width: 100%; padding: 0.625rem 0.75rem; background: transparent; border: 1px solid {{ $errors->brochure->has('nome') ? '#ff6b6b' : '#C4AA85' }}; border-radius: 6px; color: #fff; font-family: 'Montserrat', sans-serif; font-size: 0.875rem; outline: none; box-sizing: border-box;"
                         required>
-                    @error('nome')
+                    @error('nome', 'brochure')
                         <span data-server-error="nome" style="display: block; color: #ff6b6b; font-size: 0.75rem; font-family: 'Montserrat', sans-serif; margin-top: 0.25rem;">{{ $message }}</span>
                     @enderror
                 </div>
                 <div>
                     <label style="display: block; font-size: 0.875rem; color: #C4AA85; margin-bottom: 0.25rem; font-family: 'Montserrat', sans-serif;">Telefone</label>
                     <input type="tel" name="telefone" id="brochureTelefone" placeholder="9XXXXXXXX" size="9" maxlength="9" value="{{ old('telefone') }}" pattern="[9][0-9]{8}"
-                        style="width: 100%; padding: 0.625rem 0.75rem; background: transparent; border: 1px solid {{ $errors->has('telefone') ? '#ff6b6b' : '#C4AA85' }}; border-radius: 6px; color: #fff; font-family: 'Montserrat', sans-serif; font-size: 0.875rem; outline: none; box-sizing: border-box;"
+                        style="width: 100%; padding: 0.625rem 0.75rem; background: transparent; border: 1px solid {{ $errors->brochure->has('telefone') ? '#ff6b6b' : '#C4AA85' }}; border-radius: 6px; color: #fff; font-family: 'Montserrat', sans-serif; font-size: 0.875rem; outline: none; box-sizing: border-box;"
                         required>
                     <span id="telefoneError" style="display: none; color: #ff6b6b; font-size: 0.75rem; font-family: 'Montserrat', sans-serif; margin-top: 0.25rem;">
                         O telefone deve ter 9 dígitos e começar com 9.
                     </span>
-                    @error('telefone')
+                    @error('telefone', 'brochure')
                         <span data-server-error="telefone" style="display: block; color: #ff6b6b; font-size: 0.75rem; font-family: 'Montserrat', sans-serif; margin-top: 0.25rem;">{{ $message }}</span>
                     @enderror
                 </div>
                 <div>
                     <label style="display: block; font-size: 0.875rem; color: #C4AA85; margin-bottom: 0.25rem; font-family: 'Montserrat', sans-serif;">Email</label>
                     <input type="email" name="email" id="brochureEmail" placeholder="O seu email" value="{{ old('email') }}"
-                        style="width: 100%; padding: 0.625rem 0.75rem; background: transparent; border: 1px solid {{ $errors->has('email') ? '#ff6b6b' : '#C4AA85' }}; border-radius: 6px; color: #fff; font-family: 'Montserrat', sans-serif; font-size: 0.875rem; outline: none; box-sizing: border-box;"
+                        style="width: 100%; padding: 0.625rem 0.75rem; background: transparent; border: 1px solid {{ $errors->brochure->has('email') ? '#ff6b6b' : '#C4AA85' }}; border-radius: 6px; color: #fff; font-family: 'Montserrat', sans-serif; font-size: 0.875rem; outline: none; box-sizing: border-box;"
                         required>
                     <span id="emailError" style="display: none; color: #ff6b6b; font-size: 0.75rem; font-family: 'Montserrat', sans-serif; margin-top: 0.25rem;">
                         Por favor insira um email válido.
                     </span>
-                    @error('email')
+                    @error('email', 'brochure')
                         <span data-server-error="email" style="display: block; color: #ff6b6b; font-size: 0.75rem; font-family: 'Montserrat', sans-serif; margin-top: 0.25rem;">{{ $message }}</span>
                     @enderror
                 </div>
@@ -184,7 +184,7 @@
         </div>
     </footer>
 
-    @if ($errors->any())
+    @if ($errors->brochure->any())
         <script>document.addEventListener('DOMContentLoaded', () => document.getElementById('brochureModal').showModal());</script>
     @endif
 </body>

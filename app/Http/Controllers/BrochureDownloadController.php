@@ -9,7 +9,7 @@ class BrochureDownloadController extends Controller
 {
     public function store(Request $request)
     {
-        $validated = $request->validate([
+        $validated = $request->validateWithBag('brochure', [
             'nome' => 'required|string|max:255',
             'email' => 'required|email|max:255|unique:brochure_downloads,email',
             'telefone' => 'required|string|size:9|regex:/^9[0-9]{8}$/|unique:brochure_downloads,telefone',

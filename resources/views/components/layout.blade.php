@@ -49,10 +49,15 @@
                 <button class="btn btn-sm btn-circle btn-ghost absolute right-3 top-3" style="color: #C4AA85;">✕</button>
             </form>
             <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.25rem; color: #C4AA85; margin-bottom: 1.5rem; text-align: center;">
-                Preencha os campos para fazer download:
+                Preencha os campos para receber a brochura por email:
             </h3>
             <form id="brochureForm" method="POST" action="{{ route('brochure.download') }}" style="display: flex; flex-direction: column; gap: 1rem;">
                 @csrf
+                @if(session('brochure_success'))
+                    <div style="background: #2a241a; border: 1px solid #C4AA85; color: #C4AA85; padding: 0.75rem; border-radius: 6px; font-size: 0.875rem; font-family: 'Montserrat', sans-serif;">
+                        {{ session('brochure_success') }}
+                    </div>
+                @endif
                 <div>
                     <label style="display: block; font-size: 0.875rem; color: #C4AA85; margin-bottom: 0.25rem; font-family: 'Montserrat', sans-serif;">Nome</label>
                     <input type="text" name="nome" id="brochureNome" placeholder="O seu nome" value="{{ old('nome') }}"
@@ -88,7 +93,7 @@
                 </div>
                 <button type="submit" id="brochureDownloadBtn" disabled
                     style="margin-top: 0.5rem; padding: 0.75rem; background-color: #C4AA85; color: #1a1a1a; border: none; border-radius: 6px; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.95rem; cursor: not-allowed; transition: opacity 0.2s; opacity: 0.4;">
-                    Download
+                    Receber por email
                 </button>
             </form>
         </div>
@@ -184,7 +189,7 @@
         </div>
     </footer>
 
-    @if ($errors->brochure->any())
+    @if ($errors->brochure->any() || session('brochure_success'))
         <script>document.addEventListener('DOMContentLoaded', () => document.getElementById('brochureModal').showModal());</script>
     @endif
 </body>

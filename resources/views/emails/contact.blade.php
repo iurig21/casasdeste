@@ -20,13 +20,17 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         .header {
-            background-color: #333;
+            background: #f3ede4;
             color: #fff;
             padding: 20px 30px;
+            text-align: center;
         }
-        .header h1 {
-            margin: 0;
-            font-size: 22px;
+        .header img {
+            display: block;
+            margin: 0 auto;
+            width: 168px;
+            max-width: 100%;
+            height: auto;
         }
         .body {
             padding: 30px;
@@ -59,7 +63,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>Nova mensagem de contacto</h1>
+            <img src="{{ $message->embed($logoPath) }}" alt="Casas D'Este logo">
         </div>
         <div class="body">
             <div class="field">

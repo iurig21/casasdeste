@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\BrochureMail;
 use App\Models\BrochureDownload;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class BrochureDownloadController extends Controller
 {
@@ -28,6 +30,10 @@ class BrochureDownloadController extends Controller
             ]);
         }
 
-        return response()->download(public_path('brochura.pdf'), 'brochura.pdf');
+        Mail::to($validated['email'])->send(
+            new BrochureMail(nome: $validated['nome'])
+        );
+
+        return back()->with('brochure_success', 'Enviámos a brochura para o seu email.');
     }
 }

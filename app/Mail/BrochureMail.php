@@ -4,33 +4,30 @@ namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailables\Attachment;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class ContactMail extends Mailable
+class BrochureMail extends Mailable
 {
     use Queueable, SerializesModels;
 
     public function __construct(
         public string $nome,
-        public string $email,
-        public string $contacto,
-        public string $mensagem,
     ) {}
 
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: "Nova mensagem de contacto - Casas D'Este",
-            replyTo: [$this->email],
+            subject: "A sua brochura - Casas D'Este",
         );
     }
 
     public function content(): Content
     {
         return new Content(
-            view: 'emails.contact',
+            view: 'emails.brochure',
             with: [
                 'logoPath' => public_path('imagens/logo1.png'),
             ],
@@ -39,6 +36,10 @@ class ContactMail extends Mailable
 
     public function attachments(): array
     {
-        return [];
+        return [
+            Attachment::fromPath(public_path('brochura.pdf'))
+                ->as('brochura-casas-deste.pdf')
+                ->withMime('application/pdf'),
+        ];
     }
 }

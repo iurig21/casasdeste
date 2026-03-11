@@ -16,7 +16,7 @@
     <nav class="admin-nav">
         <div class="admin-nav__container">
             <div class="admin-nav__brand">
-                <h1 class="admin-nav__title">Casas D'Este</h1>
+                <img class="admin-nav__logo" src="{{ asset('imagens/logo1.svg') }}" alt="Logo Casas D'Este">
                 <span class="admin-nav__badge">Backoffice</span>
             </div>
             <a href="/admin/logout" class="font-display font-bold border-2 border-[#c4aa85] text-[#c4aa85] px-8 py-2 rounded-lg hover:bg-[#c4aa85] hover:text-white">Sair</a>

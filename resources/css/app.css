@@ -1869,11 +1869,10 @@ main {
     gap: 0.75rem;
 }
 
-.admin-nav__title {
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: #c4aa85;
-    margin: 0;
+.admin-nav__logo {
+    display: block;
+    width: clamp(95px, 12vw, 130px);
+    height: auto;
 }
 
 .admin-nav__badge {

@@ -19,6 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const telefoneInput = document.getElementById("brochureTelefone");
         const emailInput = document.getElementById("brochureEmail");
         const btn = document.getElementById("brochureDownloadBtn");
+        const brochureText = document.getElementById("brochure-text");
+        const brochureSpinner = document.getElementById("brochure-spinner");
         const telefoneError = document.getElementById("telefoneError");
         const emailError = document.getElementById("emailError");
 
@@ -84,6 +86,12 @@ document.addEventListener("DOMContentLoaded", () => {
         nomeInput.addEventListener("input", checkBrochureForm);
         telefoneInput.addEventListener("input", checkBrochureForm);
         emailInput.addEventListener("input", checkBrochureForm);
+
+        brochureForm.addEventListener("submit", () => {
+            if (btn) btn.disabled = true;
+            if (brochureText) brochureText.style.display = "none";
+            if (brochureSpinner) brochureSpinner.style.display = "flex";
+        });
 
         checkBrochureForm();
     }

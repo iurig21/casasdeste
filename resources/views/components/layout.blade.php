@@ -93,7 +93,10 @@
                 </div>
                 <button type="submit" id="brochureDownloadBtn" disabled
                     style="margin-top: 0.5rem; padding: 0.75rem; background-color: #C4AA85; color: #1a1a1a; border: none; border-radius: 6px; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.95rem; cursor: not-allowed; transition: opacity 0.2s; opacity: 0.4;">
-                    Receber por email
+                    <span id="brochure-text">Receber por email</span>
+                    <span id="brochure-spinner" class="hidden justify-center items-center">
+                        <x-lucide-loader class="animate-spin size-5"/>
+                    </span>
                 </button>
             </form>
         </div>

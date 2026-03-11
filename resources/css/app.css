@@ -15,7 +15,7 @@
         "Noto Color Emoji";
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
@@ -602,7 +602,6 @@ main {
     font-weight: 700;
 }
 
-
 .site-footer__social {
     position: absolute;
     left: 72.29%;
@@ -713,8 +712,7 @@ main {
 }
 
 @media (max-width: 1180px) {
-
-       .home-hero {
+    .home-hero {
         margin-top: 0;
         min-height: clamp(220px, 44vw, 340px);
     }
@@ -1804,9 +1802,7 @@ main {
     color: #1a1a1a;
 }
 
-#c4aa85
-
-.admin-btn--outline {
+#c4aa85 .admin-btn--outline {
     background: transparent;
     border: 1px solid #c4aa85;
     color: #c4aa85;
@@ -2075,7 +2071,6 @@ main {
     text-decoration: none;
     display: block;
 }
-
 
 /* ---------- Modal ---------- */
 

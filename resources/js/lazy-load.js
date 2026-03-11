@@ -18,10 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const lazySections = document.querySelectorAll(".lazy-section");
+    const lazyTexts = document.querySelectorAll(".lazy-text");
 
-    if (!lazySections.length) return;
+    if (!lazySections.length && !lazyTexts.length) return;
 
-    const observer = new IntersectionObserver(
+    const sectionObserver = new IntersectionObserver(
         (entries, obs) => {
             entries.forEach((entry) => {
                 if (!entry.isIntersecting) return;
@@ -35,5 +36,28 @@ document.addEventListener("DOMContentLoaded", () => {
         },
     );
 
-    lazySections.forEach((section) => observer.observe(section));
+    lazySections.forEach((section) => sectionObserver.observe(section));
+
+    const textObserver = new IntersectionObserver(
+        (entries, obs) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add("is-visible");
+                obs.unobserve(entry.target);
+            });
+        },
+        {
+            rootMargin: "0px 0px -50px 0px",
+            threshold: 0.1,
+        },
+    );
+
+    lazyTexts.forEach((text) => {
+        const delay = Number(text.dataset.delay);
+        if (!Number.isNaN(delay) && delay > 0) {
+            text.style.transitionDelay = `${delay}ms`;
+        }
+
+        textObserver.observe(text);
+    });
 });

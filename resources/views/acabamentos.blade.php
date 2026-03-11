@@ -7,9 +7,9 @@
 
         <section class="acabamentos-intro">
             <div class="acabamentos-intro__heading">
-                <h1>Materiais selecionados<br>para conforto e durabilidade</h1>
+                <h1 class="lazy-text">Materiais selecionados<br>para conforto e durabilidade</h1>
             </div>
-            <p class="acabamentos-intro__text">
+            <p class="acabamentos-intro__text lazy-text" data-delay="100">
                 Os acabamentos foram definidos para garantir elegância, resistência e personalização, permitindo ao cliente escolher cores e pequenos detalhes dentro dos valores definidos.
             </p>
         </section>
@@ -17,8 +17,8 @@
         <section class="acabamentos-specs lazy-section">
             <div class="acabamentos-specs__left">
                 <article class="acabamentos-spec">
-                    <h2>Pavimentos</h2>
-                    <ul>
+                    <h2 class="lazy-text lazy-text--left">Pavimentos</h2>
+                    <ul class="lazy-text lazy-text--left" data-delay="80">
                         <li>Pavimento flutuante AC6 (FINSA ou equivalente) nas zonas secas</li>
                         <li>Pavimento cerâmico nas zonas húmidas e varandas</li>
                         <li>Aplicação sobre tela acústica para maior conforto</li>
@@ -26,8 +26,8 @@
                 </article>
 
                 <article class="acabamentos-spec">
-                    <h2>Carpintarias</h2>
-                    <ul>
+                    <h2 class="lazy-text lazy-text--left" data-delay="120">Carpintarias</h2>
+                    <ul class="lazy-text lazy-text--left" data-delay="200">
                         <li>Portas lacadas até ao teto</li>
                         <li>Roupeiros interiores em melamina imitação nogueira</li>
                         <li>Rodapés lacados (45mm)</li>
@@ -36,8 +36,8 @@
                 </article>
 
                 <article class="acabamentos-spec">
-                    <h2>Iluminação</h2>
-                    <ul>
+                    <h2 class="lazy-text lazy-text--left" data-delay="220">Iluminação</h2>
+                    <ul class="lazy-text lazy-text--left" data-delay="300">
                         <li>Estudo luminotécnico incluído</li>
                         <li>Iluminação até 2.500€ PVP</li>
                         <li>Tetos preparados para soluções modernas e embutidas</li>
@@ -45,8 +45,8 @@
                 </article>
 
                 <article class="acabamentos-spec">
-                    <h2>Paredes e Tetos</h2>
-                    <ul>
+                    <h2 class="lazy-text lazy-text--left" data-delay="320">Paredes e Tetos</h2>
+                    <ul class="lazy-text lazy-text--left" data-delay="400">
                         <li>Paredes em gesso projetado, pintadas com primário e duas demãos</li>
                         <li>Tetos falsos em gesso cartonado (hidrófugo nas zonas húmidas)</li>
                         <li>Revestimentos cerâmicos até 20€/m² nas instalações sanitárias</li>
@@ -67,8 +67,8 @@
                 </div>
                 <div class="acabamentos-details__content">
                     <article class="acabamentos-spec">
-                        <h2>Cozinha</h2>
-                        <ul>
+                        <h2 class="lazy-text lazy-text--right">Cozinha</h2>
+                        <ul class="lazy-text lazy-text--right" data-delay="100">
                             <li>Mobiliário em MDF hidrófugo lacado (cor à escolha)</li>
                             <li>Ilha central lacada</li>
                             <li>Sistema de gavetas com fecho suave (slow-motion)</li>
@@ -79,8 +79,8 @@
                     </article>
 
                     <article class="acabamentos-spec">
-                        <h2>Caixilharia e Exterior</h2>
-                        <ul>
+                        <h2 class="lazy-text lazy-text--right" data-delay="160">Caixilharia e Exterior</h2>
+                        <ul class="lazy-text lazy-text--right" data-delay="240">
                             <li>Alumínio com rutura térmica, preto mate</li>
                             <li>Vidro duplo GuardianSun</li>
                             <li>Estores elétricos com isolamento térmico</li>
@@ -97,8 +97,8 @@
                 </div>
                 <div class="acabamentos-details__content">
                     <article class="acabamentos-spec">
-                        <h2>Instalações Sanitárias</h2>
-                        <ul>
+                        <h2 class="lazy-text lazy-text--right">Instalações Sanitárias</h2>
+                        <ul class="lazy-text lazy-text--right" data-delay="100">
                             <li>Louças suspensas com sistema kombifix slim</li>
                             <li>Sanitas com tampo soft close</li>
                             <li>Torneiras mono comando (acabamento preto)</li>
@@ -116,8 +116,8 @@
                 </div>
                 <div class="acabamentos-details__content">
                     <article class="acabamentos-spec">
-                        <h2>Personalização</h2>
-                        <p>
+                        <h2 class="lazy-text lazy-text--right">Personalização</h2>
+                        <p class="lazy-text lazy-text--right" data-delay="100">
                             Os acabamentos seguem as imagens 3D do projeto, permitindo ao cliente selecionar cores e pequenos ajustes dentro dos parâmetros definidos, garantindo uma casa personalizada sem comprometer qualidade e coerência arquitetónica.
                         </p>
                     </article>

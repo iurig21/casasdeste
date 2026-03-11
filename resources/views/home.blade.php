@@ -147,7 +147,7 @@
                     </label>
                     <label>
                         <span>Contacto</span>
-                        <input type="tel" name="contacto" autocomplete="tel" placeholder="9XXXXXXXX" pattern="[9][0-9]{8}" size="9" maxlength="9" required class="placeholder:text-center sm:placeholder:text-left md:placeholder:text-center">
+                        <input type="tel" name="contacto" autocomplete="tel"  pattern="[9][0-9]{8}" size="9" maxlength="9" required>
                     </label>
                 </div>
 

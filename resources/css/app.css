@@ -1803,10 +1803,19 @@ main {
     color: #1a1a1a;
 }
 
-#c4aa85 .admin-btn--outline {
+.admin-btn--outline {
     background: transparent;
     border: 1px solid #c4aa85;
     color: #c4aa85;
+}
+
+.admin-btn--clear {
+    min-width: 5.5rem;
+    background: rgba(196, 170, 133, 0.08);
+}
+
+.admin-btn--clear:hover {
+    background: rgba(196, 170, 133, 0.2);
 }
 
 .admin-btn--danger {

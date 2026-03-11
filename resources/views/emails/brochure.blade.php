@@ -68,7 +68,7 @@
             <p>Se tiver alguma questão, estamos à disposição para ajudar.</p>
         </div>
         <div class="footer">
-            Equipa Casas D'Este
+            Equipa Evobuild
         </div>
     </div>
 </body>

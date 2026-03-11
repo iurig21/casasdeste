@@ -41,7 +41,7 @@
                     <input class="admin-input admin-search__input" type="text" name="search" value="{{ $search }}" placeholder="Pesquisar por nome, email ou telefone...">
                     <button type="submit" class="admin-btn admin-btn--primary">Pesquisar</button>
                     @if ($search)
-                        <a href="/admin/dashboard" class="admin-btn admin-btn--outline">Limpar</a>
+                        <a href="/admin/dashboard" class="admin-btn admin-btn--outline admin-btn--clear">Limpar</a>
                     @endif
                 </form>
             </div>

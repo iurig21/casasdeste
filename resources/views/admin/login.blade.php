@@ -16,9 +16,8 @@
     <div class="admin-login">
         <div class="admin-login__card">
             <div class="admin-login__header">
-                <h1 class="admin-login__title">Casas D'Este</h1>
+                <img class="admin-login__logo" src="{{ asset('imagens/logo1.svg') }}" alt="Logo Casas D'Este">
                 <p class="admin-login__subtitle">Backoffice</p>
-
             </div>
 
             @if ($errors->any())

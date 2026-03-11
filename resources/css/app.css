@@ -1702,11 +1702,12 @@ main {
     margin-bottom: 2rem;
 }
 
-.admin-login__title {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #c4aa85;
-    margin: 0;
+.admin-login__logo {
+    display: block;
+    width: clamp(120px, 38vw, 180px);
+    height: auto;
+    margin: 0 auto 0.4rem;
+    margin-bottom: 1rem;
 }
 @media (max-width: 560px) {
     .projeto-construcao__grid,

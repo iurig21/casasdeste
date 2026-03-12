@@ -1,6 +1,6 @@
 import "./bootstrap";
 import "./lazy-load";
-import validator from "validator";
+import {isEmail} from "validator";
 
 document.addEventListener("DOMContentLoaded", () => {
     const toggle = document.querySelector("[data-nav-toggle]");
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const emailError = document.getElementById("emailError");
 
         function isValidEmail(email) {
-            return validator.isEmail(email);
+            return isEmail(email);
         }
 
         function isValidTelefone(telefone) {

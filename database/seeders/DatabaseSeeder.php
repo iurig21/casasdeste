@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
+use App\Models\BrochureDownload;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -15,11 +15,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        $faker = fake('pt_PT');
+        $downloads = [];
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        for ($i = 0; $i < 30; $i++) {
+            $downloads[] = [
+                'nome' => $faker->name(),
+                'email' => $faker->unique()->safeEmail(),
+                'telefone' => str_pad((string) $faker->unique()->numberBetween(910000000, 969999999), 9, '0', STR_PAD_LEFT),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ];
+        }
+
+        BrochureDownload::insert($downloads);
     }
 }

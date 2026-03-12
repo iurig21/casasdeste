@@ -45,7 +45,7 @@
                     </span>
                 </button>
             </form>
-            <a href="/" class="admin-btn admin-btn--outline admin-btn--block admin-login__back">← Voltar ao site</a>
+            <a href="/" class="admin-btn admin-btn--block admin-login__back">← Voltar ao site</a>
         </div>
     </div>
 

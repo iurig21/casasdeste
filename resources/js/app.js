@@ -88,7 +88,10 @@ document.addEventListener("DOMContentLoaded", () => {
         emailInput.addEventListener("input", checkBrochureForm);
 
         brochureForm.addEventListener("submit", () => {
-            if (btn) btn.disabled = true;
+            if (btn) {
+                btn.disabled = true;
+                btn.style.cursor = "not-allowed";
+            }
             if (brochureText) brochureText.style.display = "none";
             if (brochureSpinner) brochureSpinner.style.display = "flex";
         });

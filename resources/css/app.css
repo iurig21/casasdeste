@@ -532,6 +532,7 @@ main {
     font-size: 12px;
     outline: none;
     padding: 0 0 5px;
+    
 }
 
 .site-contact__message {
@@ -967,6 +968,14 @@ main {
 
     .site-contact__form {
         width: 100%;
+    }
+
+    .site-contact input{
+        text-align: center;
+    }
+
+    .site-contact label span {
+        margin-bottom: 0.625rem;
     }
 
     .site-contact__row {

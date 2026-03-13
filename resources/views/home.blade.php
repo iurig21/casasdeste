@@ -138,22 +138,22 @@
                 @csrf
                 <div class="site-contact__row">
                     <label>
-                        <span>Nome</span>
-                        <input type="text" name="nome" autocomplete="name" required>
+                        <span>Nome *</span>
+                        <input type="text" id="contactName" name="nome" autocomplete="name" required>
                     </label>
                     <label>
-                        <span>E-mail</span>
-                        <input type="email" name="email" autocomplete="email" required>
+                        <span>E-mail *</span>
+                        <input type="email" id="contactEmail" name="email" autocomplete="email" required>
                     </label>
                     <label>
-                        <span>Contacto</span>
-                        <input type="tel" name="contacto" autocomplete="tel"  pattern="[9][0-9]{8}" size="9" maxlength="9" required>
+                        <span>Contacto *</span>
+                        <input type="tel" id="contactTelefone" name="contacto" autocomplete="tel"  pattern="[9][0-9]{8}" size="9" maxlength="9" required>
                     </label>
                 </div>
 
                 <label class="site-contact__message">
-                    <span>Mensagem</span>
-                    <textarea name="mensagem" required></textarea>
+                    <span>Mensagem *</span>
+                    <textarea name="mensagem" id="contactMensagem" required></textarea>
                 </label>
 
                 <button id="login-btn" type="submit">
@@ -173,14 +173,20 @@
     </section>
 
     <script>
-       document.getElementsByClassName("site-contact__form")[0].addEventListener('submit',() => {
-            document.getElementById("login-btn").disabled = true;
-            document.getElementById("login-text").style.display = "none";
-            document.getElementById("login-spinner").style.display = "flex";     
-       })
 
+        const loginBtn = document.getElementById("login-btn");
+        const loginText = document.getElementById("login-text");
+        const spinner = document.getElementById("login-spinner"); 
+        const contactForm = document.getElementsByClassName("site-contact__form")[0];
         const successAlert = document.getElementsByClassName('site-contact__success')[0];
-        
+
+        contactForm.addEventListener('submit',() => {
+                 loginBtn.disabled = true;
+                 loginBtn.style.cursor = "not-allowed"
+                 loginText.style.display = "none";
+                 spinner.style.display = "flex"; 
+        })
+
         setTimeout(() => {
             if(successAlert){
                 successAlert.style.display = 'none';

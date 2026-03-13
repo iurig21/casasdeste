@@ -396,6 +396,10 @@ main {
     cursor: pointer;
 }
 
+.site-nav__brochure:hover{
+    background-color: #bc9d71;
+}
+
 .site-nav__brochure span + span {
     margin-top: 4px;
 }
@@ -556,6 +560,10 @@ main {
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
+}
+
+.site-contact button:hover{
+    background-color: rgb(210, 207, 207);
 }
 
 .site-footer__bottom {

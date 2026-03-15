@@ -33,7 +33,7 @@
             </div>
 
             @if (session('success'))
-                <div id="showSuccess" class="admin-alert admin-alert--success">
+                <div id="showSuccess" class="admin-alert admin-alert--success animate-fade-out">
                     <p>{{ session('success') }}</p>
                 </div>
             @endif
@@ -116,7 +116,7 @@
         if(successAlert){
             successAlert.style.display = 'none';
         }
-      }, 3000);
+      }, 4000);
 
       function openDeleteModal(action, name) {
         document.getElementById('deleteModalForm').action = action;

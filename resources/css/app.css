@@ -13,6 +13,18 @@
         "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
         "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
         "Noto Color Emoji";
+
+    --animate-fade-out: fade-out 4s ease-in-out forwards;
+}
+
+@keyframes fade-out {
+    0%, 70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        pointer-events: none;
+    }
 }
 
 html {
@@ -396,7 +408,7 @@ main {
     cursor: pointer;
 }
 
-.site-nav__brochure:hover{
+.site-nav__brochure:hover {
     background-color: #bc9d71;
 }
 
@@ -532,7 +544,6 @@ main {
     font-size: 12px;
     outline: none;
     padding: 0 0 5px;
-    
 }
 
 .site-contact__message {
@@ -563,7 +574,7 @@ main {
     cursor: pointer;
 }
 
-.site-contact button:hover{
+.site-contact button:hover {
     background-color: rgb(210, 207, 207);
 }
 
@@ -970,7 +981,7 @@ main {
         width: 100%;
     }
 
-    .site-contact input{
+    .site-contact input {
         text-align: center;
     }
 

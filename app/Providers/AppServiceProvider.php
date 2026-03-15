@@ -23,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         RateLimiter::for('api', function (Request $request) {
-            return Limit::perMinute(4)
+            return Limit::perMinute(3)
             ->by($request->ip().'|'.$request->path())
             ->response(function (Request $request, array $headers) {
                 return response('Limite de taxa excedido. Por favor, tente novamente mais tarde.', 429, $headers);

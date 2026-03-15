@@ -164,7 +164,7 @@
                 </button>
 
                 @if(session('success'))
-                    <div class="site-contact__success" style="background: #d4edda; color: #155724; padding: 12px 20px; border-radius: 6px; margin-top: 20px; font-size: 14px;">
+                    <div class="site-contact__success animate-fade-out" style="background: #d4edda; color: #155724; padding: 12px 20px; border-radius: 6px; margin-top: 20px; font-size: 14px;">
                         {{ session('success') }}
                     </div>
                 @endif
@@ -191,7 +191,7 @@
             if(successAlert){
                 successAlert.style.display = 'none';
             }
-        }, 4000);
+        },4000);
         
         const shouldScrollToContact = @json(session('success') || $errors->contact->any());
 

@@ -18,7 +18,8 @@
 }
 
 @keyframes fade-out {
-    0%, 70% {
+    0%,
+    70% {
         opacity: 1;
     }
     100% {
@@ -218,6 +219,11 @@ main {
 .home-interior__grid img:not(:first-child) {
     grid-column: span 3;
 }
+
+.home-interior__grid img.home-interior__mobile-extra {
+    display: none;
+}
+
 
 .home-exterior {
     width: 100%;
@@ -817,10 +823,20 @@ main {
         min-height: 184px;
     }
 
+    .home-interior__grid img.home-interior__mobile-extra {
+        display: block;
+    }
+
+
     .home-exterior__gallery {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
     }
+
+    .home-exterior__gallery.home-exterior__gallery--desktop {
+        display: none;
+    }
+
 
     .home-exterior__main {
         grid-row: auto;

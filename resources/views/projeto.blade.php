@@ -1,7 +1,7 @@
 <x-layout>
     <div class="projeto-page">
         <section class="projeto-hero">
-            <img srcset="/imagens/projeto-hero.webp" alt="Casas D'Este – Fachada" class="projeto-hero__image" fetchpriority="high">
+            <img srcset="{{ asset('imagens/projeto-hero.webp') }}" alt="Casas D'Este – Fachada" class="projeto-hero__image" fetchpriority="high">
         </section>
 
         <section class="projeto-intro">
@@ -20,7 +20,7 @@
             <h2 class="projeto-floor__title lazy-text lazy-text--left">Rés-do-chão</h2>
             <div class="projeto-floor__body">
                 <div class="contents max-[860px]:block max-[860px]:w-full max-[860px]:px-[14px]">
-                    <img src="/imagens/projeto-resdochao.webp" alt="Rés-do-chão" class="projeto-floor__image" loading="lazy">
+                    <img src="{{ asset('imagens/projeto-resdochao.webp') }}" alt="Rés-do-chão" class="projeto-floor__image" loading="lazy">
                 </div>
                 <div class="projeto-floor__info">
                     <p class="projeto-floor__info-subtitle lazy-text lazy-text--left" data-delay="80">Um piso funcional e prático, pensado para apoio à vivência diária</p>
@@ -39,7 +39,7 @@
             <h2 class="projeto-floor__title lazy-text lazy-text--right">Primeiro Piso</h2>
             <div class="projeto-floor__body">
                 <div class="contents max-[860px]:block max-[860px]:w-full max-[860px]:px-[14px]">
-                    <img src="/imagens/projeto-primeiro-piso.webp" alt="Primeiro Piso" class="projeto-floor__image" loading="lazy">
+                    <img src="{{ asset('imagens/projeto-primeiro-piso.webp') }}" alt="Primeiro Piso" class="projeto-floor__image" loading="lazy">
                 </div>
                 <div class="projeto-floor__info">
                     <p class="projeto-floor__info-title lazy-text lazy-text--right" data-delay="80">Zona Social</p>
@@ -63,7 +63,7 @@
             <h2 class="projeto-floor__title lazy-text lazy-text--left">Segundo Piso</h2>
             <div class="projeto-floor__body">
                 <div class="contents max-[860px]:block max-[860px]:w-full max-[860px]:px-[14px]">
-                    <img srcset="/imagens/projeto-segundo-piso.webp" alt="Segundo Piso" class="projeto-floor__image" loading="lazy">
+                    <img srcset="{{ asset('imagens/projeto-segundo-piso.webp') }}" alt="Segundo Piso" class="projeto-floor__image" loading="lazy">
                 </div>
                 <div class="projeto-floor__info">
                     <p class="projeto-floor__info-title lazy-text lazy-text--left" data-delay="80">Zona Privativa</p>

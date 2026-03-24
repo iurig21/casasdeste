@@ -16,12 +16,12 @@
     <nav class="admin-nav">
         <div class="admin-nav__container">
             <div class="admin-nav__brand">
-                <a href="/admin/dashboard">
+                <a href="{{ route('admin.dashboard') }}">
                     <img class="admin-nav__logo" src="{{ asset('imagens/logo1.svg') }}" alt="Logo Casas D'Este">
                 </a>
                 <span class="admin-nav__badge">Backoffice</span>
             </div>
-            <a href="/admin/logout" class="font-display font-bold border-2 border-[#c4aa85] text-[#c4aa85] px-8 py-2 rounded-lg hover:bg-[#c4aa85] hover:text-white">Sair</a>
+            <a href="{{ route('admin.logout') }}" class="font-display font-bold border-2 border-[#c4aa85] text-[#c4aa85] px-8 py-2 rounded-lg hover:bg-[#c4aa85] hover:text-white">Sair</a>
         </div>
     </nav>
 
@@ -39,11 +39,11 @@
             @endif
 
             <div class="admin-toolbar">
-                <form method="GET" action="/admin/dashboard" class="admin-search">
+                <form method="GET" action="{{ route('admin.dashboard') }}" class="admin-search">
                     <input class="admin-input admin-search__input" type="text" name="search" value="{{ $search }}" placeholder="Pesquisar por nome, email ou telefone...">
                     <button type="submit" class="admin-btn admin-btn--primary">Pesquisar</button>
                     @if ($search)
-                        <a href="/admin/dashboard" class="admin-btn admin-btn--outline admin-btn--clear">Limpar</a>
+                        <a href="{{ route('admin.dashboard') }}" class="admin-btn admin-btn--outline admin-btn--clear">Limpar</a>
                     @endif
                 </form>
             </div>
@@ -67,7 +67,7 @@
                                 <td>{{ $download->telefone }}</td>
                                 <td>{{ $download->created_at->format('d/m/Y H:i') }}</td>
                                 <td>
-                                    <button type="button" class="admin-btn admin-btn--danger admin-btn--sm" onclick="openDeleteModal('/admin/downloads/{{ $download->id }}', '{{ $download->nome }}')">Eliminar</button>
+                                    <button type="button" class="admin-btn admin-btn--danger admin-btn--sm" onclick="openDeleteModal('{{ route('admin.downloads.destroy', $download->id) }}', '{{ $download->nome }}')">Eliminar</button>
                                 </td>
                             </tr>
                         @empty

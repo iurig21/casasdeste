@@ -7,16 +7,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
 
 Route::get('/projeto', function () {
     return view('projeto');
-});
+})->name('project');
 
 Route::get('/acabamentos', function () {
     return view('acabamentos');
-});
+})->name('finishes');
 
 Route::middleware(['throttle:api'])->group(function () {
     Route::post('/brochure-download', [BrochureDownloadController::class, 'store'])->name('brochure.download');
@@ -24,10 +24,10 @@ Route::middleware(['throttle:api'])->group(function () {
 });
 
 
-Route::get('/admin', [AdminController::class, 'loginForm']);
-Route::post('/admin/login', [AdminController::class, 'login']);
+Route::get('/admin', [AdminController::class, 'loginForm'])->name('admin.login');
+Route::post('/admin/login', [AdminController::class, 'login'])->name('admin.login.submit');
 Route::middleware('admin')->group(function () {
-    Route::get('/admin/dashboard', [AdminController::class, 'dashboard']);
-    Route::delete('/admin/downloads/{download}', [AdminController::class, 'destroy']);
-    Route::get('/admin/logout', [AdminController::class, 'logout']);
+    Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+    Route::delete('/admin/downloads/{download}', [AdminController::class, 'destroy'])->name('admin.downloads.destroy');
+    Route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
 });

@@ -28,7 +28,7 @@
                 </div>
             @endif
 
-            <form method="POST" action="/admin/login" class="admin-login__form">
+            <form method="POST" action="{{ route('admin.login.submit') }}" class="admin-login__form">
                 @csrf
                 <div class="admin-form-group">
                     <label class="admin-label" for="username">Username</label>
@@ -45,7 +45,7 @@
                     </span>
                 </button>
             </form>
-            <a href="/" class="admin-btn admin-btn--block admin-login__back">← Voltar ao site</a>
+            <a href="{{ route('home') }}" class="admin-btn admin-btn--block admin-login__back">← Voltar ao site</a>
         </div>
     </div>
 

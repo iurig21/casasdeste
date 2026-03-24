@@ -2,7 +2,7 @@
     <section class="acabamentos-page">
 
         <section class="acabamentos-hero">
-            <img src="/imagens/acabamentos-hero.webp" alt="Acabamentos Casas D'Este" class="acabamentos-hero__image" fetchpriority="high">
+            <img src="{{ asset('imagens/acabamentos-hero.webp') }}" alt="Acabamentos Casas D'Este" class="acabamentos-hero__image" fetchpriority="high">
         </section>
 
         <section class="acabamentos-intro">
@@ -56,14 +56,14 @@
             </div>
 
             <div class="acabamentos-specs__right max-[860px]:w-full max-[860px]:px-[14px]">
-                <img src="/imagens/acabamentos-interior-right.webp" alt="Interior acabamentos" class="block w-full" loading="lazy">
+                <img src="{{ asset('imagens/acabamentos-interior-right.webp') }}" alt="Interior acabamentos" class="block w-full" loading="lazy">
             </div>
         </section>
 
         <section class="acabamentos-details lazy-section">
             <div class="acabamentos-details__row">
                 <div class="acabamentos-details__image max-[860px]:w-full max-[860px]:px-[14px]">
-                    <img src="/imagens/interna1.webp" alt="Cozinha" class="block w-full" loading="lazy">
+                    <img src="{{ asset('imagens/interna1.webp') }}" alt="Cozinha" class="block w-full" loading="lazy">
                 </div>
                 <div class="acabamentos-details__content">
                     <article class="acabamentos-spec">
@@ -93,7 +93,7 @@
 
             <div class="acabamentos-details__row">
                 <div class="acabamentos-details__image max-[860px]:w-full max-[860px]:px-[14px]">
-                    <img src="/imagens/acabamentos-quarto.webp" alt="Quarto" class="block w-full" loading="lazy">
+                    <img src="{{ asset('imagens/acabamentos-quarto.webp') }}" alt="Quarto" class="block w-full" loading="lazy">
                 </div>
                 <div class="acabamentos-details__content">
                     <article class="acabamentos-spec">
@@ -112,7 +112,7 @@
 
             <div class="acabamentos-details__row">
                 <div class="acabamentos-details__image max-[860px]:w-full max-[860px]:px-[14px]">
-                    <img src="/imagens/acabamentos-wc.webp" alt="Instalações sanitárias" class="block w-full" loading="lazy">
+                    <img src="{{ asset('imagens/acabamentos-wc.webp') }}" alt="Instalações sanitárias" class="block w-full" loading="lazy">
                 </div>
                 <div class="acabamentos-details__content">
                     <article class="acabamentos-spec">

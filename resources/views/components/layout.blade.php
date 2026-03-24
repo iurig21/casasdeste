@@ -18,8 +18,8 @@
     <header>
         <nav class="site-nav" data-nav>
             <div class="site-nav__container">
-                <a href="/" class="site-nav__brand" aria-label="Casas D'Este">
-                    <img src="/imagens/logo1.svg" alt="Casas D'Este" class="site-nav__brand-symbol">
+                <a href="{{ route('home') }}" class="site-nav__brand" aria-label="Casas D'Este">
+                    <img src="{{ asset('imagens/logo1.svg') }}" alt="Casas D'Este" class="site-nav__brand-symbol">
                 </a>
 
                 <button class="site-nav__menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links"
@@ -29,8 +29,8 @@
 
                 <div class="site-nav__actions" id="site-nav-links" data-nav-panel>
                     <ul class="site-nav__links">
-                        <li><a href="/projeto" @class(['site-nav__link--active' => request()->is('projeto')])>O PROJETO</a></li>
-                        <li><a href="/acabamentos" @class(['site-nav__link--active' => request()->is('acabamentos')])>ACABAMENTOS</a></li>
+                        <li><a href="{{ route('project') }}" @class(['site-nav__link--active' => request()->routeIs('project')])>O PROJETO</a></li>
+                        <li><a href="{{ route('finishes') }}" @class(['site-nav__link--active' => request()->routeIs('finishes')])>ACABAMENTOS</a></li>
                         <li><a target="_blank" href="https://maps.app.goo.gl/tdSycnys8VXh6xVCA">LOCALIZAÇÃO</a></li>
                     </ul>
 
@@ -112,7 +112,7 @@
     <footer class="site-footer">
         <div class="site-footer__bottom">
             <div class="site-footer__bottom-container">
-                <a href="/" class="site-footer__evobuild" aria-label="Evobuild">
+                <a href="{{ route('home') }}" class="site-footer__evobuild" aria-label="Evobuild">
                     <svg width="263" height="47" viewBox="0 0 263 47" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4.59355 21.3181V21.4957C4.59355 22.8154 5.65946 23.4499 6.97916 23.4499H29.5155V28.0688H6.97916C3.12159 28.0688 0 25.3787 0 21.4957V15.6078C0 11.7503 3.12159 8.17188 6.97916 8.17188H24.3636C27.4091 8.17188 29.8962 10.659 29.8962 13.7044V15.7855C29.8962 18.8309 27.4091 21.3434 24.3636 21.3434H4.59355V21.3181ZM4.59355 19.0847C4.64431 17.2575 6.29393 16.8007 7.51211 16.6991H24.3382C24.8458 16.6991 25.2519 16.2931 25.2519 15.7855V13.7044C25.2519 13.1969 24.8458 12.7908 24.3382 12.7908H6.97916C5.65946 12.7908 4.59355 14.3135 4.59355 15.6078V19.1101V19.0847Z" fill="white"/>
                         <path d="M62.2794 8.12134L50.123 26.6732C49.5393 27.5107 48.4226 28.0183 47.1791 28.0183C45.9355 28.0183 44.8189 27.5107 44.2351 26.6986L44.1844 26.6478L32.0533 8.12134H37.3829L47.1791 23.3232L56.9753 8.12134H62.3048H62.2794Z" fill="white"/>
@@ -176,7 +176,7 @@
 
                 <div class="site-footer__details">
                     <p>+351 924 456 674</p>
-                    <p>geral@evobuildgroup.pt</p>
+                    <p>iurilameira2017@gmail.com</p>
                     <p>Alvará 114185-PAR</p>
                 </div>
 

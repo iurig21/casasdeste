@@ -88,19 +88,19 @@
         <section class="home-interior lazy-section max-[860px]:px-[14px]">
             <h2 class="lazy-text lazy-text--left">Essência e Equilíbrio</h2>
             <div class="home-interior__grid">
-                <img src="/imagens/interna1.webp" alt="Interior principal" loading="lazy">
-                <img src="/imagens/interna2.webp" alt="Interior 2" loading="lazy">
-                <img src="/imagens/interna3.webp" alt="Interior 3" loading="lazy">
-                <img src="/imagens/interna4.webp" alt="Interior 4" loading="lazy">
-                <img src="/imagens/interna5.webp" alt="Interior 5" loading="lazy">
+                <img src="{{ asset('imagens/interna1.webp') }}" alt="Interior principal" loading="lazy">
+                <img src="{{ asset('imagens/interna2.webp') }}" alt="Interior 2" loading="lazy">
+                <img src="{{ asset('imagens/interna3.webp') }}" alt="Interior 3" loading="lazy">
+                <img src="{{ asset('imagens/interna4.webp') }}" alt="Interior 4" loading="lazy">
+                <img src="{{ asset('imagens/interna5.webp') }}" alt="Interior 5" loading="lazy">
             </div>
         </section>
 
         <section class="home-exterior lazy-section max-[860px]:px-[14px] max-[1180px]:grid-cols-1! max-[1180px]:gap-[30px]!">
             <div class="home-exterior__gallery w-full max-w-[600px] mx-auto sm:max-w-none sm:mx-0 max-[1180px]:grid-cols-1! max-[1180px]:grid-rows-[auto]!">
-                <img class="home-exterior__main block w-full h-auto! sm:h-full!" src="/imagens/exterior1.webp" alt="Exterior principal" loading="lazy">
-                <img class="block w-full h-auto! sm:h-full!" src="/imagens/exterior2.webp" alt="Exterior 2" loading="lazy">
-                <img class="block w-full h-auto! sm:h-full!" src="/imagens/exterior3.webp" alt="Exterior 3" loading="lazy">
+                <img class="home-exterior__main block w-full h-auto! sm:h-full!" src="{{ asset('imagens/exterior1.webp') }}" alt="Exterior principal" loading="lazy">
+                <img class="block w-full h-auto! sm:h-full!" src="{{ asset('imagens/exterior2.webp') }}" alt="Exterior 2" loading="lazy">
+                <img class="block w-full h-auto! sm:h-full!" src="{{ asset('imagens/exterior3.webp') }}" alt="Exterior 3" loading="lazy">
             </div>
 
             <div class="home-exterior__details mx-auto max-w-[620px] text-center sm:mx-0 sm:max-w-none sm:text-left">

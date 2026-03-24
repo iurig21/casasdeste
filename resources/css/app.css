@@ -1306,8 +1306,8 @@ main {
         font-size: 12px;
     }
 
-    .acabamentos-specs {
-        margin-top: 20px;
+    .acabamentos-specs__left{
+        gap: 2rem;
     }
 
     .acabamentos-spec h2 {

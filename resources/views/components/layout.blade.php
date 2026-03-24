@@ -176,7 +176,7 @@
 
                 <div class="site-footer__details">
                     <p>+351 924 456 674</p>
-                    <p>iurilameira2017@gmail.com</p>
+                    <p>geral@evobuildgroup.pt</p>
                     <p>Alvará 114185-PAR</p>
                 </div>
 

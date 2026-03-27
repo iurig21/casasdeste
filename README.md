@@ -17,7 +17,6 @@ This project is built with [Laravel](https://laravel.com/) and leverages Blade t
 - [Project Structure](#project-structure)
 - [Environment Variables](#environment-variables)
 - [Deployment](#deployment)
-- [License](#license)
 
 ---
 
@@ -215,13 +214,6 @@ Refer to Laravel’s [environment configuration documentation](https://laravel.c
     - Set file/folder permissions as per Laravel's [deployment guide](https://laravel.com/docs/master/deployment)
     - Configure production-ready admin credentials and environment variables
 
----
-
-## License
-
-Distributed under the MIT License. See [LICENSE](LICENSE) for details.
-
----
 
 Questions, suggestions, or need a quote? Reach out!
 

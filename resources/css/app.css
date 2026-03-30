@@ -3428,7 +3428,7 @@ main {
     }
 
     .projeto-construcao__title {
-        font-size: 110px;
+        font-size: 90px;
         max-width: 1600px;
         margin: 0 auto 75px;
     }
@@ -3440,7 +3440,7 @@ main {
     }
 
     .projeto-construcao__item h3 {
-        font-size: 64px;
+        font-size: 52px;
     }
 
     .projeto-construcao__item-list {
@@ -3449,8 +3449,8 @@ main {
 
     .projeto-construcao__item-list,
     .projeto-construcao__item p {
-        font-size: 34px;
-        line-height: 46px;
+        font-size: 28px;
+        line-height: 39px;
     }
 
     .projeto-construcao__item p {

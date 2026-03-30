@@ -224,7 +224,6 @@ main {
     display: none;
 }
 
-
 .home-exterior {
     width: 100%;
     margin: 28px 0 0;
@@ -827,7 +826,6 @@ main {
         display: block;
     }
 
-
     .home-exterior__gallery {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
@@ -836,7 +834,6 @@ main {
     .home-exterior__gallery.home-exterior__gallery--desktop {
         display: none;
     }
-
 
     .home-exterior__main {
         grid-row: auto;
@@ -1084,6 +1081,610 @@ main {
     }
 }
 
+/* ── Large screen breakpoints (QHD / 2K — ~1.33× from 1920) ── */
+
+@media (min-width: 2200px) {
+    header {
+        height: 102px;
+    }
+
+    .site-nav {
+        padding: 24px 3.3rem 17px;
+    }
+
+    .site-nav::after {
+        border-bottom-width: 3px;
+    }
+
+    .site-nav__container {
+        max-width: 1780px;
+        padding: 0 24px;
+        gap: 32px;
+    }
+
+    .site-nav__brand {
+        gap: 9px;
+    }
+
+    .site-nav__brand-symbol {
+        width: 160px;
+        height: 61px;
+    }
+
+    .site-nav__brand-text {
+        width: 169px;
+        height: 16px;
+    }
+
+    .site-nav__links {
+        gap: 42px;
+    }
+
+    .site-nav__links a {
+        font-size: 18px;
+    }
+
+    .site-nav__links a::after {
+        bottom: -5px;
+        border-bottom-width: 3px;
+    }
+
+    .site-nav__link--active::after {
+        bottom: -11px;
+        height: 3px;
+    }
+
+    .site-nav__actions {
+        gap: 32px;
+    }
+
+    .site-nav__brochure {
+        width: 207px;
+        min-height: 64px;
+        font-size: 17px;
+        border-radius: 11px;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25);
+    }
+
+    .site-nav__brochure span + span {
+        margin-top: 5px;
+    }
+
+    .home-hero {
+        min-height: clamp(600px, 33vw, 850px);
+    }
+
+    .home-hero__image {
+        height: clamp(600px, 33vw, 850px);
+    }
+
+    .home-hero__overlay {
+        width: min(48%, 1200px);
+    }
+
+    .home-hero__overlay h1 {
+        font-size: 56px;
+    }
+
+    .home-hero__subtitle {
+        margin: 22px 0 0;
+        font-size: 36px;
+        line-height: 1.1;
+    }
+
+    .home-hero__description {
+        margin: 14px 0 0;
+        font-size: 24px;
+        line-height: 1.4;
+    }
+
+    .home-intro {
+        margin: 53px auto 44px;
+        width: min(calc(100% - 37px), 745px);
+    }
+
+    .home-intro p {
+        font-size: 31px;
+    }
+
+    .home-highlights {
+        width: min(calc(100% - 60px), 1600px);
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 37px;
+    }
+
+    .home-highlight {
+        width: auto;
+        min-height: 170px;
+        border-radius: 19px;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25);
+        padding: 18px 20px 22px;
+    }
+
+    .home-highlight svg {
+        height: 66px;
+    }
+
+    .home-highlight h3 {
+        font-size: 21px;
+        line-height: 30px;
+    }
+
+    .home-highlight p {
+        font-size: 21px;
+        line-height: 30px;
+    }
+
+    .home-details {
+        margin-top: 1.67rem;
+    }
+
+    .home-interior {
+        margin: 73px 0 0;
+        padding-left: clamp(14px, 3.3%, 84px);
+    }
+
+    .home-interior h2 {
+        font-size: 74px;
+    }
+
+    .home-interior__grid {
+        gap: 16px;
+        margin-left: clamp(0px, 5%, 117px);
+    }
+
+    .home-exterior {
+        margin: 37px 0 0;
+        gap: 48px;
+        padding-right: clamp(14px, 9.5%, 241px);
+        grid-template-columns: minmax(0, 1fr) minmax(240px, 625px);
+    }
+
+    .home-exterior__gallery {
+        grid-template-rows: clamp(340px, 17.5vw, 453px) clamp(200px, 10.5vw, 267px);
+        gap: 21px;
+    }
+
+    .home-exterior__details article + article {
+        margin-top: 35px;
+    }
+
+    .home-exterior__details h3 {
+        font-size: 40px;
+    }
+
+    .home-exterior__details p {
+        font-size: 20px;
+    }
+
+    .site-contact {
+        padding: 67px 0 53px;
+    }
+
+    .site-contact__container {
+        max-width: 1780px;
+        padding: 67px 19px 0;
+        gap: 67px;
+    }
+
+    .site-contact h2 {
+        font-size: 47px;
+    }
+
+    .site-contact__form {
+        width: min(100%, 966px);
+    }
+
+    .site-contact__row {
+        gap: 35px;
+    }
+
+    .site-contact label span {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .site-contact input,
+    .site-contact textarea {
+        font-size: 16px;
+    }
+
+    .site-contact input {
+        padding: 0 0 7px;
+    }
+
+    .site-contact textarea {
+        min-height: 133px;
+        padding: 13px 16px;
+    }
+
+    .site-contact__message {
+        margin-top: 20px;
+    }
+
+    .site-contact button {
+        margin-top: 20px;
+        min-width: 140px;
+        height: 45px;
+        font-size: 19px;
+        border-radius: 13px;
+    }
+
+    .site-footer__bottom {
+        min-height: 200px;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
+    }
+
+    .site-footer__bottom-container {
+        width: min(100%, 1915px);
+        min-height: 200px;
+    }
+
+    .site-footer__evobuild svg {
+        width: 226px;
+    }
+
+    .site-footer__details p {
+        font-size: 17px;
+    }
+
+    .site-footer__social {
+        gap: 20px;
+    }
+
+    .site-footer__social a {
+        width: 40px;
+        height: 40px;
+    }
+
+    #brochureModal .modal-box {
+        max-width: 44rem !important;
+        padding: 4rem !important;
+        border-radius: 18px !important;
+    }
+
+    #brochureModal .modal-box h3 {
+        font-size: 2rem !important;
+        margin-bottom: 2.5rem !important;
+    }
+
+    #brochureModal .modal-box label {
+        font-size: 1.4rem !important;
+        margin-bottom: 0.4rem !important;
+    }
+
+    #brochureModal .modal-box input {
+        padding: 1rem 1.2rem !important;
+        font-size: 1.4rem !important;
+        border-radius: 10px !important;
+    }
+
+    #brochureModal .modal-box form {
+        gap: 1.5rem !important;
+    }
+
+    #brochureModal .modal-box button[type="submit"] {
+        padding: 1.2rem !important;
+        font-size: 1.5rem !important;
+        border-radius: 10px !important;
+    }
+
+    #brochureModal .modal-box .btn-circle {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.25rem;
+    }
+
+    #brochureModal .modal-box span[data-server-error],
+    #brochureModal .modal-box #telefoneError,
+    #brochureModal .modal-box #emailError {
+        font-size: 1.15rem !important;
+    }
+
+}
+
+/* ── Large screen breakpoints (4K / UHD — ~2× from 1920) ──── */
+
+@media (min-width: 3200px) {
+    header {
+        height: 154px;
+    }
+
+    .site-nav {
+        padding: 36px 5rem 26px;
+    }
+
+    .site-nav::after {
+        border-bottom-width: 4px;
+    }
+
+    .site-nav__container {
+        max-width: 2680px;
+        padding: 0 36px;
+        gap: 48px;
+    }
+
+    .site-nav__brand {
+        gap: 14px;
+    }
+
+    .site-nav__brand-symbol {
+        width: 240px;
+        height: 92px;
+    }
+
+    .site-nav__brand-text {
+        width: 254px;
+        height: 24px;
+    }
+
+    .site-nav__links {
+        gap: 64px;
+    }
+
+    .site-nav__links a {
+        font-size: 27px;
+    }
+
+    .site-nav__links a::after {
+        bottom: -8px;
+        border-bottom-width: 4px;
+    }
+
+    .site-nav__link--active::after {
+        bottom: -16px;
+        height: 4px;
+    }
+
+    .site-nav__actions {
+        gap: 48px;
+    }
+
+    .site-nav__brochure {
+        width: 312px;
+        min-height: 96px;
+        font-size: 26px;
+        border-radius: 16px;
+        box-shadow: 0 8px 8px rgba(0, 0, 0, 0.25);
+    }
+
+    .site-nav__brochure span + span {
+        margin-top: 8px;
+    }
+
+    .home-hero {
+        min-height: clamp(850px, 33vw, 1200px);
+    }
+
+    .home-hero__image {
+        height: clamp(850px, 33vw, 1200px);
+    }
+
+    .home-hero__overlay {
+        width: min(48%, 1800px);
+    }
+
+    .home-hero__overlay h1 {
+        font-size: 86px;
+    }
+
+    .home-hero__subtitle {
+        margin: 34px 0 0;
+        font-size: 54px;
+        line-height: 1.1;
+    }
+
+    .home-hero__description {
+        margin: 20px 0 0;
+        font-size: 36px;
+        line-height: 1.4;
+    }
+
+    .home-intro {
+        margin: 80px auto 66px;
+        width: min(calc(100% - 56px), 1120px);
+    }
+
+    .home-intro p {
+        font-size: 46px;
+    }
+
+    .home-highlights {
+        width: min(calc(100% - 80px), 2800px);
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 56px;
+    }
+
+    .home-highlight {
+        width: auto;
+        min-height: 280px;
+        border-radius: 28px;
+        box-shadow: 0 8px 8px rgba(0, 0, 0, 0.25);
+        padding: 28px 30px 34px;
+    }
+
+    .home-highlight svg {
+        height: 100px;
+    }
+
+    .home-highlight h3 {
+        font-size: 32px;
+        line-height: 44px;
+    }
+
+    .home-highlight p {
+        font-size: 32px;
+        line-height: 44px;
+    }
+
+    .home-details {
+        margin-top: 2.5rem;
+    }
+
+    .home-interior {
+        margin: 110px 0 0;
+        padding-left: clamp(14px, 3.3%, 126px);
+    }
+
+    .home-interior h2 {
+        font-size: 112px;
+    }
+
+    .home-interior__grid {
+        gap: 24px;
+        margin-left: clamp(0px, 5%, 176px);
+    }
+
+    .home-exterior {
+        margin: 56px 0 0;
+        gap: 72px;
+        padding-right: clamp(14px, 9.5%, 362px);
+        grid-template-columns: minmax(0, 1fr) minmax(360px, 940px);
+    }
+
+    .home-exterior__gallery {
+        grid-template-rows: clamp(453px, 17.5vw, 680px) clamp(267px, 10.5vw, 400px);
+        gap: 32px;
+    }
+
+    .home-exterior__details article + article {
+        margin-top: 52px;
+    }
+
+    .home-exterior__details h3 {
+        font-size: 60px;
+    }
+
+    .home-exterior__details p {
+        font-size: 30px;
+    }
+
+    .site-contact {
+        padding: 100px 0 80px;
+    }
+
+    .site-contact__container {
+        max-width: 2680px;
+        padding: 100px 28px 0;
+        gap: 100px;
+    }
+
+    .site-contact h2 {
+        font-size: 70px;
+    }
+
+    .site-contact__form {
+        width: min(100%, 1452px);
+    }
+
+    .site-contact__row {
+        gap: 52px;
+    }
+
+    .site-contact label span {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+
+    .site-contact input,
+    .site-contact textarea {
+        font-size: 24px;
+    }
+
+    .site-contact input {
+        padding: 0 0 10px;
+    }
+
+    .site-contact textarea {
+        min-height: 200px;
+        padding: 20px 24px;
+    }
+
+    .site-contact__message {
+        margin-top: 30px;
+    }
+
+    .site-contact button {
+        margin-top: 30px;
+        min-width: 210px;
+        height: 68px;
+        font-size: 28px;
+        border-radius: 20px;
+    }
+
+    .site-footer__bottom {
+        min-height: 300px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    }
+
+    .site-footer__bottom-container {
+        width: min(100%, 2880px);
+        min-height: 300px;
+    }
+
+    .site-footer__evobuild svg {
+        width: 340px;
+    }
+
+    .site-footer__details p {
+        font-size: 26px;
+    }
+
+    .site-footer__social {
+        gap: 30px;
+    }
+
+    .site-footer__social a {
+        width: 60px;
+        height: 60px;
+    }
+
+    #brochureModal .modal-box {
+        max-width: 66rem !important;
+        padding: 6rem !important;
+        border-radius: 28px !important;
+    }
+
+    #brochureModal .modal-box h3 {
+        font-size: 3rem !important;
+        margin-bottom: 3.5rem !important;
+    }
+
+    #brochureModal .modal-box label {
+        font-size: 2.1rem !important;
+        margin-bottom: 0.6rem !important;
+    }
+
+    #brochureModal .modal-box input {
+        padding: 1.5rem 1.8rem !important;
+        font-size: 2.1rem !important;
+        border-radius: 14px !important;
+    }
+
+    #brochureModal .modal-box form {
+        gap: 2.2rem !important;
+    }
+
+    #brochureModal .modal-box button[type="submit"] {
+        padding: 1.8rem !important;
+        font-size: 2.3rem !important;
+        border-radius: 14px !important;
+    }
+
+    #brochureModal .modal-box .btn-circle {
+        width: 3.5rem;
+        height: 3.5rem;
+        font-size: 1.8rem;
+    }
+
+    #brochureModal .modal-box span[data-server-error],
+    #brochureModal .modal-box #telefoneError,
+    #brochureModal .modal-box #emailError {
+        font-size: 1.8rem !important;
+    }
+
+}
+
 .acabamentos-page {
     margin: 0 auto;
 }
@@ -1306,7 +1907,7 @@ main {
         font-size: 12px;
     }
 
-    .acabamentos-specs__left{
+    .acabamentos-specs__left {
         gap: 2rem;
     }
 
@@ -1331,6 +1932,162 @@ main {
     .acabamentos-details__content {
         padding: 12px 14px;
         gap: 17px;
+    }
+}
+
+@media (min-width: 2200px) {
+    .acabamentos-intro {
+        max-width: 1795px;
+        padding: 53px 19px 0;
+        gap: 67px;
+    }
+
+    .acabamentos-intro__heading {
+        max-width: 665px;
+    }
+
+    .acabamentos-hero {
+        height: clamp(370px, 19vw, 492px);
+    }
+
+    .acabamentos-intro__heading h1 {
+        font-size: 56px;
+    }
+
+    .acabamentos-intro__text {
+        font-size: 24px;
+        line-height: 1.25;
+        max-width: 1000px;
+        padding-top: 13px;
+    }
+
+    .acabamentos-specs {
+        grid-template-columns: 1fr minmax(500px, 850px);
+        gap: 53px;
+        margin-top: 67px;
+    }
+
+    .acabamentos-specs__left {
+        padding-left: max(14px, calc((100vw - 1795px) / 2 + 14px));
+        gap: 5rem;
+    }
+
+    .acabamentos-specs__right img {
+        max-height: 1100px;
+    }
+
+    .acabamentos-spec h2 {
+        font-size: 56px;
+    }
+
+    .acabamentos-spec ul {
+        margin: 13px 0 0;
+    }
+
+    .acabamentos-spec ul,
+    .acabamentos-spec > p {
+        font-size: 22px;
+        line-height: 1.45;
+    }
+
+    .acabamentos-details {
+        margin-top: 67px;
+        margin-bottom: 5rem;
+    }
+
+    .acabamentos-details__row {
+        grid-template-columns: minmax(500px, 850px) minmax(0, 1fr);
+    }
+
+    .acabamentos-details__row + .acabamentos-details__row {
+        margin-top: 53px;
+    }
+
+    .acabamentos-details__image img {
+        min-height: 425px;
+    }
+
+    .acabamentos-details__content {
+        padding: 40px max(14px, calc((100vw - 1795px) / 2 + 14px)) 40px 80px;
+        gap: 40px;
+    }
+}
+
+@media (min-width: 3200px) {
+    .acabamentos-intro {
+        max-width: 2700px;
+        padding: 80px 28px 0;
+        gap: 100px;
+    }
+
+    .acabamentos-intro__heading {
+        max-width: 1000px;
+    }
+
+    .acabamentos-hero {
+        height: clamp(492px, 19vw, 740px);
+    }
+
+    .acabamentos-intro__heading h1 {
+        font-size: 84px;
+    }
+
+    .acabamentos-intro__text {
+        font-size: 36px;
+        line-height: 1.25;
+        max-width: 1500px;
+        padding-top: 20px;
+    }
+
+    .acabamentos-specs {
+        grid-template-columns: 1fr minmax(750px, 1280px);
+        gap: 80px;
+        margin-top: 100px;
+    }
+
+    .acabamentos-specs__left {
+        padding-left: max(14px, calc((100vw - 2700px) / 2 + 14px));
+        gap: 8rem;
+    }
+
+    .acabamentos-specs__right img {
+        max-height: 1660px;
+    }
+
+    .acabamentos-spec h2 {
+        font-size: 84px;
+    }
+
+    .acabamentos-spec ul {
+        margin: 20px 0 0;
+    }
+
+    .acabamentos-spec ul,
+    .acabamentos-spec > p {
+        font-size: 34px;
+        line-height: 1.45;
+    }
+
+    .acabamentos-details {
+        margin-top: 100px;
+        margin-bottom: 8rem;
+    }
+
+    .acabamentos-details__row {
+        grid-template-columns: minmax(750px, 1280px) minmax(0, 1fr);
+    }
+
+    .acabamentos-details__row + .acabamentos-details__row {
+        margin-top: 80px;
+    }
+
+    .acabamentos-details__image img {
+        min-height: 640px;
+    }
+
+    .acabamentos-details__content {
+        padding: 60px max(14px, calc((100vw - 2700px) / 2 + 14px)) 60px 120px;
+        gap: 60px;
     }
 }
 
@@ -1723,6 +2480,178 @@ main {
     .projeto-construcao__item-list,
     .projeto-construcao__item p {
         font-size: 11px;
+    }
+}
+
+@media (min-width: 2200px) {
+    .projeto-page {
+        max-width: 1915px;
+    }
+
+    .projeto-intro {
+        max-width: 1795px;
+        padding: 48px 19px 0;
+        gap: 47px;
+    }
+
+    .projeto-intro__heading {
+        font-size: 56px;
+        max-width: 400px;
+    }
+
+    .projeto-intro__text {
+        font-size: 22px;
+        line-height: 1.25;
+        max-width: 1125px;
+    }
+
+    .projeto-hero {
+        height: clamp(310px, 19vw, 412px);
+    }
+
+    .projeto-floor {
+        max-width: 2128px;
+        margin: 53px auto 0;
+    }
+
+    .projeto-floor__title {
+        font-size: clamp(56px, 4.1vw, 104px);
+    }
+
+    .projeto-floor__image {
+        width: clamp(380px, 47%, 1200px);
+    }
+
+    .projeto-floor__info {
+        padding: 67px 37px 37px 60px;
+    }
+
+    .projeto-floor__info-title {
+        font-size: 22px;
+    }
+
+    .projeto-floor__info-subtitle {
+        font-size: 22px;
+        margin: 4px 0 0;
+    }
+
+    .projeto-floor__info-list {
+        font-size: 22px;
+        margin: 19px 0 0;
+    }
+
+    .projeto-construcao {
+        margin-top: 67px;
+        padding: 67px clamp(14px, 2.5vw, 169px) clamp(37px, 3.5vw, 120px);
+        padding-top: clamp(107px, 8.5vw, 200px);
+    }
+
+    .projeto-construcao__title {
+        font-size: clamp(46px, 3.8vw, 87px);
+        margin: 0 0 clamp(23px, 2.1vw, 51px);
+    }
+
+    .projeto-construcao__grid {
+        gap: clamp(23px, 2.1vw, 51px) clamp(44px, 4.2vw, 107px);
+    }
+
+    .projeto-construcao__item h3 {
+        font-size: clamp(28px, 1.9vw, 47px);
+    }
+
+    .projeto-construcao__item-list {
+        margin: 11px 0 0;
+    }
+
+    .projeto-construcao__item-list,
+    .projeto-construcao__item p {
+        font-size: clamp(15px, 1vw, 24px);
+    }
+}
+
+@media (min-width: 3200px) {
+    .projeto-page {
+        max-width: 2880px;
+    }
+
+    .projeto-intro {
+        max-width: 2700px;
+        padding: 72px 28px 0;
+        gap: 70px;
+    }
+
+    .projeto-intro__heading {
+        font-size: 84px;
+        max-width: 600px;
+    }
+
+    .projeto-intro__text {
+        font-size: 34px;
+        line-height: 1.25;
+        max-width: 1690px;
+    }
+
+    .projeto-hero {
+        height: clamp(412px, 19vw, 620px);
+    }
+
+    .projeto-floor {
+        max-width: 3200px;
+        margin: 80px auto 0;
+    }
+
+    .projeto-floor__title {
+        font-size: clamp(78px, 4.1vw, 156px);
+    }
+
+    .projeto-floor__image {
+        width: clamp(560px, 47%, 1810px);
+    }
+
+    .projeto-floor__info {
+        padding: 100px 56px 56px 90px;
+    }
+
+    .projeto-floor__info-title {
+        font-size: 34px;
+    }
+
+    .projeto-floor__info-subtitle {
+        font-size: 34px;
+        margin: 6px 0 0;
+    }
+
+    .projeto-floor__info-list {
+        font-size: 34px;
+        margin: 28px 0 0;
+    }
+
+    .projeto-construcao {
+        margin-top: 100px;
+        padding: 100px clamp(14px, 2.5vw, 254px) clamp(56px, 3.5vw, 180px);
+        padding-top: clamp(160px, 8.5vw, 300px);
+    }
+
+    .projeto-construcao__title {
+        font-size: clamp(65px, 3.8vw, 130px);
+        margin: 0 0 clamp(34px, 2.1vw, 76px);
+    }
+
+    .projeto-construcao__grid {
+        gap: clamp(34px, 2.1vw, 76px) clamp(66px, 4.2vw, 160px);
+    }
+
+    .projeto-construcao__item h3 {
+        font-size: clamp(35px, 1.9vw, 70px);
+    }
+
+    .projeto-construcao__item-list {
+        margin: 16px 0 0;
+    }
+
+    .projeto-construcao__item-list,
+    .projeto-construcao__item p {
+        font-size: clamp(18px, 1vw, 36px);
     }
 }
 

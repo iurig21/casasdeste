@@ -12,7 +12,7 @@
                         <p class="home-hero__subtitle">Onde a Arquitetura Moderna encontra o Refúgio Perfeito em Braga</p>
                         <p class="home-hero__description">
                             Moradias unifamiliares V3 de luxo, desenhadas para oferecer o máximo conforto, sofisticação e uma
-                            integração única com a natureza.w
+                            integração única com a natureza.
                         </p>
                     </div>
                 </div>

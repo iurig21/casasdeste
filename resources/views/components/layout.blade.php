@@ -82,7 +82,8 @@
                 <div>
                     <label style="display: block; font-size: 0.875rem; color: #C4AA85; margin-bottom: 0.25rem; font-family: 'Montserrat', sans-serif;">Email *</label>
                     <input type="email" name="email" id="brochureEmail" placeholder="O seu email" value="{{ old('email') }}"
-                        style="width: 100%; padding: 0.625rem 0.75rem; background: transparent; border: 1px solid {{ $errors->brochure->has('email') ? '#ff6b6b' : '#C4AA85' }}; border-radius: 6px; color: #fff; font-family: 'Montserrat', sans-serif; font-size: 0.875rem; outline: none; box-sizing: border-box;"
+                        style="width: 100%; padding: 0.625rem 0.75rem; background: transparent; border: 1px solid {{ $errors->brochure->has('email') 
+                        ? '#ff6b6b' : '#C4AA85' }}; border-radius: 6px; color: #fff; font-family: 'Montserrat', sans-serif; font-size: 0.875rem; outline: none; box-sizing: border-box;"
                         required>
                     <span id="emailError" style="display: none; color: #ff6b6b; font-size: 0.75rem; font-family: 'Montserrat', sans-serif; margin-top: 0.25rem;">
                         Por favor insira um email válido.

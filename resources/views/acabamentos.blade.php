@@ -7,7 +7,7 @@
 
         <section class="acabamentos-intro">
             <div class="acabamentos-intro__heading">
-                <h1 class="lazy-text">Materiais selecionados<br>para conforto e durabilidade</h1>
+                <h1 class="lazy-text"><span class="acabamentos-intro__h1-line">Materiais selecionados</span><br><span class="acabamentos-intro__h1-line acabamentos-intro__h1-line--sub">para conforto e durabilidade</span></h1>
             </div>
             <p class="acabamentos-intro__text lazy-text" data-delay="100">
                 Os acabamentos foram definidos para garantir elegância, resistência e personalização, permitindo ao cliente escolher cores e pequenos detalhes dentro dos valores definidos.
@@ -99,7 +99,7 @@
                         </article>
 
                         <article class="acabamentos-spec">
-                            <h2 class="lazy-text lazy-text--right" data-delay="80">Instalações Sanitárias</h2>
+                            <h2 class="lazy-text lazy-text--right" data-delay="80">Instalações&nbsp;Sanitárias</h2>
                             <ul class="lazy-text lazy-text--right" data-delay="140">
                                 <li>Louças suspensas com sistema kombifix slim</li>
                                 <li>Sanitas com tampo soft close</li>

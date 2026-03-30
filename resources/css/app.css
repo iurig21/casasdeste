@@ -1102,6 +1102,14 @@ main {
         gap: 33px;
     }
 
+    .home-exterior__details h3 {
+        font-size: 50px;
+    }
+    
+    .home-exterior__details p {
+        font-size: 25px;
+    }
+
     .site-nav__brand {
         gap: 10px;
     }
@@ -1244,6 +1252,10 @@ main {
                 240px
             );
         gap: 18px;
+    }
+
+    .home-exterior__details {
+        padding-left: 1.75rem;
     }
 
     .home-exterior__details article + article {
@@ -1589,7 +1601,7 @@ main {
             );
         gap: 21px;
     }
-    
+
     .home-exterior__details article + article {
         margin-top: 64px;
 
@@ -2077,6 +2089,16 @@ main {
     color: #c4aa85;
 }
 
+.acabamentos-intro__h1-line {
+    display: inline;
+}
+
+@media (min-width: 1800px) {
+    .acabamentos-intro__h1-line--sub {
+        white-space: nowrap;
+    }
+}
+
 .acabamentos-intro__text {
     margin: 0;
     padding-top: 10px;
@@ -2320,6 +2342,40 @@ main {
 }
 
 @media (min-width: 1800px) and (max-width: 2199px) {
+    .acabamentos-intro {
+        max-width: 1795px;
+        padding: 53px 19px 0;
+        gap: 67px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .acabamentos-intro__heading {
+        flex: 0 0 auto;
+        max-width: none;
+    }
+
+    .acabamentos-intro__heading h1 {
+        font-size: 3.75rem;
+        line-height: 1.05;
+    }
+
+    .acabamentos-intro__text {
+        flex: 0 1 42rem;
+        padding-top: 0;
+        font-size: 25px;
+        line-height: 1.25;
+        max-width: 42rem;
+    }
+
+    .acabamentos-specs__left {
+        padding-left: max(14px, calc((100vw - 1795px) / 2 + 14px));
+    }
+
+    .acabamentos-details__content {
+        padding-inline: max(14px, calc((100vw - 1795px) / 2 + 14px - 1.25rem));
+    }
+
     .acabamentos-specs {
         grid-template-columns: 1fr 54.5rem;
     }
@@ -2344,10 +2400,13 @@ main {
         max-width: 1795px;
         padding: 53px 19px 0;
         gap: 67px;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .acabamentos-intro__heading {
-        max-width: 665px;
+        flex: 0 0 auto;
+        max-width: none;
     }
 
     .acabamentos-hero {
@@ -2420,10 +2479,13 @@ main {
         max-width: 2700px;
         padding: 80px 28px 0;
         gap: 100px;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .acabamentos-intro__heading {
-        max-width: 1000px;
+        flex: 0 0 auto;
+        max-width: none;
     }
 
     .acabamentos-hero {
@@ -2912,9 +2974,9 @@ main {
     }
 
     .projeto-intro__text {
-        font-size: 27px;
+        font-size: 25px;
         line-height: 1.3;
-        max-width: 950px;
+        max-width: 9px;
     }
 
     .projeto-floor__info-title {

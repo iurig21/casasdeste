@@ -1238,7 +1238,11 @@ main {
     }
 
     .home-exterior__gallery {
-        grid-template-rows: clamp(280px, 17.5vw, 400px) clamp(170px, 10.5vw, 240px);
+        grid-template-rows: clamp(280px, 17.5vw, 400px) clamp(
+                170px,
+                10.5vw,
+                240px
+            );
         gap: 18px;
     }
 
@@ -1595,7 +1599,11 @@ main {
     }
 
     .home-exterior__gallery {
-        grid-template-rows: clamp(340px, 17.5vw, 453px) clamp(200px, 10.5vw, 267px);
+        grid-template-rows: clamp(340px, 17.5vw, 453px) clamp(
+                200px,
+                10.5vw,
+                267px
+            );
         gap: 21px;
     }
 
@@ -1735,7 +1743,6 @@ main {
     #brochureModal .modal-box #emailError {
         font-size: 1.15rem !important;
     }
-
 }
 
 /* ── Large screen breakpoints (4K / UHD — ~2× from 1920) ──── */
@@ -1898,7 +1905,11 @@ main {
     }
 
     .home-exterior__gallery {
-        grid-template-rows: clamp(453px, 17.5vw, 680px) clamp(267px, 10.5vw, 400px);
+        grid-template-rows: clamp(453px, 17.5vw, 680px) clamp(
+                267px,
+                10.5vw,
+                400px
+            );
         gap: 32px;
     }
 
@@ -2038,7 +2049,6 @@ main {
     #brochureModal .modal-box #emailError {
         font-size: 1.8rem !important;
     }
-
 }
 
 .acabamentos-page {
@@ -2153,32 +2163,60 @@ main {
 .acabamentos-details {
     margin-top: 50px;
     margin-bottom: 4rem;
+    --acabamentos-details-block-gap: 4rem;
+    --acabamentos-details-image-gap: 1.25rem;
 }
 
 .acabamentos-details__row {
     display: grid;
-    grid-template-columns: minmax(300px, 570px) minmax(0, 1fr);
+    grid-template-columns: minmax(280px, 540px) minmax(0, 1fr);
     gap: 0;
     align-items: stretch;
 }
 
-.acabamentos-details__row + .acabamentos-details__row {
-    margin-top: 40px;
+.acabamentos-details__images {
+    display: flex;
+    flex-direction: column;
+    gap: var(--acabamentos-details-image-gap);
+    align-self: start;
 }
 
 .acabamentos-details__image img {
     display: block;
     width: 100%;
     height: 100%;
-    min-height: 320px;
+    min-height: 200px;
     object-fit: cover;
 }
 
 .acabamentos-details__content {
-    padding: 30px max(14px, calc((100vw - 1350px) / 2 + 14px)) 30px 60px;
+    box-sizing: border-box;
+    padding-inline: max(14px, calc((100vw - 1350px) / 2 + 14px - 1.25rem));
+    padding-block: 0;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    justify-content: center;
+    align-items: stretch;
+    min-height: 100%;
+    text-align: left;
+}
+
+.acabamentos-details__content-inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--acabamentos-details-block-gap);
+    width: 100%;
+}
+
+.acabamentos-details__content .acabamentos-spec {
+    width: 100%;
+    max-width: 100%;
+    padding-block: 0.2rem;
+}
+
+.acabamentos-details__content .acabamentos-spec ul,
+.acabamentos-details__content .acabamentos-spec > p {
+    line-height: 1.45;
 }
 
 @media (max-width: 1440px) {
@@ -2232,16 +2270,19 @@ main {
     }
 
     .acabamentos-details__image img {
-        min-height: 220px;
-        max-height: 340px;
+        min-height: 200px;
+        max-height: 300px;
+    }
+
+    .acabamentos-details {
+        --acabamentos-details-block-gap: 1.25rem;
+        --acabamentos-details-image-gap: 1rem;
     }
 
     .acabamentos-details__content {
-        padding: 17px 14px;
-    }
-
-    .acabamentos-details__row + .acabamentos-details__row {
-        margin-top: 25px;
+        justify-content: flex-start;
+        min-height: 0;
+        padding: 14px 14px;
     }
 }
 
@@ -2278,16 +2319,39 @@ main {
 
     .acabamentos-details {
         margin-top: 28px;
+        --acabamentos-details-block-gap: 1rem;
+        --acabamentos-details-image-gap: 0.875rem;
     }
 
     .acabamentos-details__image img {
-        min-height: 170px;
-        max-height: 250px;
+        min-height: 150px;
+        max-height: 220px;
     }
 
     .acabamentos-details__content {
-        padding: 12px 14px;
-        gap: 17px;
+        justify-content: flex-start;
+        min-height: 0;
+        padding: 10px 14px;
+    }
+}
+
+@media (min-width: 1800px) and (max-width: 2199px) {
+    .acabamentos-specs {
+        grid-template-columns: 1fr 54.5rem;
+    }
+
+    .acabamentos-specs__right img {
+        width: 100%;
+        max-width: 54.5rem;
+    }
+
+    .acabamentos-details__row {
+        grid-template-columns: 54.5rem minmax(0, 1fr);
+    }
+
+    .acabamentos-details__image img {
+        width: 100%;
+        max-width: 54.5rem;
     }
 }
 
@@ -2349,23 +2413,21 @@ main {
     .acabamentos-details {
         margin-top: 67px;
         margin-bottom: 5rem;
+        --acabamentos-details-block-gap: 1.75rem;
+        --acabamentos-details-image-gap: 1.25rem;
     }
 
     .acabamentos-details__row {
         grid-template-columns: minmax(500px, 850px) minmax(0, 1fr);
     }
 
-    .acabamentos-details__row + .acabamentos-details__row {
-        margin-top: 53px;
-    }
-
     .acabamentos-details__image img {
-        min-height: 425px;
+        min-height: 260px;
     }
 
     .acabamentos-details__content {
-        padding: 40px max(14px, calc((100vw - 1795px) / 2 + 14px)) 40px 80px;
-        gap: 40px;
+        padding-inline: max(14px, calc((100vw - 1795px) / 2 + 14px - 1.5rem));
+        padding-block: 0;
     }
 }
 
@@ -2427,23 +2489,21 @@ main {
     .acabamentos-details {
         margin-top: 100px;
         margin-bottom: 8rem;
+        --acabamentos-details-block-gap: 2.25rem;
+        --acabamentos-details-image-gap: 1.5rem;
     }
 
     .acabamentos-details__row {
         grid-template-columns: minmax(750px, 1280px) minmax(0, 1fr);
     }
 
-    .acabamentos-details__row + .acabamentos-details__row {
-        margin-top: 80px;
-    }
-
     .acabamentos-details__image img {
-        min-height: 640px;
+        min-height: 400px;
     }
 
     .acabamentos-details__content {
-        padding: 60px max(14px, calc((100vw - 2700px) / 2 + 14px)) 60px 120px;
-        gap: 60px;
+        padding-inline: max(14px, calc((100vw - 2700px) / 2 + 14px - 2rem));
+        padding-block: 0;
     }
 }
 
@@ -2856,6 +2916,28 @@ main {
 }
 
 @media (min-width: 1800px) and (max-width: 2199px) {
+    .projeto-intro__text {
+        font-size: 26px;
+        line-height: 1.3;
+        max-width: 950px;
+    }
+
+    .projeto-floor__info-title {
+        font-size: 26px;
+        font-weight: 700;
+    }
+
+    .projeto-floor__info-subtitle {
+        font-size: 26px;
+        margin: 6px 0 0;
+    }
+
+    .projeto-floor__info-list {
+        font-size: 26px;
+        margin: 18px 0 0;
+        line-height: 1.45;
+    }
+
     .projeto-construcao {
         margin-top: 58px;
         padding: 90px 10% 90px 10%;

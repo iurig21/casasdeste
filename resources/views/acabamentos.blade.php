@@ -62,65 +62,61 @@
 
         <section class="acabamentos-details lazy-section">
             <div class="acabamentos-details__row">
-                <div class="acabamentos-details__image max-[860px]:w-full max-[860px]:px-[14px]">
-                    <img src="{{ asset('imagens/interna1.webp') }}" alt="Cozinha" class="block w-full" loading="lazy">
+                <div class="acabamentos-details__images max-[860px]:w-full max-[860px]:px-[14px]">
+                    <div class="acabamentos-details__image">
+                        <img src="{{ asset('imagens/interna1.webp') }}" alt="Cozinha" class="block w-full" loading="lazy">
+                    </div>
+                    <div class="acabamentos-details__image">
+                        <img src="{{ asset('imagens/acabamentos-quarto.webp') }}" alt="Caixilharia e exterior" class="block w-full" loading="lazy">
+                    </div>
+                    <div class="acabamentos-details__image">
+                        <img src="{{ asset('imagens/acabamentos-wc.webp') }}" alt="Instalações sanitárias" class="block w-full" loading="lazy">
+                    </div>
                 </div>
                 <div class="acabamentos-details__content">
-                    <article class="acabamentos-spec">
-                        <h2 class="lazy-text lazy-text--right">Cozinha</h2>
-                        <ul class="lazy-text lazy-text--right" data-delay="100">
-                            <li>Mobiliário em MDF hidrófugo lacado (cor à escolha)</li>
-                            <li>Ilha central lacada</li>
-                            <li>Sistema de gavetas com fecho suave (slow-motion)</li>
-                            <li>Tampo e contra-tampo até 400€/m²</li>
-                            <li>Revestimento cerâmico retificado 45x90 cm</li>
-                            <li>Lava-loiça e torneira incluídos</li>
-                        </ul>
-                    </article>
+                    <div class="acabamentos-details__content-inner">
+                        <article class="acabamentos-spec">
+                            <h2 class="lazy-text lazy-text--right">Cozinha</h2>
+                            <ul class="lazy-text lazy-text--right" data-delay="100">
+                                <li>Mobiliário em MDF hidrófugo lacado (cor à escolha)</li>
+                                <li>Ilha central lacada</li>
+                                <li>Sistema de gavetas com fecho suave (slow-motion)</li>
+                                <li>Tampo e contra-tampo até 400€/m²</li>
+                                <li>Revestimento cerâmico retificado 45x90 cm</li>
+                                <li>Lava-loiça e torneira incluídos</li>
+                            </ul>
+                        </article>
 
-                    <article class="acabamentos-spec">
-                        <h2 class="lazy-text lazy-text--right" data-delay="160">Caixilharia e Exterior</h2>
-                        <ul class="lazy-text lazy-text--right" data-delay="240">
-                            <li>Alumínio com rutura térmica, preto mate</li>
-                            <li>Vidro duplo GuardianSun</li>
-                            <li>Estores elétricos com isolamento térmico</li>
-                            <li>Guardas em vidro</li>
-                            <li>Portão seccionado automático</li>
-                        </ul>
-                    </article>
-                </div>
-            </div>
+                        <article class="acabamentos-spec">
+                            <h2 class="lazy-text lazy-text--right" data-delay="80">Caixilharia e Exterior</h2>
+                            <ul class="lazy-text lazy-text--right" data-delay="140">
+                                <li>Alumínio com rutura térmica, preto mate</li>
+                                <li>Vidro duplo GuardianSun</li>
+                                <li>Estores elétricos com isolamento térmico</li>
+                                <li>Guardas em vidro</li>
+                                <li>Portão seccionado automático</li>
+                            </ul>
+                        </article>
 
-            <div class="acabamentos-details__row">
-                <div class="acabamentos-details__image max-[860px]:w-full max-[860px]:px-[14px]">
-                    <img src="{{ asset('imagens/acabamentos-quarto.webp') }}" alt="Quarto" class="block w-full" loading="lazy">
-                </div>
-                <div class="acabamentos-details__content">
-                    <article class="acabamentos-spec">
-                        <h2 class="lazy-text lazy-text--right">Instalações Sanitárias</h2>
-                        <ul class="lazy-text lazy-text--right" data-delay="100">
-                            <li>Louças suspensas com sistema kombifix slim</li>
-                            <li>Sanitas com tampo soft close</li>
-                            <li>Torneiras mono comando (acabamento preto)</li>
-                            <li>Bases de duche modernas</li>
-                            <li>Pios ovais até 140€</li>
-                            <li>Placas de descarga em preto mate</li>
-                        </ul>
-                    </article>
-                </div>
-            </div>
+                        <article class="acabamentos-spec">
+                            <h2 class="lazy-text lazy-text--right" data-delay="80">Instalações Sanitárias</h2>
+                            <ul class="lazy-text lazy-text--right" data-delay="140">
+                                <li>Louças suspensas com sistema kombifix slim</li>
+                                <li>Sanitas com tampo soft close</li>
+                                <li>Torneiras mono comando (acabamento preto)</li>
+                                <li>Bases de duche modernas</li>
+                                <li>Pios ovais até 140€</li>
+                                <li>Placas de descarga em preto mate</li>
+                            </ul>
+                        </article>
 
-            <div class="acabamentos-details__row">
-                <div class="acabamentos-details__image max-[860px]:w-full max-[860px]:px-[14px]">
-                    <img src="{{ asset('imagens/acabamentos-wc.webp') }}" alt="Instalações sanitárias" class="block w-full" loading="lazy">
-                </div>
-                <div class="acabamentos-details__content">
-                    <article class="acabamentos-spec">
-                        <h2 class="lazy-text lazy-text--right">Personalização</h2>
-                        <p class="lazy-text lazy-text--right" data-delay="100">
-                            Os acabamentos seguem as imagens 3D do projeto, permitindo ao cliente selecionar cores e pequenos ajustes dentro dos parâmetros definidos, garantindo uma casa personalizada sem comprometer qualidade e coerência arquitetónica.
-                        </p>
-                    </article>
+                        <article class="acabamentos-spec">
+                            <h2 class="lazy-text lazy-text--right" data-delay="80">Personalização</h2>
+                            <p class="lazy-text lazy-text--right" data-delay="140">
+                                Os acabamentos seguem as imagens 3D do projeto, permitindo ao cliente selecionar cores e pequenos ajustes dentro dos parâmetros definidos, garantindo uma casa personalizada sem comprometer qualidade e coerência arquitetónica.
+                            </p>
+                        </article>
+                    </div>
                 </div>
             </div>
         </section>

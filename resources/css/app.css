@@ -1403,47 +1403,47 @@ main {
     }
 
     #brochureModal .modal-box {
-        max-width: 37rem !important;
-        padding: 3.5rem !important;
-        border-radius: 16px !important;
+        max-width: 44rem !important;
+        padding: 4.25rem !important;
+        border-radius: 20px !important;
     }
 
     #brochureModal .modal-box h3 {
-        font-size: 1.55rem !important;
-        margin-bottom: 2rem !important;
+        font-size: 1.875rem !important;
+        margin-bottom: 2.5rem !important;
     }
 
     #brochureModal .modal-box label {
-        font-size: 1.05rem !important;
-        margin-bottom: 0.35rem !important;
+        font-size: 1.2rem !important;
+        margin-bottom: 0.45rem !important;
     }
 
     #brochureModal .modal-box input {
-        padding: 0.8rem 1rem !important;
-        font-size: 1.05rem !important;
-        border-radius: 9px !important;
+        padding: 1rem 1.2rem !important;
+        font-size: 1.2rem !important;
+        border-radius: 11px !important;
     }
 
     #brochureModal .modal-box form {
-        gap: 1.25rem !important;
+        gap: 1.5rem !important;
     }
 
     #brochureModal .modal-box button[type="submit"] {
-        padding: 1rem !important;
-        font-size: 1.15rem !important;
-        border-radius: 9px !important;
+        padding: 1.25rem !important;
+        font-size: 1.35rem !important;
+        border-radius: 11px !important;
     }
 
     #brochureModal .modal-box .btn-circle {
-        width: 2.125rem;
-        height: 2.125rem;
-        font-size: 1.05rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.2rem;
     }
 
     #brochureModal .modal-box span[data-server-error],
     #brochureModal .modal-box #telefoneError,
     #brochureModal .modal-box #emailError {
-        font-size: 0.95rem !important;
+        font-size: 1.1rem !important;
     }
 }
 
@@ -2459,11 +2459,11 @@ main {
     }
 
     .acabamentos-intro__heading h1 {
-        font-size: 56px;
+        font-size: 64px;
     }
 
     .acabamentos-intro__text {
-        font-size: 24px;
+        font-size: 28px;
         line-height: 1.25;
         max-width: 1000px;
         padding-top: 13px;
@@ -2485,7 +2485,7 @@ main {
     }
 
     .acabamentos-spec h2 {
-        font-size: 56px;
+        font-size: 64px;
     }
 
     .acabamentos-spec ul {
@@ -2494,7 +2494,7 @@ main {
 
     .acabamentos-spec ul,
     .acabamentos-spec > p {
-        font-size: 22px;
+        font-size: 26px;
         line-height: 1.45;
     }
 

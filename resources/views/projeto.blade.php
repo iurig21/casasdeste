@@ -119,7 +119,7 @@
 
                     <article class="projeto-construcao__item">
                         <h3 class="lazy-text lazy-text--right" data-delay="200">Garantia e Rigor</h3>
-                        <p class="lazy-text lazy-text--right" data-delay="260">
+                        <p id="size" class="lazy-text lazy-text--right" data-delay="260">
                             Todos os materiais são certificados e aplicados conforme as
                             recomendações do fabricante, com garantia legal de 5 anos,
                             assegurando qualidade e segurança ao proprietário.

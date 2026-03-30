@@ -1085,64 +1085,64 @@ main {
 
 @media (min-width: 1800px) and (max-width: 2199px) {
     header {
-        height: 90px;
+        height: 105px;
     }
 
     .site-nav {
-        padding: 21px 3rem 15px;
+        padding: 25px 3.4rem 18px;
     }
 
     .site-nav::after {
-        border-bottom-width: 2.5px;
+        border-bottom-width: 3px;
     }
 
     .site-nav__container {
-        max-width: 1600px;
-        padding: 0 22px;
-        gap: 28px;
+        max-width: 1750px;
+        padding: 0 25px;
+        gap: 33px;
     }
 
     .site-nav__brand {
-        gap: 8px;
+        gap: 10px;
     }
 
     .site-nav__brand-symbol {
-        width: 142px;
-        height: 55px;
+        width: 163px;
+        height: 63px;
     }
 
     .site-nav__brand-text {
-        width: 150px;
-        height: 14px;
+        width: 172px;
+        height: 16px;
     }
 
     .site-nav__links {
-        gap: 38px;
+        gap: 44px;
     }
 
     .site-nav__links a {
-        font-size: 15.5px;
+        font-size: 18px;
     }
 
     .site-nav__links a::after {
-        bottom: -5px;
-        border-bottom-width: 2.5px;
+        bottom: -5.5px;
+        border-bottom-width: 3px;
     }
 
     .site-nav__actions {
-        gap: 28px;
+        gap: 33px;
     }
 
     .site-nav__brochure {
-        width: 180px;
-        min-height: 56px;
-        font-size: 15px;
-        border-radius: 10px;
-        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25);
+        width: 210px;
+        min-height: 65px;
+        font-size: 17.5px;
+        border-radius: 11.5px;
+        box-shadow: 0 5.5px 5.5px rgba(0, 0, 0, 0.25);
     }
 
     .site-nav__brochure span + span {
-        margin-top: 5px;
+        margin-top: 5.5px;
     }
 
     .home-hero {
@@ -1387,35 +1387,6 @@ main {
     .projeto-floor__info-list {
         font-size: 27px;
         margin: 18px 0 0;
-        line-height: 1.45;
-    }
-
-    .projeto-construcao {
-        margin-top: 58px;
-        padding: 58px clamp(14px, 2.5vw, 145px) clamp(32px, 3.5vw, 100px);
-        padding-top: clamp(95px, 8.5vw, 170px);
-    }
-
-    .projeto-construcao__title {
-        font-size: 78px;
-        margin: 0 0 42px;
-    }
-
-    .projeto-construcao__grid {
-        gap: 38px 86px;
-    }
-
-    .projeto-construcao__item h3 {
-        font-size: 42px;
-    }
-
-    .projeto-construcao__item-list {
-        margin: 12px 0 0;
-    }
-
-    .projeto-construcao__item-list,
-    .projeto-construcao__item p {
-        font-size: 25px;
         line-height: 1.45;
     }
 
@@ -2675,6 +2646,7 @@ main {
     margin: 0 0 clamp(17px, 2.1vw, 38px);
     font-family: "Ubuntu", sans-serif;
     font-weight: 500;
+    font-style: italic;
     font-size: clamp(29px, 3.8vw, 65px);
     line-height: 1;
     color: #fff;
@@ -2883,6 +2855,47 @@ main {
     }
 }
 
+@media (min-width: 1800px) and (max-width: 2199px) {
+    .projeto-construcao {
+        margin-top: 58px;
+        padding: 90px 10% 90px 10%;
+        padding-top: 170px;
+    }
+
+    .projeto-construcao__title {
+        font-size: 81px;
+        max-width: 1300px;
+        margin: 0 auto 65px;
+    }
+
+    .projeto-construcao__grid {
+        max-width: 1300px;
+        margin: 0 auto;
+        gap: 50px 116px;
+    }
+
+    #size {
+        font-size: 26px;
+        max-width: 620px;
+    }
+
+    .projeto-construcao__item h3 {
+        font-size: 46px;
+    }
+
+    .projeto-construcao__item-list {
+        margin: 12px 0 0;
+        font-size: 26px;
+        line-height: 36px;
+    }
+
+    .projeto-construcao__item p {
+        max-width: 520px;
+        font-size: 20px;
+        line-height: 29px;
+    }
+}
+
 @media (min-width: 2200px) {
     .projeto-page {
         max-width: 1915px;
@@ -2957,31 +2970,38 @@ main {
 
     .projeto-construcao {
         margin-top: 67px;
-        padding: 67px clamp(14px, 2.5vw, 169px) clamp(37px, 3.5vw, 120px);
-        padding-top: clamp(107px, 8.5vw, 200px);
+        padding: 100px 10% 110px 10%;
+        padding-top: 200px;
     }
 
     .projeto-construcao__title {
-        font-size: 92px;
-        margin: 0 0 48px;
+        font-size: 110px;
+        max-width: 1600px;
+        margin: 0 auto 75px;
     }
 
     .projeto-construcao__grid {
-        gap: 40px 100px;
+        max-width: 1600px;
+        margin: 0 auto;
+        gap: 60px 140px;
     }
 
     .projeto-construcao__item h3 {
-        font-size: 50px;
+        font-size: 64px;
     }
 
     .projeto-construcao__item-list {
-        margin: 13px 0 0;
+        margin: 14px 0 0;
     }
 
     .projeto-construcao__item-list,
     .projeto-construcao__item p {
-        font-size: 28px;
-        line-height: 1.45;
+        font-size: 34px;
+        line-height: 46px;
+    }
+
+    .projeto-construcao__item p {
+        max-width: 620px;
     }
 }
 

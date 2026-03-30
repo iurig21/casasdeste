@@ -256,7 +256,7 @@ main {
 }
 
 .home-exterior__details article + article {
-    margin-top: 26px;
+    margin-top: 42px;
 }
 
 .home-exterior__details h3 {
@@ -1246,15 +1246,16 @@ main {
     }
 
     .home-exterior__details article + article {
-        margin-top: 35px;
+        margin-top: 64px;
     }
 
     .home-exterior__details h3 {
-        font-size: 40px;
+        font-size: 46px;
     }
 
     .home-exterior__details p {
-        font-size: 20px;
+        font-size: 23px;
+        line-height: 1.4;
     }
 
     .site-contact {
@@ -1548,15 +1549,16 @@ main {
     }
 
     .home-exterior__details article + article {
-        margin-top: 52px;
+        margin-top: 68px;
     }
 
     .home-exterior__details h3 {
-        font-size: 60px;
+        font-size: 70px;
     }
 
     .home-exterior__details p {
-        font-size: 30px;
+        font-size: 34px;
+        line-height: 1.4;
     }
 
     .site-contact {
@@ -2236,17 +2238,21 @@ main {
 }
 
 .projeto-floor--right {
-    padding-left: 5%;
+    max-width: none;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    padding-left: 11%;
 }
 
 .projeto-floor--right .projeto-floor__title {
     text-align: left;
-    padding-left: 10%;
+    padding-left: 18%;
 }
 
 .projeto-floor--right .projeto-floor__image {
     order: 0;
     margin-left: 0;
+    width: clamp(283px, 47vw, 907px);
 }
 
 .projeto-floor--right .projeto-floor__info {
@@ -2411,6 +2417,8 @@ main {
 
     .projeto-floor--right {
         padding-left: 0;
+        width: 100%;
+        margin-left: 0;
     }
 
     .projeto-floor--right .projeto-floor__body {
@@ -2420,6 +2428,7 @@ main {
     .projeto-floor--right .projeto-floor__image {
         order: 0;
         margin-left: 0;
+        width: 100%;
     }
 
     .projeto-floor--right .projeto-floor__info {
@@ -2523,6 +2532,7 @@ main {
     }
 
     .projeto-floor--left,
+    .projeto-floor--right,
     .projeto-floor--left-offset {
         max-width: none;
         width: 100vw;
@@ -2536,6 +2546,10 @@ main {
 
     .projeto-floor__image {
         width: clamp(380px, 47%, 1200px);
+    }
+
+    .projeto-floor--right .projeto-floor__image {
+        width: clamp(380px, 47vw, 1200px);
     }
 
     .projeto-floor__info {
@@ -2617,6 +2631,7 @@ main {
     }
 
     .projeto-floor--left,
+    .projeto-floor--right,
     .projeto-floor--left-offset {
         max-width: none;
         width: 100vw;
@@ -2630,6 +2645,10 @@ main {
 
     .projeto-floor__image {
         width: clamp(560px, 47%, 1810px);
+    }
+
+    .projeto-floor--right .projeto-floor__image {
+        width: clamp(560px, 47vw, 1810px);
     }
 
     .projeto-floor__info {

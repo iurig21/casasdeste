@@ -1,59 +1,222 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Casas D'Este
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A modern website to promote the work of the house construction company, Casas D'Este, based in Braga, Portugal.
 
-## About Laravel
+This project is built with [Laravel](https://laravel.com/) and leverages Blade templating, PHP back-end logic, custom CSS, and JavaScript. It features a responsive website for clients and a secure backoffice (admin panel) for managing contact leads.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Table of Contents
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- [About](#about)
+- [Features](#features)
+- [Backoffice (Admin Panel)](#backoffice-admin-panel)
+- [Screenshots](#screenshots)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Project Structure](#project-structure)
+- [Environment Variables](#environment-variables)
+- [Deployment](#deployment)
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## About
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+**Casas D'Este** showcases the experience and portfolio of a residential construction company from Braga. The platform provides potential clients with detailed information about construction services, highlights completed projects, and serves as a direct channel for contact and inquiries.
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Features
 
-### Premium Partners
+- **Modern Responsive Design:** Adapts seamlessly to desktop and mobile screens.
+- **Portfolio Display:** Showcases houses and projects with galleries and details.
+- **Company Showcase:** Dedicated pages for services, values, and team introduction.
+- **Contact Form:** Lets visitors reach out for custom project quotes or information.
+- **Brochure Download:** Visitors can request brochures and submit their contact data.
+- **SEO-Friendly:** Uses semantic markup and meta data for discoverability.
+- **Easy Content Management:** Built with organized Blade templates for maintainability and quick editing.
+- **Admin Backoffice:** Secure management of lead data (see below).
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+---
 
-## Contributing
+## Backoffice (Admin Panel)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Casas D'Este includes a secure, custom-built backoffice for administrators:
 
-## Code of Conduct
+- **Access:**  
+  - `/admin` endpoint for login (credentials from `.env`: `ADMIN_USERNAME` / `ADMIN_PASSWORD`).
+  - Admin-protected routes using session authentication and custom middleware.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- **Features:**  
+  - **Dashboard:** Displays and manages brochure download requests/leads with search and pagination.
+  - **Record Search:** Filter leads by name, email, or phone.
+  - **Delete Records:** Remove submissions with confirmation modal.
+  - **Logout:** Securely terminate the admin session.
 
-## Security Vulnerabilities
+- **Security:**  
+  - Middleware restricts protected routes to logged-in admins.
+  - Credentials are stored in environment variables via `config/admin.php`.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- **Styling:**  
+  - Modern UI built with custom CSS and Blade templates for clarity and usability.
+  - Responsive and accessible for use across devices.
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Screenshots
+
+<!-- Add actual screenshots in the `public/screenshots/` folder and update paths below -->
+![Homepage](public/screenshots/homepage.png)
+![Portfolio](public/screenshots/portfolio.png)
+![Contact Form](public/screenshots/contact.png)
+![Admin Dashboard](public/screenshots/admin_dashboard.png)
+![Admin Login](public/screenshots/admin_login.png)
+
+---
+
+## Tech Stack
+
+- **Framework:** [Laravel](https://laravel.com/) (PHP)
+- **Templating:** Blade
+- **Styling:** CSS,Tailwind
+- **Database:** MySQL
+- **Build Tools:** Composer, npm
+
+---
+
+## Getting Started
+
+**To get a local copy up and running:**
+
+### 1. Prerequisites
+
+- PHP 8.0 or higher
+- Composer
+- Node.js and npm
+- A database (MySQL, MariaDB, SQLite, etc.)
+
+### 2. Installation
+
+Clone the repository:
+```sh
+git clone https://github.com/iurig21/casasdeste.git
+cd casasdeste
+```
+
+Install PHP dependencies:
+```sh
+composer install
+```
+
+Install JavaScript dependencies and compile assets:
+```sh
+npm install
+npm run dev   # For development
+# or
+npm run build # For production
+```
+
+### 3. Configure Environment
+
+Copy `.env.example` to `.env`:
+```sh
+cp .env.example .env
+```
+
+Set your environment variables in `.env` (see [Environment Variables](#environment-variables) below). Set your database, mail, application URL, and admin credentials as needed:
+
+```env
+ADMIN_USERNAME=your_admin_username
+ADMIN_PASSWORD=your_secure_password
+```
+
+Generate Laravel application key:
+```sh
+php artisan key:generate
+```
+
+### 4. Run Migrations (if applicable)
+
+If your site uses a database:
+```sh
+php artisan migrate
+```
+
+### 5. Serve the Application
+
+```sh
+php artisan serve
+```
+Visit [http://localhost:8000](http://localhost:8000).
+
+---
+
+## Project Structure
+
+```
+casasdeste/
+├── app/                # Laravel backend logic
+├── bootstrap/
+├── config/             # Configuration files (see config/admin.php for admin credentials)
+├── database/
+├── public/             # Public assets (index.php, images, CSS, etc.)
+├── resources/
+│   ├── views/          # Blade templates
+│   └── css/js          # Source styles/scripts (optionally)
+├── routes/             # Route definitions (web.php)
+├── storage/
+├── tests/
+└── ...
+```
+
+---
+
+## Environment Variables
+
+Key variables to set in `.env`:
+
+```env
+APP_NAME=CasasDEste
+APP_ENV=local
+APP_KEY=base64:...
+APP_URL=http://localhost
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=casasdeste
+DB_USERNAME=your_db_user
+DB_PASSWORD=your_db_password
+
+ADMIN_USERNAME=your_admin_username
+ADMIN_PASSWORD=your_secure_password
+
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.example.com
+MAIL_PORT=587
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS=info@casasdeste.pt
+MAIL_FROM_NAME="Casas D'Este"
+```
+
+Refer to Laravel’s [environment configuration documentation](https://laravel.com/docs/master/configuration) for more info.
+
+---
+
+## Deployment
+
+- For production, ensure you:
+    - Run `php artisan config:cache` and `php artisan route:cache`
+    - Use `npm run build` for minified frontend assets
+    - Point your web server (e.g., Nginx, Apache) to the `public/` directory
+    - Set file/folder permissions as per Laravel's [deployment guide](https://laravel.com/docs/master/deployment)
+    - Configure production-ready admin credentials and environment variables
+
+
+Questions, suggestions, or need a quote? Reach out!
+
+---
+
+_Maintained by [@iurig21](https://github.com/iurig21)_

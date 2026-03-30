@@ -1,6 +1,6 @@
 import "./bootstrap";
 import "./lazy-load";
-import {isEmail} from "validator";
+import { isEmail } from "validator";
 
 document.addEventListener("DOMContentLoaded", () => {
     const toggle = document.querySelector("[data-nav-toggle]");

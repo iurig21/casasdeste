@@ -45,7 +45,7 @@
                     </span>
                 </button>
             </form>
-            <a href="{{ route('home') }}" class="admin-btn admin-btn--block admin-login__back">← Voltar ao site</a>
+            <a href="{{ route('home') }}" class="admin-btn admin-btn--block admin-login__back">←  Ir para o site</a>
         </div>
     </div>
 

@@ -22,8 +22,8 @@ class AdminController extends Controller
             'username' => 'required|string',
             'password' => 'required',
         ],[
-            'username.required' => 'O username é obrigatório',
-            'password.required' => 'A password é obrigatória'
+            'username.required' => 'O username é obrigatório.',
+            'password.required' => 'A password é obrigatória.'
         ]);
 
         if ($request->username === config('admin.username') && $request->password === config('admin.password')) {

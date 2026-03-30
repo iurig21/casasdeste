@@ -673,7 +673,8 @@ main {
     height: 100%;
 }
 
-@media (max-width: 1440px) {
+/* ≤1535px: laptop / small desktop (incl. 1366×768–1535×864). Avoids layout jump at 1440px vs base. */
+@media (max-width: 1535px) {
     .home-hero__overlay {
         left: 0;
         width: min(44%, 620px);
@@ -760,6 +761,152 @@ main {
 
     .site-footer__details p {
         font-size: 12px;
+    }
+}
+
+/* 1181–1535px: laptop / small desktop — overlay, contact, footer, inner pages */
+@media (min-width: 1181px) and (max-width: 1536px) {
+    .home-hero {
+        min-height: clamp(280px, 28vw, 520px);
+    }
+
+    .home-hero__image {
+        height: clamp(280px, 28vw, 520px);
+    }
+
+    .home-hero__overlay {
+        width: min(46%, 660px);
+    }
+
+    .home-hero__overlay-text {
+        top: 57%;
+        left: 30%;
+        width: 63%;
+    }
+
+    .home-hero__overlay h1 {
+        font-size: clamp(23px, 2.55vw, 35px);
+    }
+
+    .home-hero__subtitle {
+        font-size: clamp(14px, 1.6vw, 22px);
+        max-width: 34ch;
+    }
+
+    .home-hero__description {
+        font-size: clamp(12px, 1.15vw, 15px);
+        max-width: 52ch;
+        line-height: 1.42;
+    }
+
+    .site-contact__container {
+        max-width: min(1280px, calc(100vw - 40px));
+        padding: 46px clamp(16px, 2.2vw, 24px) 0;
+        gap: clamp(26px, 3vw, 38px);
+    }
+
+    .site-contact h2 {
+        font-size: clamp(27px, 2.35vw, 33px);
+        margin: 0;
+        margin-left: clamp(28px, 4.5vw, 72px);
+        padding-left: 0;
+        align-self: center;
+    }
+
+    .site-contact__row {
+        gap: clamp(14px, 1.6vw, 22px);
+    }
+
+    .site-footer__bottom {
+        min-height: 142px;
+    }
+
+    .site-footer__bottom-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        width: min(100%, calc(100vw - 32px));
+        max-width: 1320px;
+        min-height: 142px;
+        padding: 0 clamp(16px, 2.2vw, 28px);
+        gap: clamp(20px, 2.8vw, 36px);
+        row-gap: 0.75rem;
+    }
+
+    .site-footer__evobuild {
+        flex: 0 0 auto;
+    }
+
+    .site-footer__details {
+        flex: 0 1 auto;
+        text-align: center;
+        min-width: 0;
+        max-width: min(100%, 38rem);
+    }
+
+    .site-footer__social {
+        display: flex;
+        flex: 0 0 auto;
+        align-items: center;
+        gap: clamp(12px, 1.4vw, 18px);
+    }
+
+    .site-footer__details p {
+        font-size: clamp(11px, 0.92vw, 13px);
+        line-height: 1.38;
+    }
+
+    .site-footer__evobuild svg {
+        width: clamp(138px, 10.5vw, 168px);
+    }
+
+    .site-footer__social a {
+        width: clamp(28px, 2.1vw, 34px);
+        height: clamp(28px, 2.1vw, 34px);
+    }
+
+    .home-highlights {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: clamp(16px, 2.2vw, 28px);
+    }
+
+    .home-highlight {
+        width: 100%;
+        max-width: 228px;
+        justify-self: center;
+    }
+
+    .acabamentos-hero {
+        height: clamp(200px, 20vw, 310px);
+    }
+
+    .acabamentos-intro {
+        padding-left: clamp(14px, 2.8vw, 28px);
+        padding-right: clamp(14px, 2.8vw, 28px);
+        gap: clamp(28px, 3.2vw, 44px);
+    }
+
+    .acabamentos-specs__left {
+        padding-left: max(14px, calc((100vw - 1280px) / 2 + 14px));
+    }
+
+    .acabamentos-details__content {
+        padding-inline: max(
+            14px,
+            calc((100vw - 1280px) / 2 + 14px - 1.25rem)
+        );
+    }
+
+    .projeto-hero {
+        height: clamp(230px, 17.5vw, 320px);
+    }
+
+    .projeto-intro {
+        padding-left: clamp(14px, 2.8vw, 28px);
+        padding-right: clamp(14px, 2.8vw, 28px);
     }
 }
 
@@ -1276,21 +1423,24 @@ main {
         row-gap: 1.25rem;
     }
 
-    .home-exterior__gallery.home-exterior__gallery--desktop .home-exterior__main {
+    .home-exterior__gallery.home-exterior__gallery--desktop
+        .home-exterior__main {
         width: 39.875rem !important;
         height: 41.6875rem !important;
         max-width: none;
         aspect-ratio: 22 / 23;
     }
 
-    .home-exterior__gallery.home-exterior__gallery--desktop .home-exterior__thumb--square {
+    .home-exterior__gallery.home-exterior__gallery--desktop
+        .home-exterior__thumb--square {
         width: 25.3125rem !important;
         height: 25.3125rem !important;
         max-width: none;
         aspect-ratio: 1 / 1;
     }
 
-    .home-exterior__gallery.home-exterior__gallery--desktop .home-exterior__thumb--wide {
+    .home-exterior__gallery.home-exterior__gallery--desktop
+        .home-exterior__thumb--wide {
         width: 25.3125rem !important;
         height: 15.125rem !important;
         max-width: none;
@@ -2283,7 +2433,7 @@ main {
     line-height: 1.45;
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1535px) {
     .acabamentos-intro {
         gap: 33px;
         padding-top: 33px;
@@ -2295,6 +2445,25 @@ main {
 
     .acabamentos-spec h2 {
         font-size: clamp(23px, 2.3vw, 42px);
+    }
+}
+
+@media (min-width: 1181px) and (max-width: 1535px) {
+    .acabamentos-intro__heading h1 {
+        font-size: clamp(29px, 2.6vw, 52px);
+    }
+
+    .acabamentos-intro__text {
+        font-size: clamp(16px, 1.3vw, 26px);
+    }
+
+    .acabamentos-spec h2 {
+        font-size: clamp(29px, 2.6vw, 52px);
+    }
+
+    .acabamentos-spec ul,
+    .acabamentos-spec > p {
+        font-size: clamp(16px, 1.3vw, 26px);
     }
 }
 
@@ -2888,7 +3057,7 @@ main {
     background: #c4aa85;
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1535px) {
     .projeto-intro {
         gap: 25px;
         padding-top: 33px;
@@ -2908,6 +3077,74 @@ main {
 
     .projeto-construcao__item h3 {
         font-size: clamp(17px, 1.8vw, 29px);
+    }
+}
+
+@media (min-width: 1181px) and (max-width: 1535px) {
+    .projeto-intro__heading {
+        font-size: clamp(29px, 2.75vw, 48px);
+    }
+
+    .projeto-intro__text {
+        font-size: clamp(16px, 1.28vw, 24px);
+    }
+
+    .projeto-floor__title {
+        font-size: clamp(36px, 4.35vw, 82px);
+    }
+
+    .projeto-floor__info-title,
+    .projeto-floor__info-subtitle,
+    .projeto-floor__info-list {
+        font-size: clamp(16px, 1.28vw, 24px);
+    }
+
+    /* Construção e Qualidade: 2×2 como referência — col. esq. Conforto/Estrutura, col. dir. Envolvente/Garantia */
+    .projeto-construcao__title {
+        font-size: clamp(35px, 3.95vw, 74px);
+        max-width: min(1040px, calc(100vw - 48px));
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .projeto-construcao__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-flow: row;
+        grid-template-areas:
+            "conforto envolvente"
+            "estrutura garantia";
+        max-width: min(1040px, calc(100vw - 48px));
+        margin-left: auto;
+        margin-right: auto;
+        column-gap: clamp(22px, 3.7vw, 52px);
+        row-gap: clamp(28px, 3.2vw, 44px);
+    }
+
+    .projeto-construcao__item:nth-child(1) {
+        grid-area: conforto;
+    }
+
+    .projeto-construcao__item:nth-child(2) {
+        grid-area: envolvente;
+    }
+
+    .projeto-construcao__item:nth-child(3) {
+        grid-area: estrutura;
+    }
+
+    .projeto-construcao__item:nth-child(4) {
+        grid-area: garantia;
+    }
+
+    .projeto-construcao__item h3 {
+        font-size: clamp(24px, 2.35vw, 40px);
+        text-align: left;
+    }
+
+    .projeto-construcao__item-list,
+    .projeto-construcao__item p {
+        font-size: clamp(15px, 1.3vw, 26px);
+        text-align: left;
     }
 }
 

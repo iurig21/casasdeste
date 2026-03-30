@@ -21,8 +21,7 @@
 
         <section class="home-intro">
             <p class="lazy-text" data-delay="80">
-                Situadas em S. Pedro d'Este, estas moradias privilegiam a luz natural e a funcionalidade em três pisos
-                de pura elegância.
+                <span class="home-intro__line1">Situadas em S. Pedro d'Este, estas moradias privilegiam a </span><span class="home-intro__line2">luz natural e a funcionalidade em três pisos de pura elegância.</span>
             </p>
         </section>
 

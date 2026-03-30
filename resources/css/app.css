@@ -132,6 +132,21 @@ main {
     line-height: 1.35;
 }
 
+@media (min-width: 561px) {
+    .home-intro {
+        width: min(calc(100% - 28px), 680px);
+    }
+
+    .home-intro__line1 {
+        display: block;
+        white-space: nowrap;
+    }
+
+    .home-intro__line2 {
+        display: block;
+    }
+}
+
 .home-highlights {
     width: min(calc(100% - 28px), 1020px);
     margin: 0 auto;
@@ -274,6 +289,12 @@ main {
     font-family: "Ubuntu", sans-serif;
     font-size: 15px;
     line-height: 1.36;
+}
+
+@media (min-width: 861px) {
+    .home-exterior__details {
+        padding-left: 1.25rem;
+    }
 }
 
 .site-nav {
@@ -1102,14 +1123,6 @@ main {
         gap: 33px;
     }
 
-    .home-exterior__details h3 {
-        font-size: 50px;
-    }
-    
-    .home-exterior__details p {
-        font-size: 25px;
-    }
-
     .site-nav__brand {
         gap: 10px;
     }
@@ -1185,11 +1198,11 @@ main {
 
     .home-intro {
         margin: 48px auto 40px;
-        width: min(calc(100% - 34px), 680px);
+        width: min(calc(100% - 34px), 1100px);
     }
 
     .home-intro p {
-        font-size: 26px;
+        font-size: 2.375rem;
     }
 
     .home-highlights {
@@ -1255,7 +1268,7 @@ main {
     }
 
     .home-exterior__details {
-        padding-left: 1.75rem;
+        padding-left: 2.25rem;
     }
 
     .home-exterior__details article + article {
@@ -1263,11 +1276,11 @@ main {
     }
 
     .home-exterior__details h3 {
-        font-size: 36px;
+        font-size: 3.125rem;
     }
 
     .home-exterior__details p {
-        font-size: 18px;
+        font-size: 1.5625rem;
         line-height: 1.38;
     }
 
@@ -1533,7 +1546,7 @@ main {
 
     .home-intro {
         margin: 53px auto 44px;
-        width: min(calc(100% - 37px), 745px);
+        width: min(calc(100% - 37px), 960px);
     }
 
     .home-intro p {
@@ -1602,9 +1615,12 @@ main {
         gap: 21px;
     }
 
+    .home-exterior__details {
+        padding-left: 2.75rem;
+    }
+
     .home-exterior__details article + article {
         margin-top: 64px;
-
     }
 
     .home-exterior__details h3 {
@@ -1840,7 +1856,7 @@ main {
 
     .home-intro {
         margin: 80px auto 66px;
-        width: min(calc(100% - 56px), 1120px);
+        width: min(calc(100% - 56px), 1400px);
     }
 
     .home-intro p {
@@ -1907,6 +1923,10 @@ main {
                 400px
             );
         gap: 32px;
+    }
+
+    .home-exterior__details {
+        padding-left: 3.5rem;
     }
 
     .home-exterior__details article + article {
@@ -2214,6 +2234,13 @@ main {
     width: 100%;
 }
 
+@media (min-width: 1181px) {
+    .acabamentos-details__content-inner {
+        padding-left: 1.5rem;
+        box-sizing: border-box;
+    }
+}
+
 .acabamentos-details__content .acabamentos-spec {
     width: 100%;
     max-width: 100%;
@@ -2370,6 +2397,14 @@ main {
 
     .acabamentos-specs__left {
         padding-left: max(14px, calc((100vw - 1795px) / 2 + 14px));
+        gap: 3.5rem;
+        justify-content: center;
+        min-height: 100%;
+    }
+
+    .acabamentos-spec ul,
+    .acabamentos-spec > p {
+        font-size: 25px;
     }
 
     .acabamentos-details__content {
@@ -2378,11 +2413,21 @@ main {
 
     .acabamentos-specs {
         grid-template-columns: 1fr 54.5rem;
+        align-items: stretch;
+    }
+
+    .acabamentos-specs__right {
+        align-self: start;
     }
 
     .acabamentos-specs__right img {
-        width: 100%;
-        max-width: 54.5rem;
+        display: block;
+        width: 54.5rem;
+        max-width: 100%;
+        height: 79.6875rem;
+        max-height: none;
+        aspect-ratio: 119 / 174;
+        object-fit: cover;
     }
 
     .acabamentos-details__row {
@@ -2432,7 +2477,7 @@ main {
 
     .acabamentos-specs__left {
         padding-left: max(14px, calc((100vw - 1795px) / 2 + 14px));
-        gap: 5rem;
+        gap: 4rem;
     }
 
     .acabamentos-specs__right img {
@@ -2456,7 +2501,7 @@ main {
     .acabamentos-details {
         margin-top: 67px;
         margin-bottom: 5rem;
-        --acabamentos-details-block-gap: 1.75rem;
+        --acabamentos-details-block-gap: 3.25rem;
         --acabamentos-details-image-gap: 1.25rem;
     }
 
@@ -2535,7 +2580,7 @@ main {
     .acabamentos-details {
         margin-top: 100px;
         margin-bottom: 8rem;
-        --acabamentos-details-block-gap: 2.25rem;
+        --acabamentos-details-block-gap: 8rem;
         --acabamentos-details-image-gap: 1.5rem;
     }
 
@@ -2976,7 +3021,7 @@ main {
     .projeto-intro__text {
         font-size: 25px;
         line-height: 1.3;
-        max-width: 9px;
+        max-width: 900px;
     }
 
     .projeto-floor__info-title {

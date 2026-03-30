@@ -1081,73 +1081,456 @@ main {
     }
 }
 
-/* ── Large screen breakpoints (QHD / 2K — ~1.33× from 1920) ── */
+/* ── Large screen breakpoint (Full HD+ — ~1.1× scale for 1920-2199px) ── */
 
-@media (min-width: 2200px) {
+@media (min-width: 1800px) and (max-width: 2199px) {
     header {
-        height: 102px;
+        height: 90px;
     }
 
     .site-nav {
-        padding: 24px 3.3rem 17px;
+        padding: 21px 3rem 15px;
     }
 
     .site-nav::after {
-        border-bottom-width: 3px;
+        border-bottom-width: 2.5px;
     }
 
     .site-nav__container {
-        max-width: 1780px;
-        padding: 0 24px;
-        gap: 32px;
+        max-width: 1600px;
+        padding: 0 22px;
+        gap: 28px;
     }
 
     .site-nav__brand {
-        gap: 9px;
+        gap: 8px;
     }
 
     .site-nav__brand-symbol {
-        width: 160px;
-        height: 61px;
+        width: 142px;
+        height: 55px;
     }
 
     .site-nav__brand-text {
-        width: 169px;
-        height: 16px;
+        width: 150px;
+        height: 14px;
     }
 
     .site-nav__links {
-        gap: 42px;
+        gap: 38px;
     }
 
     .site-nav__links a {
-        font-size: 18px;
+        font-size: 15.5px;
     }
 
     .site-nav__links a::after {
         bottom: -5px;
-        border-bottom-width: 3px;
-    }
-
-    .site-nav__link--active::after {
-        bottom: -11px;
-        height: 3px;
+        border-bottom-width: 2.5px;
     }
 
     .site-nav__actions {
-        gap: 32px;
+        gap: 28px;
     }
 
     .site-nav__brochure {
-        width: 207px;
-        min-height: 64px;
-        font-size: 17px;
-        border-radius: 11px;
+        width: 180px;
+        min-height: 56px;
+        font-size: 15px;
+        border-radius: 10px;
         box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25);
     }
 
     .site-nav__brochure span + span {
         margin-top: 5px;
+    }
+
+    .home-hero {
+        min-height: clamp(400px, 33vw, 700px);
+    }
+
+    .home-hero__image {
+        height: clamp(400px, 33vw, 700px);
+    }
+
+    .home-hero__overlay {
+        width: min(46%, 950px);
+    }
+
+    .home-hero__overlay h1 {
+        font-size: clamp(32px, 2.5vw, 48px);
+    }
+
+    .home-hero__subtitle {
+        margin: 18px 0 0;
+        font-size: clamp(20px, 1.8vw, 32px);
+        line-height: 1.08;
+        max-width: none;
+    }
+
+    .home-hero__description {
+        margin: 10px 0 0;
+        font-size: clamp(14px, 1.1vw, 20px);
+        max-width: none;
+        line-height: 1.38;
+    }
+
+    .home-intro {
+        margin: 48px auto 40px;
+        width: min(calc(100% - 34px), 680px);
+    }
+
+    .home-intro p {
+        font-size: 26px;
+    }
+
+    .home-highlights {
+        width: min(calc(100% - 48px), 1400px);
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 34px;
+    }
+
+    .home-highlight {
+        width: auto;
+        min-height: 155px;
+        border-radius: 17px;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25);
+        padding: 16px 18px 20px;
+    }
+
+    .home-highlight svg {
+        height: 58px;
+    }
+
+    .home-highlight h3 {
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .home-highlight p {
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .home-details {
+        margin-top: 1.5rem;
+    }
+
+    .home-interior {
+        margin: 65px 0 0;
+        padding-left: clamp(14px, 3.3%, 75px);
+    }
+
+    .home-interior h2 {
+        font-size: 64px;
+    }
+
+    .home-interior__grid {
+        gap: 14px;
+        margin-left: clamp(0px, 5%, 100px);
+    }
+
+    .home-exterior {
+        margin: 34px 0 0;
+        gap: 42px;
+        padding-right: clamp(14px, 9.5%, 210px);
+        grid-template-columns: minmax(0, 1fr) minmax(210px, 550px);
+    }
+
+    .home-exterior__gallery {
+        grid-template-rows: clamp(280px, 17.5vw, 400px) clamp(170px, 10.5vw, 240px);
+        gap: 18px;
+    }
+
+    .home-exterior__details article + article {
+        margin-top: 52px;
+    }
+
+    .home-exterior__details h3 {
+        font-size: 36px;
+    }
+
+    .home-exterior__details p {
+        font-size: 18px;
+        line-height: 1.38;
+    }
+
+    .site-contact {
+        padding: 58px 0 46px;
+    }
+
+    .site-contact__container {
+        max-width: 1500px;
+        padding: 58px 16px 0;
+        gap: 56px;
+    }
+
+    .site-contact h2 {
+        font-size: 40px;
+    }
+
+    .site-contact__form {
+        width: min(100%, 840px);
+    }
+
+    .site-contact__row {
+        gap: 28px;
+    }
+
+    .site-contact label span {
+        font-size: 14px;
+        margin-bottom: 7px;
+    }
+
+    .site-contact input,
+    .site-contact textarea {
+        font-size: 14px;
+    }
+
+    .site-contact textarea {
+        min-height: 115px;
+        padding: 12px 14px;
+    }
+
+    .site-contact__message {
+        margin-top: 18px;
+    }
+
+    .site-contact button {
+        margin-top: 18px;
+        min-width: 120px;
+        height: 40px;
+        font-size: 16px;
+        border-radius: 12px;
+    }
+
+    .site-footer__bottom {
+        min-height: 170px;
+    }
+
+    .site-footer__bottom-container {
+        width: min(100%, 1620px);
+        min-height: 170px;
+    }
+
+    .site-footer__evobuild svg {
+        width: 190px;
+    }
+
+    .site-footer__details p {
+        font-size: 15px;
+    }
+
+    .site-footer__social {
+        gap: 18px;
+    }
+
+    .site-footer__social a {
+        width: 35px;
+        height: 35px;
+    }
+
+    .projeto-page {
+        max-width: 1620px;
+    }
+
+    .projeto-intro {
+        max-width: 1500px;
+        padding: 42px 16px 0;
+        gap: 40px;
+    }
+
+    .projeto-intro__heading {
+        font-size: 50px;
+        max-width: 400px;
+    }
+
+    .projeto-intro__text {
+        font-size: 27px;
+        line-height: 1.3;
+        max-width: 950px;
+    }
+
+    .projeto-hero {
+        height: clamp(260px, 19vw, 370px);
+    }
+
+    .projeto-floor {
+        max-width: 1800px;
+        margin: 48px auto 0;
+    }
+
+    .projeto-floor--left,
+    .projeto-floor--right,
+    .projeto-floor--left-offset {
+        margin-top: 48px;
+    }
+
+    .projeto-floor__title {
+        font-size: 82px;
+    }
+
+    .projeto-floor__info {
+        padding: 58px 32px 32px 52px;
+    }
+
+    .projeto-floor__info-title {
+        font-size: 27px;
+        font-weight: 700;
+    }
+
+    .projeto-floor__info-subtitle {
+        font-size: 27px;
+        margin: 6px 0 0;
+    }
+
+    .projeto-floor__info-list {
+        font-size: 27px;
+        margin: 18px 0 0;
+        line-height: 1.45;
+    }
+
+    .projeto-construcao {
+        margin-top: 58px;
+        padding: 58px clamp(14px, 2.5vw, 145px) clamp(32px, 3.5vw, 100px);
+        padding-top: clamp(95px, 8.5vw, 170px);
+    }
+
+    .projeto-construcao__title {
+        font-size: 78px;
+        margin: 0 0 42px;
+    }
+
+    .projeto-construcao__grid {
+        gap: 38px 86px;
+    }
+
+    .projeto-construcao__item h3 {
+        font-size: 42px;
+    }
+
+    .projeto-construcao__item-list {
+        margin: 12px 0 0;
+    }
+
+    .projeto-construcao__item-list,
+    .projeto-construcao__item p {
+        font-size: 25px;
+        line-height: 1.45;
+    }
+
+    #brochureModal .modal-box {
+        max-width: 34rem !important;
+        padding: 3rem !important;
+        border-radius: 14px !important;
+    }
+
+    #brochureModal .modal-box h3 {
+        font-size: 1.45rem !important;
+        margin-bottom: 1.8rem !important;
+    }
+
+    #brochureModal .modal-box label {
+        font-size: 1rem !important;
+        margin-bottom: 0.3rem !important;
+    }
+
+    #brochureModal .modal-box input {
+        padding: 0.75rem 0.9rem !important;
+        font-size: 1rem !important;
+        border-radius: 8px !important;
+    }
+
+    #brochureModal .modal-box form {
+        gap: 1.15rem !important;
+    }
+
+    #brochureModal .modal-box button[type="submit"] {
+        padding: 0.9rem !important;
+        font-size: 1.1rem !important;
+        border-radius: 8px !important;
+    }
+
+    #brochureModal .modal-box .btn-circle {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1rem;
+    }
+
+    #brochureModal .modal-box span[data-server-error],
+    #brochureModal .modal-box #telefoneError,
+    #brochureModal .modal-box #emailError {
+        font-size: 0.9rem !important;
+    }
+}
+
+/* ── Large screen breakpoints (QHD / 2K — ~1.33× from 1920) ── */
+
+@media (min-width: 2200px) {
+    header {
+        height: 120px;
+    }
+
+    .site-nav {
+        padding: 28px 3.8rem 20px;
+    }
+
+    .site-nav::after {
+        border-bottom-width: 3.5px;
+    }
+
+    .site-nav__container {
+        max-width: 1900px;
+        padding: 0 28px;
+        gap: 38px;
+    }
+
+    .site-nav__brand {
+        gap: 11px;
+    }
+
+    .site-nav__brand-symbol {
+        width: 185px;
+        height: 71px;
+    }
+
+    .site-nav__brand-text {
+        width: 195px;
+        height: 18px;
+    }
+
+    .site-nav__links {
+        gap: 50px;
+    }
+
+    .site-nav__links a {
+        font-size: 21px;
+    }
+
+    .site-nav__links a::after {
+        bottom: -6px;
+        border-bottom-width: 3.5px;
+    }
+
+    .site-nav__link--active::after {
+        bottom: -13px;
+        height: 3.5px;
+    }
+
+    .site-nav__actions {
+        gap: 38px;
+    }
+
+    .site-nav__brochure {
+        width: 240px;
+        min-height: 74px;
+        font-size: 20px;
+        border-radius: 13px;
+        box-shadow: 0 6px 6px rgba(0, 0, 0, 0.25);
+    }
+
+    .site-nav__brochure span + span {
+        margin-top: 6px;
     }
 
     .home-hero {
@@ -2517,8 +2900,8 @@ main {
     }
 
     .projeto-intro__text {
-        font-size: 22px;
-        line-height: 1.25;
+        font-size: 28px;
+        line-height: 1.3;
         max-width: 1125px;
     }
 
@@ -2557,17 +2940,19 @@ main {
     }
 
     .projeto-floor__info-title {
-        font-size: 22px;
+        font-size: 28px;
+        font-weight: 700;
     }
 
     .projeto-floor__info-subtitle {
-        font-size: 22px;
-        margin: 4px 0 0;
+        font-size: 28px;
+        margin: 6px 0 0;
     }
 
     .projeto-floor__info-list {
-        font-size: 22px;
-        margin: 19px 0 0;
+        font-size: 28px;
+        margin: 20px 0 0;
+        line-height: 1.45;
     }
 
     .projeto-construcao {
@@ -2577,25 +2962,26 @@ main {
     }
 
     .projeto-construcao__title {
-        font-size: clamp(46px, 3.8vw, 87px);
-        margin: 0 0 clamp(23px, 2.1vw, 51px);
+        font-size: 92px;
+        margin: 0 0 48px;
     }
 
     .projeto-construcao__grid {
-        gap: clamp(23px, 2.1vw, 51px) clamp(44px, 4.2vw, 107px);
+        gap: 40px 100px;
     }
 
     .projeto-construcao__item h3 {
-        font-size: clamp(28px, 1.9vw, 47px);
+        font-size: 50px;
     }
 
     .projeto-construcao__item-list {
-        margin: 11px 0 0;
+        margin: 13px 0 0;
     }
 
     .projeto-construcao__item-list,
     .projeto-construcao__item p {
-        font-size: clamp(15px, 1vw, 24px);
+        font-size: 28px;
+        line-height: 1.45;
     }
 }
 

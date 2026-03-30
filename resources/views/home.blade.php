@@ -101,8 +101,8 @@
         <section class="home-exterior lazy-section max-[860px]:px-[14px] max-[1180px]:grid-cols-1! max-[1180px]:gap-[30px]!">
             <div class="home-exterior__gallery home-exterior__gallery--desktop w-full max-w-[600px] mx-auto sm:max-w-none sm:mx-0 max-[1180px]:grid-cols-1! max-[1180px]:grid-rows-[auto]!">
                 <img class="home-exterior__main block w-full h-auto! sm:h-full!" src="{{ asset('imagens/exterior1.webp') }}" alt="Exterior principal" loading="lazy">
-                <img class="block w-full h-auto! sm:h-full!" src="{{ asset('imagens/exterior2.webp') }}" alt="Exterior 2" loading="lazy">
-                <img class="block w-full h-auto! sm:h-full!" src="{{ asset('imagens/exterior3.webp') }}" alt="Exterior 3" loading="lazy">
+                <img class="home-exterior__thumb home-exterior__thumb--square block w-full h-auto! sm:h-full!" src="{{ asset('imagens/exterior2.webp') }}" alt="Exterior 2" loading="lazy">
+                <img class="home-exterior__thumb home-exterior__thumb--wide block w-full h-auto! sm:h-full!" src="{{ asset('imagens/exterior3.webp') }}" alt="Exterior 3" loading="lazy">
             </div>
             <div class="home-exterior__details mx-auto max-w-[620px] text-center sm:mx-0 sm:max-w-none sm:text-left">
                 <article>

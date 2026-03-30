@@ -1243,7 +1243,7 @@ main {
     }
 
     .home-interior h2 {
-        font-size: 64px;
+        font-size: 95px;
     }
 
     .home-interior__grid {
@@ -1259,12 +1259,31 @@ main {
     }
 
     .home-exterior__gallery {
-        grid-template-rows: clamp(280px, 17.5vw, 400px) clamp(
-                170px,
-                10.5vw,
-                240px
-            );
-        gap: 18px;
+        grid-template-columns: 39.875rem 25.3125rem;
+        grid-template-rows: 25.3125rem 15.125rem;
+        column-gap: 1.125rem;
+        row-gap: 1.25rem;
+    }
+
+    .home-exterior__gallery.home-exterior__gallery--desktop .home-exterior__main {
+        width: 39.875rem !important;
+        height: 41.6875rem !important;
+        max-width: none;
+        aspect-ratio: 22 / 23;
+    }
+
+    .home-exterior__gallery.home-exterior__gallery--desktop .home-exterior__thumb--square {
+        width: 25.3125rem !important;
+        height: 25.3125rem !important;
+        max-width: none;
+        aspect-ratio: 1 / 1;
+    }
+
+    .home-exterior__gallery.home-exterior__gallery--desktop .home-exterior__thumb--wide {
+        width: 25.3125rem !important;
+        height: 15.125rem !important;
+        max-width: none;
+        aspect-ratio: 82 / 49;
     }
 
     .home-exterior__details {
@@ -1295,42 +1314,43 @@ main {
     }
 
     .site-contact h2 {
-        font-size: 40px;
+        font-size: 3.4375rem;
     }
 
     .site-contact__form {
-        width: min(100%, 840px);
+        width: min(100%, 1155px);
     }
 
     .site-contact__row {
-        gap: 28px;
+        gap: 39px;
     }
 
     .site-contact label span {
-        font-size: 14px;
-        margin-bottom: 7px;
+        font-size: 19px;
+        margin-bottom: 10px;
     }
 
     .site-contact input,
     .site-contact textarea {
-        font-size: 14px;
+        font-size: 19px;
+        padding: 0 0 7px;
     }
 
     .site-contact textarea {
-        min-height: 115px;
-        padding: 12px 14px;
+        min-height: 158px;
+        padding: 17px 19px;
     }
 
     .site-contact__message {
-        margin-top: 18px;
+        margin-top: 25px;
     }
 
     .site-contact button {
-        margin-top: 18px;
-        min-width: 120px;
-        height: 40px;
-        font-size: 16px;
-        border-radius: 12px;
+        margin-top: 25px;
+        min-width: 165px;
+        height: 55px;
+        font-size: 22px;
+        border-radius: 17px;
     }
 
     .site-footer__bottom {
@@ -2393,6 +2413,7 @@ main {
         font-size: 25px;
         line-height: 1.25;
         max-width: 42rem;
+        margin-inline-end: 7rem;
     }
 
     .acabamentos-specs__left {

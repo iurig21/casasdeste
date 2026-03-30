@@ -5,12 +5,11 @@
         </section>
 
         <section class="projeto-intro">
-            <h1 class="projeto-intro__heading lazy-text">Moradias pensadas<br>ao detalhe</h1>
+            <h1 class="projeto-intro__heading lazy-text">Moradias pensadas </br> ao detalhe</h1>
             <p class="projeto-intro__text lazy-text" data-delay="100">
                 Estas moradias unifamiliares V3, localizadas em S. Pedro d'Este – Braga, foram concebidas
                 para oferecer conforto, funcionalidade e qualidade construtiva, distribuídas por três pisos
-                cuidadosamente organizados.
-                <br><br>
+                cuidadosamente organizados.</br>
                 Com uma área de construção de 243,75 m² e 97,50 m² de varandas, o projeto alia
                 arquitetura contemporânea, eficiência energética e materiais de elevada durabilidade.
             </p>

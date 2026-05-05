@@ -154,7 +154,8 @@
 
                 <label class="site-contact__message">
                     <span>Mensagem *</span>
-                    <textarea name="mensagem" id="contactMensagem" required></textarea>
+                    <textarea maxlength="500" name="mensagem" id="contactMensagem" required></textarea>
+                    <span id="contactMensagemCounter" class="site-contact__char-counter" aria-live="polite"></span>
                 </label>
 
                 <button id="login-btn" type="submit">
@@ -194,6 +195,18 @@
             }
         },4000);
         
+        const contactMensagem = document.getElementById('contactMensagem');
+        const contactMensagemCounter = document.getElementById('contactMensagemCounter');
+        const mensagemMaxLen = Number(contactMensagem.getAttribute('maxlength')) || 500;
+
+        function updateMensagemCounter() {
+            const len = contactMensagem.value.length;
+            contactMensagemCounter.textContent = `${len} / ${mensagemMaxLen} caracteres`;
+        }
+
+        contactMensagem.addEventListener('input', updateMensagemCounter);
+        updateMensagemCounter();
+
         const shouldScrollToContact = @json(session('success') || $errors->contact->any());
 
         if (shouldScrollToContact) {

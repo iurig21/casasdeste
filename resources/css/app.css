@@ -576,6 +576,15 @@ main {
     margin-top: 15px;
 }
 
+.site-contact__char-counter {
+    display: block;
+    margin-top: 6px;
+    text-align: right;
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
 .site-contact textarea {
     min-height: 100px;
     border: 1px solid rgba(255, 255, 255, 0.95);

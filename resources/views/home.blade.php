@@ -125,37 +125,57 @@
         <div class="site-contact__container">
             <h2 class="lazy-text lazy-text--left">Contacte-nos para<br>mais informações</h2>
 
-            @if($errors->contact->any())
-                <div class="site-contact__errors" style="background: #f8d7da; color: #721c24; padding: 12px 20px; border-radius: 6px; margin-bottom: 20px; font-size: 14px;">
-                    <ul style="margin: 0; padding-left: 20px;">
-                        @foreach($errors->contact->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
+            @php
+                $__contactDigits = preg_replace('/\D/', '', (string) old('contacto', ''));
+                $__contactDisplay = '';
+                if ($__contactDigits !== '') {
+                    $parts = [];
+                    for ($i = 0; $i < strlen($__contactDigits) && $i < 9; $i += 3) {
+                        $parts[] = substr($__contactDigits, $i, 3);
+                    }
+                    $__contactDisplay = implode(' ', $parts);
+                }
+            @endphp
 
             <form class="site-contact__form" method="post" action="{{ route('contact.send') }}">
                 @csrf
                 <div class="site-contact__row">
                     <label>
                         <span>Nome *</span>
-                        <input type="text" id="contactName" name="nome" autocomplete="name" required>
+                        <input maxlength="70" type="text" id="contactName" name="nome" value="{{ old('nome') }}" autocomplete="name" required>
                     </label>
                     <label>
                         <span>E-mail *</span>
-                        <input type="email" id="contactEmail" name="email" autocomplete="email" required>
+                        <input maxlength="255" type="email" id="contactEmail" name="email" value="{{ old('email') }}" autocomplete="email" required>
                     </label>
                     <label>
                         <span>Contacto *</span>
-                        <input type="tel" id="contactTelefone" name="contacto" autocomplete="tel"  pattern="[9][0-9]{8}" size="9" maxlength="9" required>
+                        <input type="tel"
+                            id="contactTelefone"
+                            name="contacto"
+                            value="{{ $__contactDisplay }}"
+                            inputmode="numeric"
+                            autocomplete="tel"
+                            maxlength="11"
+                            required>
                     </label>
                 </div>
 
                 <label class="site-contact__message">
                     <span>Mensagem *</span>
-                    <textarea maxlength="500" name="mensagem" id="contactMensagem" required></textarea>
+                    <textarea maxlength="500" name="mensagem" id="contactMensagem" required>{{ old('mensagem') }}</textarea>
+
                     <span id="contactMensagemCounter" class="site-contact__char-counter" aria-live="polite"></span>
+
+                    @if ($errors->contact->any())
+                    <div class="site-contact__errors" role="alert" style="background: #f8d7da; color: #721c24; padding: 12px 20px; border-radius: 6px; margin-top: 12px; font-size: 14px;">
+                        <ul style="margin: 0; padding-left: 20px;">
+                            @foreach ($errors->contact->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 </label>
 
                 <button id="login-btn" type="submit">
@@ -181,6 +201,25 @@
         const spinner = document.getElementById("login-spinner"); 
         const contactForm = document.getElementsByClassName("site-contact__form")[0];
         const successAlert = document.getElementsByClassName('site-contact__success')[0];
+
+        function formatContactTelDigits(raw) {
+            const d = String(raw).replace(/\D/g, '').slice(0, 9);
+            const parts = [];
+            for (let i = 0; i < d.length; i += 3) {
+                parts.push(d.slice(i, i + 3));
+            }
+            return parts.join(' ');
+        }
+
+        const contactTelefone = document.getElementById('contactTelefone');
+        if (contactTelefone) {
+            contactTelefone.addEventListener('input', () => {
+                const formatted = formatContactTelDigits(contactTelefone.value);
+                if (contactTelefone.value !== formatted) {
+                    contactTelefone.value = formatted;
+                }
+            });
+        }
 
         contactForm.addEventListener('submit',() => {
                  loginBtn.disabled = true;

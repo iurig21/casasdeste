@@ -24,10 +24,18 @@ class AppServiceProvider extends ServiceProvider
     {
         RateLimiter::for('api', function (Request $request) {
             return Limit::perMinute(3)
-            ->by($request->ip().'|'.$request->path())
-            ->response(function (Request $request, array $headers) {
-                return response('Limite de taxa excedido. Por favor, tente novamente mais tarde.', 429, $headers);
-            });
+                ->by($request->ip().'|'.$request->path())
+                ->response(function (Request $request, array $headers) {
+                    if ($request->expectsJson()) {
+                        return response()->json([
+                            'message' => 'Limite de taxa excedido. Por favor, tente novamente mais tarde.',
+                        ], 429, $headers);
+                    }
+
+                    return response()
+                        ->view('errors.429', [], 429)
+                        ->withHeaders($headers);
+                });
         });
     }
 }

@@ -613,6 +613,28 @@ main {
     background-color: rgb(210, 207, 207);
 }
 
+.site-contact__success {
+    margin-top: 20px;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    background: #d4edda;
+    color: #155724;
+    opacity: 1;
+    transition:
+        opacity 0.85s ease-out,
+        visibility 0s linear 0s;
+}
+
+.site-contact__success.site-contact__success--hiding {
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity 0.85s ease-out,
+        visibility 0s linear 0.85s;
+    pointer-events: none;
+}
+
 .site-footer__bottom {
     background: #353d3f;
     min-height: 150px;

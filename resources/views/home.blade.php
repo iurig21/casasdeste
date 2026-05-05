@@ -166,7 +166,7 @@
                 </button>
 
                 @if(session('success'))
-                    <div class="site-contact__success animate-fade-out" style="background: #d4edda; color: #155724; padding: 12px 20px; border-radius: 6px; margin-top: 20px; font-size: 14px;">
+                    <div class="site-contact__success" role="status">
                         {{ session('success') }}
                     </div>
                 @endif
@@ -189,11 +189,17 @@
                  spinner.style.display = "flex"; 
         })
 
-        setTimeout(() => {
-            if(successAlert){
-                successAlert.style.display = 'none';
-            }
-        },4000);
+        if (successAlert) {
+            const visibleMs = 3500;
+            const fadeMs = 850;
+
+            setTimeout(() => {
+                successAlert.classList.add('site-contact__success--hiding');
+                setTimeout(() => {
+                    successAlert.style.display = 'none';
+                }, fadeMs);
+            }, visibleMs);
+        }
         
         const contactMensagem = document.getElementById('contactMensagem');
         const contactMensagemCounter = document.getElementById('contactMensagemCounter');

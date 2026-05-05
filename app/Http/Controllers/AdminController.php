@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\BrochureDownload;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -21,13 +22,14 @@ class AdminController extends Controller
         $request->validate([
             'username' => 'required|string',
             'password' => 'required',
-        ],[
+        ], [
             'username.required' => 'O username é obrigatório.',
-            'password.required' => 'A password é obrigatória.'
+            'password.required' => 'A password é obrigatória.',
         ]);
 
         if ($request->username === config('admin.username') && $request->password === config('admin.password')) {
             session(['admin_logged_in' => true]);
+
             return redirect('/admin/dashboard');
         }
 
@@ -37,30 +39,48 @@ class AdminController extends Controller
     public function dashboard(Request $request)
     {
         $search = $request->input('search');
+        $searchTrimmed = $search !== null ? trim((string) $search) : '';
 
         $downloads = BrochureDownload::query()
-            ->when($search, function ($query, $search) {
-                $query->where('nome', 'like', "%{$search}%")
-                    ->orWhere('email', 'like', "%{$search}%")
-                    ->orWhere('telefone', 'like', "%{$search}%");
-            })
+            ->when($searchTrimmed !== '', fn (Builder $query) => $query->adminSearch($searchTrimmed))
             ->orderBy('created_at', 'desc')
             ->paginate(7)
             ->withQueryString();
 
-        return view('admin.dashboard', compact('downloads', 'search'));
+        $payload = compact('downloads', 'search');
+
+        if ($request->ajax()) {
+            return response()->view('admin.partials.dashboard-downloads-inner', $payload);
+        }
+
+        return view('admin.dashboard', $payload);
     }
 
-    public function destroy(BrochureDownload $download)
+    public function destroy(Request $request, BrochureDownload $download)
     {
         $download->delete();
 
-        return redirect('/admin/dashboard')->with('success', 'Registo eliminado com sucesso.');
+        $message = 'Registo eliminado com sucesso.';
+
+        if ($request->ajax() || $request->wantsJson()) {
+            return response()->json(['message' => $message]);
+        }
+
+        $dashboardPath = parse_url(route('admin.dashboard'), PHP_URL_PATH);
+        $previousUrl = url()->previous();
+        $previousPath = parse_url($previousUrl, PHP_URL_PATH);
+
+        if ($previousPath === $dashboardPath) {
+            return redirect()->to($previousUrl)->with('success', $message);
+        }
+
+        return redirect()->route('admin.dashboard')->with('success', $message);
     }
 
     public function logout()
     {
         session()->forget('admin_logged_in');
+
         return redirect('/admin');
     }
 }

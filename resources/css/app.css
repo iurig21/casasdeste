@@ -3950,6 +3950,12 @@ main {
     padding: 2rem 1rem !important;
 }
 
+.admin-dashboard-pane--loading {
+    opacity: 0.55;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+}
+
 .admin-pagination {
     margin-top: 1.5rem;
     display: flex;

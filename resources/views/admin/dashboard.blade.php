@@ -27,72 +27,17 @@
 
     <main class="admin-main">
         <div class="admin-container">
-            <div class="admin-header">
-                <h2 class="admin-header__title">Downloads da Brochura</h2>
-                <span class="admin-header__count">{{ $downloads->total() }} registos</span>
-            </div>
-
             @if (session('success'))
                 <div id="showSuccess" class="admin-alert admin-alert--success animate-fade-out">
                     <p>{{ session('success') }}</p>
                 </div>
             @endif
 
-            <div class="admin-toolbar">
-                <form method="GET" action="{{ route('admin.dashboard') }}" class="admin-search">
-                    <input class="admin-input admin-search__input" type="text" name="search" value="{{ $search }}" placeholder="Pesquisar por nome, email ou telefone...">
-                    <button type="submit" class="admin-btn admin-btn--primary">
-                        <x-lucide-search/>
-                        Pesquisar</button>
-                    @if ($search)
-                        <a href="{{ route('admin.dashboard') }}" class="admin-btn admin-btn--outline admin-btn--clear">Limpar</a>
-                    @endif
-                </form>
+            <div id="admin-dashboard-pane" class="admin-dashboard-pane" data-admin-dashboard-pane data-dashboard-url="{{ route('admin.dashboard') }}">
+                @include('admin.partials.dashboard-downloads-inner', compact('downloads', 'search'))
             </div>
-
-            <div class="admin-table-wrapper">
-                <table class="admin-table">
-                    <thead>
-                        <tr>
-                            <th>Nome</th>
-                            <th>Email</th>
-                            <th>Telefone</th>
-                            <th>Data</th>
-                            <th>Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @forelse ($downloads as $download)
-                            <tr>
-                                <td>{{ $download->nome }}</td>
-                                <td>{{ $download->email }}</td>
-                                <td>{{ $download->telefone }}</td>
-                                <td>{{ $download->created_at->format('d/m/Y H:i') }}</td>
-                                <td>
-                                    <button type="button" class="admin-btn admin-btn--danger admin-btn--sm" onclick="openDeleteModal('{{ route('admin.downloads.destroy', $download->id) }}', '{{ $download->nome }}')">
-                                        <x-lucide-trash-2 class="shrink-0" aria-hidden="true" />
-                                        Eliminar
-                                    </button>
-                                </td>
-                            </tr>
-                        @empty
-                            <tr>
-                                <td colspan="5" class="admin-table__empty">
-                                    Nenhum registo encontrado.
-                                </td>
-                            </tr>
-                        @endforelse
-                    </tbody>
-                </table>
-            </div>
-
-            @if ($downloads->hasPages())
-                <div class="admin-pagination">
-                    {{ $downloads->links() }}
-                </div>
-            @endif
         </div>
-        
+
     </main>
 
     <div id="deleteModal" class="admin-modal-overlay">
@@ -109,7 +54,7 @@
                 <form id="deleteModalForm" method="POST" action="">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="admin-btn admin-btn--danger admin-btn--sm"> 
+                    <button type="submit" class="admin-btn admin-btn--danger admin-btn--sm">
                         <x-lucide-trash-2 class="shrink-0" aria-hidden="true" />
                         Eliminar</button>
                 </form>
@@ -142,6 +87,134 @@
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') closeDeleteModal();
       });
+
+      (function () {
+        const pane = document.querySelector('[data-admin-dashboard-pane]');
+        if (!pane) return;
+
+        async function loadDashboard(url, { skipHistory = false } = {}) {
+          pane.classList.add('admin-dashboard-pane--loading');
+          try {
+            const res = await fetch(url, {
+              headers: {
+                'X-Requested-With': 'XMLHttpRequest',
+                Accept: 'text/html',
+              },
+              credentials: 'same-origin',
+            });
+
+            if (!res.ok) {
+              throw new Error('Request failed');
+            }
+
+            pane.innerHTML = await res.text();
+
+            if (!skipHistory && typeof history !== 'undefined' && history.pushState) {
+              const next = new URL(url, window.location.origin);
+              history.pushState({ adminDashboardPane: true }, '', next.pathname + next.search + next.hash);
+            }
+          } catch (err) {
+            console.error(err);
+            window.alert('Não foi possível carregar os registos.');
+          } finally {
+            pane.classList.remove('admin-dashboard-pane--loading');
+          }
+        }
+
+        pane.addEventListener('click', (e) => {
+          const pagLink = e.target.closest('.admin-pagination a[href]');
+          if (pagLink) {
+            e.preventDefault();
+            loadDashboard(pagLink.href);
+            return;
+          }
+
+          const clearLink = e.target.closest('a.admin-btn--clear[href]');
+          if (clearLink) {
+            e.preventDefault();
+            loadDashboard(clearLink.href);
+          }
+        });
+
+        pane.addEventListener('submit', (e) => {
+          const form = e.target.closest('form.admin-search');
+          if (!form || form.method.toUpperCase() !== 'GET') return;
+          e.preventDefault();
+
+          const action = form.getAttribute('action') || pane.dataset.dashboardUrl || window.location.pathname;
+          const params = new URLSearchParams(new FormData(form)).toString();
+          const qs = params ? `?${params}` : '';
+          loadDashboard(action + qs);
+        });
+
+        window.addEventListener('popstate', () => {
+          loadDashboard(window.location.href, { skipHistory: true });
+        });
+
+        function showAjaxSuccess(message) {
+          const oldEl = document.getElementById('ajaxDeleteSuccess');
+          if (oldEl) oldEl.remove();
+          const div = document.createElement('div');
+          div.id = 'ajaxDeleteSuccess';
+          div.className = 'admin-alert admin-alert--success animate-fade-out';
+          const p = document.createElement('p');
+          p.textContent = message;
+          div.appendChild(p);
+          pane.parentNode.insertBefore(div, pane);
+          setTimeout(() => div.remove(), 4000);
+        }
+
+        const deleteModalForm = document.getElementById('deleteModalForm');
+        if (deleteModalForm) {
+          deleteModalForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const action = deleteModalForm.getAttribute('action');
+            if (!action) return;
+
+            const submitBtn = deleteModalForm.querySelector('button[type="submit"]');
+            const fd = new FormData(deleteModalForm);
+
+            pane.classList.add('admin-dashboard-pane--loading');
+            if (submitBtn) submitBtn.disabled = true;
+
+            try {
+              const res = await fetch(action, {
+                method: 'POST',
+                headers: {
+                  'X-Requested-With': 'XMLHttpRequest',
+                  Accept: 'application/json',
+                  'X-CSRF-TOKEN': fd.get('_token'),
+                },
+                body: fd,
+                credentials: 'same-origin',
+              });
+
+              if (!res.ok) {
+                if (res.status === 419 || res.status === 401) {
+                  window.alert('Sessão expirada. Atualize a página.');
+                } else {
+                  window.alert('Não foi possível eliminar o registo.');
+                }
+                return;
+              }
+
+              let data = {};
+              try {
+                data = await res.json();
+              } catch (_) {}
+              closeDeleteModal();
+              await loadDashboard(window.location.href, { skipHistory: true });
+              showAjaxSuccess(data.message || 'Registo eliminado com sucesso.');
+            } catch (err) {
+              console.error(err);
+              window.alert('Não foi possível eliminar o registo.');
+            } finally {
+              pane.classList.remove('admin-dashboard-pane--loading');
+              if (submitBtn) submitBtn.disabled = false;
+            }
+          });
+        }
+      })();
     </script>
 </body>
 </html>

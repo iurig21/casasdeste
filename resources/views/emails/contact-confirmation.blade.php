@@ -73,6 +73,8 @@
         </div>
         <div class="body">
             <strong class="intro">A sua mensagem foi enviada com sucesso. Daremos um retorno assim que possível!</strong>
+            <br>
+            <br>
             <div class="field">
                 <div class="field-label">Nome</div>
                 <div class="field-value">{{ $nome }}</div>

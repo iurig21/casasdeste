@@ -161,7 +161,7 @@
                 <button id="login-btn" type="submit">
                     <span id="login-text">Enviar</span>
                     <span id="login-spinner" class="hidden justify-center items-center">
-                        <x-lucide-loader class="animate-spin size-5"/>
+                        <x-lucide-loader-circle class="animate-spin size-6"/>
                     </span>
                 </button>
 

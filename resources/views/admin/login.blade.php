@@ -47,7 +47,7 @@
                 <button id="login-btn" type="submit" class="admin-btn admin-btn--primary admin-btn--full">
                     <span id="login-text">Entrar</span>
                     <span id="login-spinner" style="display: none">
-                        <x-lucide-loader class="animate-spin size-5"/>
+                        <x-lucide-loader-circle class="animate-spin size-6"/>
                     </span>
                 </button>
             </form>

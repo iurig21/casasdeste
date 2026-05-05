@@ -72,7 +72,7 @@
             <img src="{{ $message->embed($logoPath) }}" alt="Casas D'Este logo">
         </div>
         <div class="body">
-            <p class="intro">A sua mensagem foi enviada com sucesso. Daremos um retorno assim que possível!</p>
+            <strong class="intro">A sua mensagem foi enviada com sucesso. Daremos um retorno assim que possível!</strong>
             <div class="field">
                 <div class="field-label">Nome</div>
                 <div class="field-value">{{ $nome }}</div>

@@ -36,7 +36,13 @@
                 </div>
                 <div class="admin-form-group">
                     <label class="admin-label" for="password">Password</label>
-                    <input class="admin-input" type="password" id="password" name="password" placeholder="••••••••" required>
+                    <div class="admin-password-field">
+                        <input class="admin-input admin-input--password-toggle" type="password" id="password" name="password" placeholder="••••••••" required autocomplete="current-password">
+                        <button type="button" class="admin-password-toggle" id="password-toggle" aria-label="Mostrar palavra-passe" aria-pressed="false">
+                            <x-lucide-eye class="size-5 admin-password-toggle__icon admin-password-toggle__icon--show" />
+                            <x-lucide-eye-off class="size-5 admin-password-toggle__icon admin-password-toggle__icon--hide hidden" />
+                        </button>
+                    </div>
                 </div>
                 <button id="login-btn" type="submit" class="admin-btn admin-btn--primary admin-btn--full">
                     <span id="login-text">Entrar</span>
@@ -55,6 +61,20 @@
             document.getElementById("login-text").style.display = "none";
             document.getElementById("login-spinner").style.display = "inline";            
        })
+
+        const passwordInput = document.getElementById('password');
+        const passwordToggle = document.getElementById('password-toggle');
+        const iconShow = passwordToggle.querySelector('.admin-password-toggle__icon--show');
+        const iconHide = passwordToggle.querySelector('.admin-password-toggle__icon--hide');
+
+        passwordToggle.addEventListener('click', () => {
+            const revealing = passwordInput.type === 'password';
+            passwordInput.type = revealing ? 'text' : 'password';
+            passwordToggle.setAttribute('aria-pressed', revealing ? 'true' : 'false');
+            passwordToggle.setAttribute('aria-label', revealing ? 'Ocultar palavra-passe' : 'Mostrar palavra-passe');
+            iconShow.classList.toggle('hidden', revealing);
+            iconHide.classList.toggle('hidden', !revealing);
+        });
     </script>
 </body>
 </html>

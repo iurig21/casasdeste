@@ -41,7 +41,9 @@
             <div class="admin-toolbar">
                 <form method="GET" action="{{ route('admin.dashboard') }}" class="admin-search">
                     <input class="admin-input admin-search__input" type="text" name="search" value="{{ $search }}" placeholder="Pesquisar por nome, email ou telefone...">
-                    <button type="submit" class="admin-btn admin-btn--primary">Pesquisar</button>
+                    <button type="submit" class="admin-btn admin-btn--primary">
+                        <x-lucide-search/>
+                        Pesquisar</button>
                     @if ($search)
                         <a href="{{ route('admin.dashboard') }}" class="admin-btn admin-btn--outline admin-btn--clear">Limpar</a>
                     @endif
@@ -67,7 +69,10 @@
                                 <td>{{ $download->telefone }}</td>
                                 <td>{{ $download->created_at->format('d/m/Y H:i') }}</td>
                                 <td>
-                                    <button type="button" class="admin-btn admin-btn--danger admin-btn--sm" onclick="openDeleteModal('{{ route('admin.downloads.destroy', $download->id) }}', '{{ $download->nome }}')">Eliminar</button>
+                                    <button type="button" class="admin-btn admin-btn--danger admin-btn--sm" onclick="openDeleteModal('{{ route('admin.downloads.destroy', $download->id) }}', '{{ $download->nome }}')">
+                                        <x-lucide-trash-2 class="shrink-0" aria-hidden="true" />
+                                        Eliminar
+                                    </button>
                                 </td>
                             </tr>
                         @empty
@@ -104,7 +109,9 @@
                 <form id="deleteModalForm" method="POST" action="">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="admin-btn admin-btn--danger admin-btn--sm">Eliminar</button>
+                    <button type="submit" class="admin-btn admin-btn--danger admin-btn--sm"> 
+                        <x-lucide-trash-2 class="shrink-0" aria-hidden="true" />
+                        Eliminar</button>
                 </form>
             </div>
         </div>

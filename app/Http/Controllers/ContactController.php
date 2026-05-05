@@ -25,7 +25,7 @@ class ContactController extends Controller
             'mensagem' => $validated['mensagem'],
         ];
 
-        Mail::to('iurilameira2017@gmail.com')
+        Mail::to('iuri@digitosolutions.com')
             ->send(new ContactMail(...$contactData));
 
         Mail::to($validated['email'])

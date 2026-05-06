@@ -6,10 +6,20 @@
 <div class="admin-toolbar">
     <form method="GET" action="{{ route('admin.dashboard') }}" class="admin-search">
         <input class="admin-input admin-search__input" type="text" name="search" value="{{ $search }}" placeholder="Pesquisar por nome, email ou telefone...">
+        <div class="admin-search__dates">
+            <label class="admin-search__date-field">
+                <span class="admin-search__date-label">Desde</span>
+                <input class="admin-input admin-search__date" type="date" name="date_from" value="{{ $dateFrom }}">
+            </label>
+            <label class="admin-search__date-field">
+                <span class="admin-search__date-label">Até</span>
+                <input class="admin-input admin-search__date" type="date" name="date_to" value="{{ $dateTo }}">
+            </label>
+        </div>
         <button type="submit" class="admin-btn admin-btn--primary">
             <x-lucide-search/>
             Pesquisar</button>
-        @if ($search)
+        @if ($search || $dateFrom || $dateTo)
             <a href="{{ route('admin.dashboard') }}" class="admin-btn admin-btn--outline admin-btn--clear">Limpar</a>
         @endif
     </form>

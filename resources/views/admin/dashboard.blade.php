@@ -58,7 +58,7 @@
             @endif
 
             <div id="admin-dashboard-pane" class="admin-dashboard-pane" data-admin-dashboard-pane data-dashboard-url="{{ route('admin.dashboard') }}">
-                @include('admin.partials.dashboard-downloads-inner', compact('downloads', 'search'))
+                @include('admin.partials.dashboard-downloads-inner', compact('downloads', 'search', 'dateFrom', 'dateTo'))
             </div>
         </div>
 

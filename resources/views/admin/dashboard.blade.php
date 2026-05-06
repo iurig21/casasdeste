@@ -4,6 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('adminTheme');
+                document.documentElement.setAttribute('data-admin-theme', t === 'light' ? 'light' : 'dark');
+            } catch (e) {
+                document.documentElement.setAttribute('data-admin-theme', 'dark');
+            }
+        })();
+    </script>
     <title>Backoffice - Casas D'Este</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +31,21 @@
                 </a>
                 <span class="admin-nav__badge">Backoffice</span>
             </div>
-            <a href="{{ route('admin.logout') }}" class="font-display font-bold border-2 border-[#c4aa85] text-[#c4aa85] px-8 py-2 rounded-lg hover:bg-[#c4aa85] hover:text-white">Sair</a>
+            <div class="admin-nav__end">
+                <button type="button" id="adminThemeToggle" class="admin-theme-toggle" role="switch" aria-checked="false" aria-label="Ativar modo claro">
+                    <span class="admin-theme-toggle__track">
+                        <span class="admin-theme-toggle__bg" aria-hidden="true">
+                            <span class="admin-theme-toggle__cell"><x-lucide-sun class="admin-theme-toggle__bg-icon" /></span>
+                            <span class="admin-theme-toggle__cell"><x-lucide-moon class="admin-theme-toggle__bg-icon" /></span>
+                        </span>
+                        <span class="admin-theme-toggle__thumb" aria-hidden="true">
+                            <x-lucide-sun class="admin-theme-toggle__thumb-icon admin-theme-toggle__thumb-icon--sun" />
+                            <x-lucide-moon class="admin-theme-toggle__thumb-icon admin-theme-toggle__thumb-icon--moon" />
+                        </span>
+                    </span>
+                </button>
+                <a href="{{ route('admin.logout') }}" class="admin-nav__logout">Sair</a>
+            </div>
         </div>
     </nav>
 
@@ -63,6 +87,24 @@
     </div>
 
     <script>
+      (function () {
+        var btn = document.getElementById('adminThemeToggle');
+        if (!btn) return;
+        function apply(theme) {
+          document.documentElement.setAttribute('data-admin-theme', theme);
+          try { localStorage.setItem('adminTheme', theme); } catch (e) {}
+          var light = theme === 'light';
+          btn.setAttribute('aria-checked', light ? 'true' : 'false');
+          btn.classList.toggle('admin-theme-toggle--light', light);
+          btn.setAttribute('aria-label', light ? 'Ativar modo escuro' : 'Ativar modo claro');
+        }
+        apply(document.documentElement.getAttribute('data-admin-theme') || 'dark');
+        btn.addEventListener('click', function () {
+          var next = document.documentElement.getAttribute('data-admin-theme') === 'light' ? 'dark' : 'light';
+          apply(next);
+        });
+      })();
+
       const successAlert = document.getElementById('showSuccess');
       setTimeout(() => {
         if(successAlert){

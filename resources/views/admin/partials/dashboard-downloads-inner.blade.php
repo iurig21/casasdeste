@@ -22,7 +22,7 @@
                 <th>Nome</th>
                 <th>Email</th>
                 <th>Telefone</th>
-                <th>Data</th>
+                <th>Data e hora</th>
                 <th>Ações</th>
             </tr>
         </thead>
@@ -32,7 +32,7 @@
                     <td>{{ $download->nome }}</td>
                     <td>{{ $download->email }}</td>
                     <td>{{ $download->telefone }}</td>
-                    <td>{{ $download->created_at->format('d/m/Y H:i') }}</td>
+                    <td>{{ $download->created_at->copy()->timezone('Europe/Lisbon')->format('d/m/Y H:i') }}</td>
                     <td>
                         <button type="button" class="admin-btn admin-btn--danger admin-btn--sm" onclick="openDeleteModal('{{ route('admin.downloads.destroy', $download->id) }}', @js($download->nome))">
                             <x-lucide-trash-2 class="shrink-0" aria-hidden="true" />

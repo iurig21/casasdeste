@@ -28,8 +28,17 @@ document.addEventListener("DOMContentLoaded", () => {
             return isEmail(email);
         }
 
-        function isValidTelefone(telefone) {
-            return /^9[0-9]{8}$/.test(telefone);
+        function brochureTelefoneDigits(s) {
+            return String(s).replace(/\D/g, "").slice(0, 9);
+        }
+
+        function formatPtMobileChunks(raw) {
+            const d = brochureTelefoneDigits(raw);
+            const parts = [];
+            for (let i = 0; i < d.length; i += 3) {
+                parts.push(d.slice(i, i + 3));
+            }
+            return parts.join(" ");
         }
 
         function clearServerError(fieldName, inputEl) {
@@ -42,22 +51,30 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
-        nomeInput.addEventListener("input", () =>
-            clearServerError("nome", nomeInput),
-        );
-        telefoneInput.addEventListener("input", () =>
-            clearServerError("telefone", telefoneInput),
-        );
-        emailInput.addEventListener("input", () =>
-            clearServerError("email", emailInput),
-        );
+        nomeInput.addEventListener("input", () => {
+            clearServerError("nome", nomeInput);
+            checkBrochureForm();
+        });
+        emailInput.addEventListener("input", () => {
+            clearServerError("email", emailInput);
+            checkBrochureForm();
+        });
+
+        telefoneInput.addEventListener("input", () => {
+            const formatted = formatPtMobileChunks(telefoneInput.value);
+            if (telefoneInput.value !== formatted) {
+                telefoneInput.value = formatted;
+            }
+            clearServerError("telefone", telefoneInput);
+            checkBrochureForm();
+        });
 
         function checkBrochureForm() {
             const nome = nomeInput.value.trim();
-            const telefone = telefoneInput.value.trim();
+            const telefone = brochureTelefoneDigits(telefoneInput.value.trim());
             const email = emailInput.value.trim();
 
-            if (telefone.length > 0 && !isValidTelefone(telefone)) {
+            if (telefone.length > 0 && !/^9[0-9]{8}$/.test(telefone)) {
                 telefoneError.style.display = "block";
             } else {
                 telefoneError.style.display = "none";
@@ -70,7 +87,9 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             const allValid =
-                nome && isValidTelefone(telefone) && isValidEmail(email);
+                nome &&
+                /^9[0-9]{8}$/.test(telefone) &&
+                isValidEmail(email);
 
             if (allValid) {
                 btn.disabled = false;
@@ -82,10 +101,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 btn.style.cursor = "not-allowed";
             }
         }
-
-        nomeInput.addEventListener("input", checkBrochureForm);
-        telefoneInput.addEventListener("input", checkBrochureForm);
-        emailInput.addEventListener("input", checkBrochureForm);
 
         brochureForm.addEventListener("submit", () => {
             if (btn) {

@@ -11,8 +11,12 @@ class BrochureDownloadController extends Controller
 {
     public function store(Request $request)
     {
+
+        $digitsOnly = preg_replace('/\D/', '', (string) $request->input('telefone', ''));
+        $request->merge(['telefone' => $digitsOnly]);
+
         $validated = $request->validateWithBag('brochure', [
-            'nome' => 'required|string|max:255',
+            'nome' => 'required|string|max:70',
             'email' => 'required|email|max:255',
             'telefone' => 'required|string|size:9|regex:/^9[0-9]{8}$/',
         ]);
@@ -23,11 +27,7 @@ class BrochureDownloadController extends Controller
             ->exists();
 
         if (!$alreadyExists) {
-            BrochureDownload::create([
-                'nome' => $validated['nome'],
-                'email' => $validated['email'],
-                'telefone' => $validated['telefone'],
-            ]);
+            BrochureDownload::create($validated);
         }
 
         Mail::to($validated['email'])->send(

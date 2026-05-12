@@ -13,6 +13,14 @@ class BrochureDownload extends Model
         'telefone',
     ];
 
+    public static function checkIfDownloadExists(string $email , string $telefone): bool{
+        return static::query()
+                ->where('email', $email)
+                ->orWhere('telefone', $telefone)
+                ->exists();
+    }
+
+
     /**
      * Pesquisa no backoffice (nome por palavras, email/frase inteira e telefone com dígitos agrupados).
      */

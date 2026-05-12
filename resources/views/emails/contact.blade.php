@@ -76,7 +76,7 @@
             </div>
             <div class="field">
                 <div class="field-label">Contacto</div>
-                <div class="field-value">{{ $contacto }}</div>
+                <div class="field-value">{{ $telefone }}</div>
             </div>
             <div class="field">
                 <div class="field-label">Mensagem</div>

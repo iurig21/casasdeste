@@ -64,7 +64,7 @@
 
     </main>
 
-    <div id="deleteModal" class="admin-modal-overlay">
+    <div id="deleteModal" class="admin-modal-overlay" hidden>
         <div class="admin-modal">
             <div class="admin-modal__header">
                 <h3 class="admin-modal__title">Confirmar eliminação</h3>
@@ -105,21 +105,54 @@
         });
       })();
 
+      function removeDashboardFeedbackEls() {
+        ['showSuccess', 'ajaxDeleteSuccess', 'dashboardFeedback'].forEach((id) => {
+          const el = document.getElementById(id);
+          if (el) el.remove();
+        });
+      }
+
+      function showDashboardFeedback(message, variant, brochureStyle = false) {
+        const pane = document.querySelector('[data-admin-dashboard-pane]');
+        if (!pane || !pane.parentNode) return;
+        removeDashboardFeedbackEls();
+        const div = document.createElement('div');
+        div.id = variant === 'success' ? 'ajaxDeleteSuccess' : 'dashboardFeedback';
+        if (variant === 'success') {
+          div.className = 'admin-alert admin-alert--success animate-fade-out';
+        } else {
+          div.className = brochureStyle
+            ? 'admin-alert admin-alert--brochure-error animate-fade-out'
+            : 'admin-alert admin-alert--error animate-fade-out';
+        }
+        const p = document.createElement('p');
+        p.textContent = message;
+        div.appendChild(p);
+        pane.parentNode.insertBefore(div, pane);
+        setTimeout(() => div.remove(), 4000);
+      }
+
       const successAlert = document.getElementById('showSuccess');
       setTimeout(() => {
-        if(successAlert){
-            successAlert.style.display = 'none';
+        if (successAlert) {
+          successAlert.remove();
         }
       }, 4000);
 
       function openDeleteModal(action, name) {
+        const overlay = document.getElementById('deleteModal');
+        if (!overlay) return;
         document.getElementById('deleteModalForm').action = action;
         document.getElementById('deleteModalName').textContent = name;
-        document.getElementById('deleteModal').classList.add('is-open');
+        overlay.hidden = false;
+        overlay.classList.add('is-open');
       }
 
       function closeDeleteModal() {
-        document.getElementById('deleteModal').classList.remove('is-open');
+        const overlay = document.getElementById('deleteModal');
+        if (!overlay) return;
+        overlay.classList.remove('is-open');
+        overlay.hidden = true;
       }
 
       document.getElementById('deleteModal').addEventListener('click', function(e) {
@@ -134,7 +167,10 @@
         const pane = document.querySelector('[data-admin-dashboard-pane]');
         if (!pane) return;
 
-        async function loadDashboard(url, { skipHistory = false } = {}) {
+        async function loadDashboard(
+          url,
+          { skipHistory = false, loadErrorMessage = null } = {},
+        ) {
           pane.classList.add('admin-dashboard-pane--loading');
           try {
             const res = await fetch(url, {
@@ -155,9 +191,15 @@
               const next = new URL(url, window.location.origin);
               history.pushState({ adminDashboardPane: true }, '', next.pathname + next.search + next.hash);
             }
+            return true;
           } catch (err) {
             console.error(err);
-            window.alert('Não foi possível carregar os registos.');
+            showDashboardFeedback(
+              loadErrorMessage || 'Não foi possível carregar os registos.',
+              'error',
+              Boolean(loadErrorMessage),
+            );
+            return false;
           } finally {
             pane.classList.remove('admin-dashboard-pane--loading');
           }
@@ -193,19 +235,6 @@
           loadDashboard(window.location.href, { skipHistory: true });
         });
 
-        function showAjaxSuccess(message) {
-          const oldEl = document.getElementById('ajaxDeleteSuccess');
-          if (oldEl) oldEl.remove();
-          const div = document.createElement('div');
-          div.id = 'ajaxDeleteSuccess';
-          div.className = 'admin-alert admin-alert--success animate-fade-out';
-          const p = document.createElement('p');
-          p.textContent = message;
-          div.appendChild(p);
-          pane.parentNode.insertBefore(div, pane);
-          setTimeout(() => div.remove(), 4000);
-        }
-
         const deleteModalForm = document.getElementById('deleteModalForm');
         if (deleteModalForm) {
           deleteModalForm.addEventListener('submit', async (e) => {
@@ -233,24 +262,35 @@
 
               if (!res.ok) {
                 if (res.status === 419 || res.status === 401) {
-                  window.alert('Sessão expirada. Atualize a página.');
+                  showDashboardFeedback('Sessão expirada. Atualize a página.', 'error', false);
                 } else {
-                  window.alert('Não foi possível eliminar o registo.');
+                  showDashboardFeedback('Erro ao eliminar registo.', 'error', true);
                 }
                 return;
               }
+
+              closeDeleteModal();
 
               let data = {};
               try {
                 data = await res.json();
               } catch (_) {}
-              closeDeleteModal();
-              await loadDashboard(window.location.href, { skipHistory: true });
-              showAjaxSuccess(data.message || 'Registo eliminado com sucesso.');
+
+              const reloaded = await loadDashboard(window.location.href, {
+                skipHistory: true,
+                loadErrorMessage: 'Erro ao eliminar registo.',
+              });
+              if (reloaded) {
+                showDashboardFeedback(
+                  data.message || 'Registo eliminado com sucesso.',
+                  'success',
+                );
+              }
             } catch (err) {
               console.error(err);
-              window.alert('Não foi possível eliminar o registo.');
+              showDashboardFeedback('Erro ao eliminar registo.', 'error', true);
             } finally {
+              closeDeleteModal();
               pane.classList.remove('admin-dashboard-pane--loading');
               if (submitBtn) submitBtn.disabled = false;
             }

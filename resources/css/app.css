@@ -38,6 +38,20 @@ body {
     overflow-x: hidden;
 }
 
+/* Brochure modal: stable input background on paste / autofill */
+#brochureModal #brochureForm input {
+    background-color: #1a1a1a;
+}
+
+#brochureModal #brochureForm input:-webkit-autofill,
+#brochureModal #brochureForm input:-webkit-autofill:hover,
+#brochureModal #brochureForm input:-webkit-autofill:focus,
+#brochureModal #brochureForm input:-webkit-autofill:active {
+    -webkit-text-fill-color: #fff !important;
+    caret-color: #fff;
+    box-shadow: 0 0 0 1000px #1a1a1a inset !important;
+}
+
 header {
     height: 77px;
 }
@@ -644,6 +658,21 @@ main {
     font-size: 12px;
     outline: none;
     padding: 0 0 5px;
+}
+
+/* WebKit: keep contact fields visually transparent on autofill / paste */
+.site-contact input:-webkit-autofill,
+.site-contact input:-webkit-autofill:hover,
+.site-contact input:-webkit-autofill:focus,
+.site-contact input:-webkit-autofill:active,
+.site-contact textarea:-webkit-autofill,
+.site-contact textarea:-webkit-autofill:hover,
+.site-contact textarea:-webkit-autofill:focus,
+.site-contact textarea:-webkit-autofill:active {
+    -webkit-text-fill-color: #fff !important;
+    caret-color: #fff;
+    box-shadow: 0 0 0 1000px #c4aa85 inset !important;
+    transition: background-color 99999s ease-out 0s;
 }
 
 .site-contact__message {
@@ -3974,6 +4003,13 @@ html[data-admin-theme="light"]:has(body.admin-body) {
     background: rgba(231, 76, 60, 0.15);
     border: 1px solid #e74c3c;
     color: #ff6b6b;
+}
+
+/* Match brochure modal error banner (dark panel + coral border) */
+.admin-alert--brochure-error {
+    background: #2a1a1a;
+    border: 1px solid #ff6b6b;
+    color: #ff9b9b;
 }
 
 .admin-alert--success {

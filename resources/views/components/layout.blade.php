@@ -65,30 +65,35 @@
             <form id="brochureForm" method="POST" action="{{ route('brochure.download') }}" style="display: flex; flex-direction: column; gap: 1rem;">
                 @csrf
                 @if(session('brochure_success'))
-                    <div style="background: #2a241a; border: 1px solid #C4AA85; color: #C4AA85; padding: 0.75rem; border-radius: 6px; font-size: 0.875rem; font-family: 'Montserrat', sans-serif;">
+                    <div class="admin-alert--success" style="padding: 0.75rem; border-radius: 6px; font-size: 0.875rem; font-family: 'Montserrat', sans-serif;">
                         {{ session('brochure_success') }}
+                    </div>
+                @endif
+                @if($errors->has('error'))
+                    <div style="background: #2a1a1a; border: 1px solid #ff6b6b; color: #ff9b9b; padding: 0.75rem; border-radius: 6px; font-size: 0.875rem; font-family: 'Montserrat', sans-serif;">
+                        {{ $errors->first('error') }}
                     </div>
                 @endif
                 <div>
                     <label style="display: block; font-size: 0.875rem; color: #C4AA85; margin-bottom: 0.25rem; font-family: 'Montserrat', sans-serif;">Nome *</label>
                     <input type="text" name="nome" id="brochureNome" placeholder="O seu nome" value="{{ old('nome') }}"
-                        style="width: 100%; padding: 0.625rem 0.75rem; background: transparent; border: 1px solid {{ $errors->brochure->has('nome') ? '#ff6b6b' : '#C4AA85' }}; border-radius: 6px; color: #fff; font-family: 'Montserrat', sans-serif; font-size: 0.875rem; outline: none; box-sizing: border-box;"
+                        style="width: 100%; padding: 0.625rem 0.75rem; background-color: #1a1a1a; border: 1px solid {{ $errors->brochure->has('nome') ? '#ff6b6b' : '#C4AA85' }}; border-radius: 6px; color: #fff; font-family: 'Montserrat', sans-serif; font-size: 0.875rem; outline: none; box-sizing: border-box;"
                         required>
                     @error('nome', 'brochure')
                         <span data-server-error="nome" style="display: block; color: #ff6b6b; font-size: 0.75rem; font-family: 'Montserrat', sans-serif; margin-top: 0.25rem;">{{ $message }}</span>
                     @enderror
                 </div>
                 <div>
-                    <label style="display: block; font-size: 0.875rem; color: #C4AA85; margin-bottom: 0.25rem; font-family: 'Montserrat', sans-serif;">Telefone *</label>
+                    <label style="display: block; font-size: 0.875rem; color: #C4AA85; margin-bottom: 0.25rem; font-family: 'Montserrat', sans-serif;">Contacto *</label>
                     <input type="tel" name="telefone" id="brochureTelefone"
                         placeholder="9XX XXX XXX"
                         value="{{ $__brochureTelDisplay }}"
                         inputmode="numeric"
                         maxlength="11"
-                        style="width: 100%; padding: 0.625rem 0.75rem; background: transparent; border: 1px solid {{ $errors->brochure->has('telefone') ? '#ff6b6b' : '#C4AA85' }}; border-radius: 6px; color: #fff; font-family: 'Montserrat', sans-serif; font-size: 0.875rem; outline: none; box-sizing: border-box;"
+                        style="width: 100%; padding: 0.625rem 0.75rem; background-color: #1a1a1a; border: 1px solid {{ $errors->brochure->has('telefone') ? '#ff6b6b' : '#C4AA85' }}; border-radius: 6px; color: #fff; font-family: 'Montserrat', sans-serif; font-size: 0.875rem; outline: none; box-sizing: border-box;"
                         required>
                     <span id="telefoneError" style="display: none; color: #ff6b6b; font-size: 0.75rem; font-family: 'Montserrat', sans-serif; margin-top: 0.25rem;">
-                        O telefone deve ter 9 dígitos e começar com 9.
+                        O contacto deve seguir o formato 9XX XXX XXX.
                     </span>
                     @error('telefone', 'brochure')
                         <span data-server-error="telefone" style="display: block; color: #ff6b6b; font-size: 0.75rem; font-family: 'Montserrat', sans-serif; margin-top: 0.25rem;">{{ $message }}</span>
@@ -97,7 +102,7 @@
                 <div>
                     <label style="display: block; font-size: 0.875rem; color: #C4AA85; margin-bottom: 0.25rem; font-family: 'Montserrat', sans-serif;">Email *</label>
                     <input type="email" name="email" id="brochureEmail" placeholder="O seu email" value="{{ old('email') }}"
-                        style="width: 100%; padding: 0.625rem 0.75rem; background: transparent; border: 1px solid {{ $errors->brochure->has('email') 
+                        style="width: 100%; padding: 0.625rem 0.75rem; background-color: #1a1a1a; border: 1px solid {{ $errors->brochure->has('email') 
                         ? '#ff6b6b' : '#C4AA85' }}; border-radius: 6px; color: #fff; font-family: 'Montserrat', sans-serif; font-size: 0.875rem; outline: none; box-sizing: border-box;"
                         required>
                     <span id="emailError" style="display: none; color: #ff6b6b; font-size: 0.75rem; font-family: 'Montserrat', sans-serif; margin-top: 0.25rem;">

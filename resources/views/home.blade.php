@@ -126,7 +126,7 @@
             <h2 class="lazy-text lazy-text--left">Contacte-nos para<br>mais informações</h2>
 
             @php
-                $__contactDigits = preg_replace('/\D/', '', (string) old('contacto', ''));
+                $__contactDigits = preg_replace('/\D/', '', (string) old('telefone', ''));
                 $__contactDisplay = '';
                 if ($__contactDigits !== '') {
                     $parts = [];
@@ -152,7 +152,7 @@
                         <span>Contacto *</span>
                         <input type="tel"
                             id="contactTelefone"
-                            name="contacto"
+                            name="telefone"
                             value="{{ $__contactDisplay }}"
                             inputmode="numeric"
                             autocomplete="tel"

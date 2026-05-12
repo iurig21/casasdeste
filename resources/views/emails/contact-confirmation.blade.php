@@ -64,6 +64,10 @@
             color: #999;
             text-align: center;
         }
+
+        #name {
+            font-size: 20px; 
+        }
     </style>
 </head>
 <body>
@@ -72,9 +76,8 @@
             <img src="{{ $message->embed($logoPath) }}" alt="Casas D'Este logo">
         </div>
         <div class="body">
-            <strong class="intro">A sua mensagem foi enviada com sucesso. Daremos um retorno assim que possível!</strong>
-            <br>
-            <br>
+            <p id="name">Olá, <strong>{{ $nome }}</strong>.</p>
+            <p class="intro">A sua mensagem foi enviada com sucesso. Daremos um retorno assim que possível!</p>
             <div class="field">
                 <div class="field-label">Nome</div>
                 <div class="field-value">{{ $nome }}</div>

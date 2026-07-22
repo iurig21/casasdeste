@@ -1,169 +1,168 @@
 # Casas D'Este
 
-A modern website to promote the work of the house construction company, Casas D'Este, based in Braga, Portugal.
+Um website moderno para promover o trabalho da empresa de construção de casas Casas D'Este, sediada em Braga, Portugal.
 
-This project is built with [Laravel](https://laravel.com/) and leverages Blade templating, PHP back-end logic, custom CSS, and JavaScript. It features a responsive website for clients and a secure backoffice (admin panel) for managing contact leads.
-
----
-
-## Table of Contents
-
-- [About](#about)
-- [Features](#features)
-- [Backoffice (Admin Panel)](#backoffice-admin-panel)
-- [Screenshots](#screenshots)
-- [Tech Stack](#tech-stack)
-- [Getting Started](#getting-started)
-- [Project Structure](#project-structure)
-- [Environment Variables](#environment-variables)
-- [Deployment](#deployment)
+Este projeto foi desenvolvido com [Laravel](https://laravel.com/) e utiliza templates Blade, lógica de back-end em PHP, CSS personalizado e JavaScript. Inclui um website responsivo para clientes e um backoffice seguro para administração.
 
 ---
 
-## About
+## Índice
 
-**Casas D'Este** showcases the experience and portfolio of a residential construction company from Braga. The platform provides potential clients with detailed information about construction services, highlights completed projects, and serves as a direct channel for contact and inquiries.
-
----
-
-## Features
-
-- **Modern Responsive Design:** Adapts seamlessly to desktop and mobile screens.
-- **Portfolio Display:** Showcases houses and projects with galleries and details.
-- **Company Showcase:** Dedicated pages for services, values, and team introduction.
-- **Contact Form:** Lets visitors reach out for custom project quotes or information.
-- **Brochure Download:** Visitors can request brochures and submit their contact data.
-- **SEO-Friendly:** Uses semantic markup and meta data for discoverability.
-- **Easy Content Management:** Built with organized Blade templates for maintainability and quick editing.
-- **Admin Backoffice:** Secure management of lead data (see below).
+- [Sobre](#sobre)
+- [Funcionalidades](#funcionalidades)
+- [Backoffice (Painel de Administração)](#backoffice-painel-de-administração)
+- [Capturas de Ecrã](#capturas-de-ecrã)
+- [Tecnologias](#tecnologias)
+- [Como Começar](#como-começar)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Variáveis de Ambiente](#variáveis-de-ambiente)
 
 ---
 
-## Backoffice (Admin Panel)
+## Sobre
 
-Casas D'Este includes a secure, custom-built backoffice for administrators:
-
-- **Access:**  
-  - `/admin` endpoint for login (credentials from `.env`: `ADMIN_USERNAME` / `ADMIN_PASSWORD`).
-  - Admin-protected routes using session authentication and custom middleware.
-
-- **Features:**  
-  - **Dashboard:** Displays and manages brochure download requests/leads with search and pagination.
-  - **Record Search:** Filter leads by name, email, or phone.
-  - **Delete Records:** Remove submissions with confirmation modal.
-  - **Logout:** Securely terminate the admin session.
-
-- **Security:**  
-  - Middleware restricts protected routes to logged-in admins.
-  - Credentials are stored in environment variables via `config/admin.php`.
-
-- **Styling:**  
-  - Modern UI built with custom CSS and Blade templates for clarity and usability.
-  - Responsive and accessible for use across devices.
+**Casas D'Este** apresenta a experiência e o portefólio de uma empresa de construção residencial de Braga. A plataforma disponibiliza aos potenciais clientes informação detalhada sobre serviços de construção, projetos concluídos e contactos para pedidos de orçamento.
 
 ---
 
-## Screenshots
+## Funcionalidades
 
-<!-- Add actual screenshots in the `public/screenshots/` folder and update paths below -->
-![Homepage](public/screenshots/homepage.png)
-![Portfolio](public/screenshots/portfolio.png)
-![Contact Form](public/screenshots/contact.png)
-![Admin Dashboard](public/screenshots/admin_dashboard.png)
-![Admin Login](public/screenshots/admin_login.png)
+- **Design Responsivo Moderno:** Adapta-se de forma fluida a ecrãs de computador e dispositivos móveis.
+- **Apresentação de Portefólio:** Exibe moradias e projetos com galerias e detalhes.
+- **Apresentação da Empresa:** Páginas dedicadas a serviços, valores e apresentação da equipa.
+- **Formulário de Contacto:** Permite aos visitantes pedir orçamentos personalizados ou mais informações.
+- **Download de Brochura:** Os visitantes podem solicitar brochuras e enviar os seus dados de contacto.
+- **Otimizado para SEO:** Utiliza marcação semântica e metadados para melhorar a visibilidade.
+- **Gestão de Conteúdo Simples:** Construído com templates Blade organizados para facilitar manutenção e edição rápida.
+- **Backoffice de Administração:** Gestão segura dos dados de leads (ver abaixo).
 
 ---
 
-## Tech Stack
+## Backoffice (Painel de Administração)
+
+A Casas D'Este inclui um backoffice seguro, desenvolvido à medida para administradores:
+
+- **Acesso:**  
+  - Endpoint `/admin` para login (credenciais no `.env`: `ADMIN_USERNAME` / `ADMIN_PASSWORD`).
+  - Rotas protegidas para administradores com autenticação por sessão e middleware personalizado.
+
+- **Funcionalidades:**  
+  - **Dashboard:** Mostra e gere pedidos de download de brochuras/leads com pesquisa e paginação.
+  - **Pesquisa de Registos:** Filtra leads por nome, email ou telefone.
+  - **Eliminar Registos:** Remove submissões com modal de confirmação.
+  - **Terminar Sessão:** Encerra a sessão de administrador de forma segura.
+
+- **Segurança:**  
+  - O middleware restringe as rotas protegidas a administradores autenticados.
+  - As credenciais são armazenadas em variáveis de ambiente através de `config/admin.php`.
+
+- **Estilo:**  
+  - Interface moderna construída com CSS personalizado e templates Blade para clareza e usabilidade.
+  - Responsiva e acessível em vários dispositivos.
+
+---
+
+## Capturas de Ecrã
+
+<!-- Adicionar capturas de ecrã reais na pasta `public/screenshots/` e atualizar os caminhos abaixo -->
+![Página Inicial](public/screenshots/homepage.png)
+![Portefólio](public/screenshots/portfolio.png)
+![Formulário de Contacto](public/screenshots/contact.png)
+![Dashboard Admin](public/screenshots/admin_dashboard.png)
+![Login Admin](public/screenshots/admin_login.png)
+
+---
+
+## Tecnologias
 
 - **Framework:** [Laravel](https://laravel.com/) (PHP)
-- **Templating:** Blade
-- **Styling:** CSS,Tailwind
-- **Database:** MySQL
-- **Build Tools:** Composer, npm
+- **Templates:** Blade
+- **Estilização:** CSS, Tailwind
+- **Base de Dados:** MySQL
+- **Ferramentas de Build:** Composer, npm
 
 ---
 
-## Getting Started
+## Como Começar
 
-**To get a local copy up and running:**
+**Para correr uma cópia local do projeto:**
 
-### 1. Prerequisites
+### 1. Pré-requisitos
 
-- PHP 8.0 or higher
+- PHP 8.0 ou superior
 - Composer
-- Node.js and npm
-- A database (MySQL, MariaDB, SQLite, etc.)
+- Node.js e npm
+- Uma base de dados (MySQL, MariaDB, SQLite, etc.)
 
-### 2. Installation
+### 2. Instalação
 
-Clone the repository:
+Clonar o repositório:
 ```sh
 git clone https://github.com/iurig21/casasdeste.git
 cd casasdeste
 ```
 
-Install PHP dependencies:
+Instalar dependências PHP:
 ```sh
 composer install
 ```
 
-Install JavaScript dependencies and compile assets:
+Instalar dependências JavaScript e compilar assets:
 ```sh
 npm install
-npm run dev   # For development
-# or
-npm run build # For production
+npm run dev   # Para desenvolvimento
+# ou
+npm run build # Para produção
 ```
 
-### 3. Configure Environment
+### 3. Configurar Ambiente
 
-Copy `.env.example` to `.env`:
+Copiar `.env.example` para `.env`:
 ```sh
 cp .env.example .env
 ```
 
-Set your environment variables in `.env` (see [Environment Variables](#environment-variables) below). Set your database, mail, application URL, and admin credentials as needed:
+Definir as variáveis de ambiente no `.env` (ver [Variáveis de Ambiente](#variáveis-de-ambiente) abaixo). Configure base de dados, mail, URL da aplicação e credenciais de administrador conforme necessário:
 
 ```env
-ADMIN_USERNAME=your_admin_username
-ADMIN_PASSWORD=your_secure_password
+ADMIN_USERNAME=seu_username_admin
+ADMIN_PASSWORD=sua_password_segura
 ```
 
-Generate Laravel application key:
+Gerar a chave da aplicação Laravel:
 ```sh
 php artisan key:generate
 ```
 
-### 4. Run Migrations (if applicable)
+### 4. Correr Migrações (se aplicável)
 
-If your site uses a database:
+Se o site utilizar base de dados:
 ```sh
 php artisan migrate
 ```
 
-### 5. Serve the Application
+### 5. Servir a Aplicação
 
 ```sh
 php artisan serve
 ```
-Visit [http://localhost:8000](http://localhost:8000).
+Visite [http://localhost:8000](http://localhost:8000).
 
 ---
 
-## Project Structure
+## Estrutura do Projeto
 
-```
+```text
 casasdeste/
-├── app/                # Laravel backend logic
+├── app/                # Lógica de back-end Laravel
 ├── bootstrap/
-├── config/             # Configuration files (see config/admin.php for admin credentials)
+├── config/             # Ficheiros de configuração (ver config/admin.php para credenciais de admin)
 ├── database/
-├── public/             # Public assets (index.php, images, CSS, etc.)
+├── public/             # Assets públicos (index.php, imagens, CSS, etc.)
 ├── resources/
-│   ├── views/          # Blade templates
-│   └── css/js          # Source styles/scripts (optionally)
-├── routes/             # Route definitions (web.php)
+│   ├── views/          # Templates Blade
+│   └── css/js          # Estilos/scripts fonte (opcional)
+├── routes/             # Definições de rotas (web.php)
 ├── storage/
 ├── tests/
 └── ...
@@ -171,9 +170,9 @@ casasdeste/
 
 ---
 
-## Environment Variables
+## Variáveis de Ambiente
 
-Key variables to set in `.env`:
+Principais variáveis a definir no `.env`:
 
 ```env
 APP_NAME=CasasDEste
@@ -185,11 +184,11 @@ DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=casasdeste
-DB_USERNAME=your_db_user
-DB_PASSWORD=your_db_password
+DB_USERNAME=seu_utilizador_bd
+DB_PASSWORD=sua_password_bd
 
-ADMIN_USERNAME=your_admin_username
-ADMIN_PASSWORD=your_secure_password
+ADMIN_USERNAME=seu_username_admin
+ADMIN_PASSWORD=sua_password_segura
 
 MAIL_MAILER=smtp
 MAIL_HOST=smtp.example.com
@@ -201,22 +200,8 @@ MAIL_FROM_ADDRESS=info@casasdeste.pt
 MAIL_FROM_NAME="Casas D'Este"
 ```
 
-Refer to Laravel’s [environment configuration documentation](https://laravel.com/docs/master/configuration) for more info.
+Consulte a [documentação de configuração de ambiente do Laravel](https://laravel.com/docs/master/configuration) para mais informação.
 
 ---
 
-## Deployment
-
-- For production, ensure you:
-    - Run `php artisan config:cache` and `php artisan route:cache`
-    - Use `npm run build` for minified frontend assets
-    - Point your web server (e.g., Nginx, Apache) to the `public/` directory
-    - Set file/folder permissions as per Laravel's [deployment guide](https://laravel.com/docs/master/deployment)
-    - Configure production-ready admin credentials and environment variables
-
-
-Questions, suggestions, or need a quote? Reach out!
-
----
-
-_Maintained by [@iurig21](https://github.com/iurig21)_
+_Mantido por [@iurig21](https://github.com/iurig21)_
